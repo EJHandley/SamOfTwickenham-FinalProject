@@ -20,19 +20,63 @@ public class MoveInterface : MonoBehaviour
 
     public void UseMoveOne()
     {
-        int currentMeters = resourceBars.startingMeters += 10;
-        resourceBars.ChangeMeters(currentMeters);
+        int turnoverCheck = Random.Range(1, 101);
 
-        int currentFatigue = resourceBars.startingFatigue += 5;
-        resourceBars.ChangeFatigue(currentFatigue);
+        //This will come from the move
+        int turnoverChance = 40;
+
+        if (turnoverCheck < turnoverChance)
+        {
+            Debug.Log("TURNOVER");
+            return;
+        }
+
+        int meters = resourceBars.startingMeters += Random.Range(15, 21);
+        resourceBars.ChangeMeters(meters);
+        Debug.Log(meters);
+
+        int fatigue = resourceBars.startingFatigue += 10;
+        resourceBars.ChangeFatigue(fatigue);
+        Debug.Log(fatigue);
     }
 
     public void UseMoveTwo()
     {
-        int currentMeters = resourceBars.startingMeters += 40;
-        resourceBars.ChangeMeters(currentMeters);
+        int turnoverCheck = Random.Range(1, 101);
 
-        int currentFatigue = resourceBars.startingFatigue += 35;
-        resourceBars.ChangeFatigue(currentFatigue);
+        //This will come from the move
+        int turnoverChance = 75;
+
+        if (turnoverCheck < turnoverChance)
+        {
+            Debug.Log("TURNOVER");
+            return;
+        }
+
+        int meters = resourceBars.startingMeters += Random.Range(40, 61);
+        resourceBars.ChangeMeters(meters);
+
+        int fatigue = resourceBars.startingFatigue += 30;
+        resourceBars.ChangeFatigue(fatigue);
+    }
+
+    public void UseMoveThree()
+    {
+        int turnoverCheck = Random.Range(1, 101);
+
+        //This will come from the move
+        int turnoverChance = 10;
+
+        if (turnoverCheck < turnoverChance)
+        {
+            Debug.Log("TURNOVER");
+            return;
+        }
+
+        int meters = resourceBars.startingMeters += Random.Range(5, 11);
+        resourceBars.ChangeMeters(meters);
+
+        int fatigue = resourceBars.startingFatigue += 5;
+        resourceBars.ChangeFatigue(fatigue);
     }
 }

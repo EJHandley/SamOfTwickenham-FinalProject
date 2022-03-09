@@ -29,19 +29,22 @@ public class ResourceBars : MonoBehaviour
         if(fatigueFill.value < 100)
         {
             currentMeters = Mathf.Clamp(currentMeters, 0, 100);
+            meterFill.value = currentMeters;
 
             if (meterFill.value >= 100)
             {
                 gameManager.PlayerScores();
                 meterFill.value = 50;
+                startingMeters = 50;
+                return;
             }
             else if (meterFill.value <= 0)
             {
                 gameManager.OppoScores();
                 meterFill.value = 50;
+                startingMeters = 50;
+                return;
             }
-
-            meterFill.value = currentMeters;
         }
     }
 

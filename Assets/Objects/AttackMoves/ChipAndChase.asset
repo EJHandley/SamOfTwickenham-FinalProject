@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Chip and Chase
   icon: {fileID: 0}
-  isAttack: 1
-  isDefence: 0
-  isSpecial: 0
+  BasicType: 0
+  StarType: 1
+  TeamType: 0
+  SpecialType: 0
   fatigueCost: 35
   metersGained: 50
   turnoverChance: 0.75

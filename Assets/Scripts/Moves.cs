@@ -8,9 +8,10 @@ public class Moves : ScriptableObject
     new public string name = "New Item";
     public Sprite icon = null;
 
-    public bool isAttack;
-    public bool isDefence;
-    public bool isSpecial;
+    public bool BasicType;
+    public bool StarType;
+    public bool TeamType;
+    public bool SpecialType;
 
     public int fatigueCost;
 

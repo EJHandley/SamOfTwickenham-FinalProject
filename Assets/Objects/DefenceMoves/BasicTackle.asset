@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Basic Tackle
   icon: {fileID: 0}
-  isAttack: 0
-  isDefence: 1
-  isSpecial: 0
+  BasicType: 1
+  StarType: 0
+  TeamType: 0
+  SpecialType: 0
   fatigueCost: 5
   metersStopped: 20
   foulChance: 0.1
