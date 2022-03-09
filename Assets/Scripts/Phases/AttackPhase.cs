@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveInterface : MonoBehaviour
+public class AttackPhase : MonoBehaviour
 {
+    public GameManager gameManager;
     public ResourceBars resourceBars;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -28,6 +27,7 @@ public class MoveInterface : MonoBehaviour
         if (turnoverCheck < turnoverChance)
         {
             Debug.Log("TURNOVER");
+            gameManager.DefencePhase();
             return;
         }
 
@@ -50,6 +50,7 @@ public class MoveInterface : MonoBehaviour
         if (turnoverCheck < turnoverChance)
         {
             Debug.Log("TURNOVER");
+            gameManager.DefencePhase();
             return;
         }
 
@@ -70,6 +71,7 @@ public class MoveInterface : MonoBehaviour
         if (turnoverCheck < turnoverChance)
         {
             Debug.Log("TURNOVER");
+            gameManager.DefencePhase();
             return;
         }
 
