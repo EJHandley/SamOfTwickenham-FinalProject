@@ -41,8 +41,6 @@ public class KickingPhase : MonoBehaviour
         {
             gameManager.DefencePhase();
         }
-
-
     }
 
     public void UseMoveTwo()
@@ -67,5 +65,10 @@ public class KickingPhase : MonoBehaviour
         {
             gameManager.DefencePhase();
         }
+    }
+
+    public void KickReturn()
+    {
+        gameManager.enemyController.EnemyAttack();
     }
 }

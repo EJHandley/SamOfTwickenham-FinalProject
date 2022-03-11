@@ -38,6 +38,8 @@ public class AttackPhase : MonoBehaviour
         int fatigue = resourceBars.startingFatigue += 10;
         resourceBars.ChangeFatigue(fatigue);
         Debug.Log(fatigue);
+
+        gameManager.enemyController.EnemyAttack();
     }
 
     public void UseMoveTwo()
@@ -59,6 +61,8 @@ public class AttackPhase : MonoBehaviour
 
         int fatigue = resourceBars.startingFatigue += 30;
         resourceBars.ChangeFatigue(fatigue);
+
+        gameManager.enemyController.EnemyAttack();
     }
 
     public void UseMoveThree()
@@ -80,5 +84,7 @@ public class AttackPhase : MonoBehaviour
 
         int fatigue = resourceBars.startingFatigue += 5;
         resourceBars.ChangeFatigue(fatigue);
+
+        gameManager.enemyController.EnemyAttack();
     }
 }
