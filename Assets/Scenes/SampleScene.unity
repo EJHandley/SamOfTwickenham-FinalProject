@@ -4297,7 +4297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack the Gap
+  m_text: Wrap Tackle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4431,7 +4431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Into Contact
+  m_text: Counter Ruck
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8879,8 +8879,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709267578}
-        m_TargetAssemblyTypeName: MoveInterface, Assembly-CSharp
+      - m_Target: {fileID: 1709267582}
+        m_TargetAssemblyTypeName: DefencePhase, Assembly-CSharp
         m_MethodName: UseMoveThree
         m_Mode: 1
         m_Arguments:
@@ -14232,8 +14232,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709267578}
-        m_TargetAssemblyTypeName: MoveInterface, Assembly-CSharp
+      - m_Target: {fileID: 1709267582}
+        m_TargetAssemblyTypeName: DefencePhase, Assembly-CSharp
         m_MethodName: UseMoveOne
         m_Mode: 1
         m_Arguments:
@@ -19222,8 +19222,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709267578}
-        m_TargetAssemblyTypeName: MoveInterface, Assembly-CSharp
+      - m_Target: {fileID: 1709267582}
+        m_TargetAssemblyTypeName: DefencePhase, Assembly-CSharp
         m_MethodName: UseMoveTwo
         m_Mode: 1
         m_Arguments:
@@ -19463,7 +19463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chip and Chase
+  m_text: Jackle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

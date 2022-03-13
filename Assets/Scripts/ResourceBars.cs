@@ -36,7 +36,7 @@ public class ResourceBars : MonoBehaviour
                 meterFill.value = 50;
                 startingMeters = 50;
                 gameManager.PlayerScores();
-                gameManager.KickingPhase();
+                gameManager.KickReturn();
                 return;
             }
             else if (meterFill.value <= 0)

@@ -67,19 +67,19 @@ public class EnemyController : MonoBehaviour
             }
             else if(y > 60 && y <= 75)
             {
-                enemyCombat.UseAttackThree();
+                enemyCombat.UseAttackOne();
             }
             else if(y > 75 && y <= 85)
             {
-                enemyCombat.UseAttackFour();
+                enemyCombat.UseAttackTwo();
             }
             else if(y > 85 && y <= 95)
             {
-                enemyCombat.UseAttackFive();
+                enemyCombat.UseAttackThree();
             }
             else if(y > 95)
             {
-                enemyCombat.UseAttackSix();
+                enemyCombat.UseAttackThree();
             }
         }
 
@@ -97,19 +97,19 @@ public class EnemyController : MonoBehaviour
             }
             else if (z > 60 && z <= 75)
             {
-                enemyCombat.UseDefenceThree();
+                enemyCombat.UseDefenceOne();
             }
             else if (z > 75 && z <= 85)
             {
-                enemyCombat.UseDefenceFour();
+                enemyCombat.UseDefenceTwo();
             }
             else if (z > 85 && z <= 95)
             {
-                enemyCombat.UseDefenceFive();
+                enemyCombat.UseDefenceThree();
             }
             else if (z > 95)
             {
-                enemyCombat.UseDefenceSix();
+                enemyCombat.UseDefenceThree();
             }
         }
     }
