@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text playerScoreText;
     public TMP_Text oppoScoreText;
+    public TMP_Text tryScoredText;
 
     public TMP_Text coinTossText;
     public GameObject coinTossUI;
@@ -29,6 +30,10 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text kickReturnText;
     public GameObject kickReturnUI;
+
+    public TMP_Text tutorialText;
+    public TMP_Text playerMatchText;
+    public TMP_Text oppoMatchText;
 
     public bool isKickingPhase;
     public bool isAttackPhase;
@@ -56,11 +61,13 @@ public class GameManager : MonoBehaviour
     public void PlayerScores()
     {
         currentPlayerScore += 7;
+        tryScoredText.text = "You scored a Try!!!!!";
     }
 
     public void OppoScores()
     {
         currentOppoScore += 7;
+        tryScoredText.text = "Your opponent scored a try!";
     }
     #endregion
 
@@ -70,6 +77,8 @@ public class GameManager : MonoBehaviour
     {
         coinTossText.gameObject.SetActive(true);
         coinTossUI.SetActive(true);
+
+        tutorialText.text = "As is customary in Rugby games, you start with a coin toss. Win the toss and you'll be able to choose whether to start the game attacking or defending.";
     }
 
     public void ChoseHeads()
@@ -86,27 +95,31 @@ public class GameManager : MonoBehaviour
 
     public void CoinToss()
     {
+        CoinTossUI();
+
         int coinToss = Random.Range(1, 101);
 
         if(choseHeads && coinToss <= 50)
         {
             Debug.Log("You chose Heads and it's Heads!");
+            tutorialText.text = "You chose Heads and you won the toss! You can now choose whether to Attack the opposition, or Defend against them...";
             CoinFlipWon();
         } 
         else if (choseHeads && coinToss > 50)
         {
             Debug.Log("You chose Heads but it's Tails!");
-            CoinFlipLost();
+            CoinFlipLost("You chose Heads but the coin came up Tails, the opponent can now choose and they decide to ");
         }
 
         if(choseTails && coinToss <= 50)
         {
             Debug.Log("You chose Tails but it's Heads!");
-            CoinFlipLost();
+            CoinFlipLost("You chose Tails but the coin came up Heads, the opponent can now choose and they decide to ");
         }
         else if (choseTails && coinToss > 50)
         {
             Debug.Log("You chose Tails and it's Tails!");
+            tutorialText.text = "You chose Tails and you won the toss! You can now choose whether to Attack the opposition, or Defend against them...";
             CoinFlipWon();
         }
     }
@@ -116,9 +129,9 @@ public class GameManager : MonoBehaviour
         coinTossWonUI.SetActive(true);
     }
 
-    public void CoinFlipLost()
+    public void CoinFlipLost(string text)
     {
-        enemyController.CoinTossWon();
+        enemyController.CoinTossWon(text);
     }
     #endregion
 
@@ -141,6 +154,9 @@ public class GameManager : MonoBehaviour
         kickingUI.SetActive(false);
         kickReturnUI.SetActive(false);
         coinTossUI.SetActive(false);
+
+        tutorialText.text = "You are attacking. Your team now have to work their way up the field, either through grit and teamwork, or fancy moves in order to score a try." +
+            " Select a move below and try to advance the ball.";
     }
 
     public void DefencePhase()
@@ -162,6 +178,9 @@ public class GameManager : MonoBehaviour
         kickingUI.SetActive(false);
         kickReturnUI.SetActive(false);
         coinTossUI.SetActive(false);
+
+        tutorialText.text = "You are defending. Your team now have to prevent the opponent for advancing down the field, either by individual brilliance or team tactics. " +
+            "Select a move below and try to stop your opponent.";
     }
 
     public void KickingPhase()
@@ -197,7 +216,6 @@ public class GameManager : MonoBehaviour
 
         attackPhaseText.gameObject.SetActive(false);
         defencePhaseText.gameObject.SetActive(false);
-        kickingPhaseText.gameObject.SetActive(false);
         coinTossText.gameObject.SetActive(false);
 
         attackUI.SetActive(false);

@@ -17,17 +17,21 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    public void CoinTossWon()
+    public void CoinTossWon(string text)
     {
         int coinTossChoice = Random.Range(1, 101);
 
         if (coinTossChoice <= 75)
         {
+            gameManager.tutorialText.text = text + "attack. You will now kick the ball to them. Choose to either kick deep and pin the opponent deep into their half," +
+                "or go short and try to recover the ball.";
             gameManager.KickingPhase();
         }
         else if (coinTossChoice > 75)
         {
             gameManager.KickReturn();
+            gameManager.tutorialText.text = text + "defend. You will now receive the ball from them. Your opponent will either kick it deep into your territory, or go" +
+                "short and attempt to recover the ball.";
         }
     }
 
@@ -51,6 +55,7 @@ public class EnemyController : MonoBehaviour
         if(gameManager.isKickReturn == true)
         {
             enemyCombat.KickReturn();
+            return;
         }
 
         if(gameManager.isAttackPhase == true)
@@ -61,19 +66,19 @@ public class EnemyController : MonoBehaviour
             {
                 enemyCombat.UseAttackOne();
             }
-            else if(y > 40 && y <= 60)
+            else if(y > 40 && y <= 55)
             {
                 enemyCombat.UseAttackTwo();
             }
-            else if(y > 60 && y <= 75)
+            else if(y > 55 && y <= 80)
             {
                 enemyCombat.UseAttackOne();
             }
-            else if(y > 75 && y <= 85)
+            else if(y > 80 && y <= 90)
             {
                 enemyCombat.UseAttackTwo();
             }
-            else if(y > 85 && y <= 95)
+            else if(y > 90 && y <= 95)
             {
                 enemyCombat.UseAttackThree();
             }
@@ -81,6 +86,7 @@ public class EnemyController : MonoBehaviour
             {
                 enemyCombat.UseAttackThree();
             }
+            return;
         }
 
         if(gameManager.isDefencePhase == true)
@@ -111,6 +117,7 @@ public class EnemyController : MonoBehaviour
             {
                 enemyCombat.UseDefenceThree();
             }
+            return;
         }
     }
 }

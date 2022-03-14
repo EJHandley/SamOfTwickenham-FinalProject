@@ -55,4 +55,9 @@ public class ResourceBars : MonoBehaviour
         currentFatigue = Mathf.Clamp(currentFatigue, 0, 100);
         fatigueFill.value = currentFatigue;
     }
+
+    public void Test(int oppoMeters, int playerMeters)
+    {
+
+    }
 }

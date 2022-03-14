@@ -19,6 +19,8 @@ public class DefencePhase : MonoBehaviour
 
     public void UseMoveOne()
     {
+        gameManager.enemyController.EnemyAttack();
+
         int foulCheck = Random.Range(1, 101);
 
         //This will come from the move
@@ -27,9 +29,14 @@ public class DefencePhase : MonoBehaviour
         if (foulCheck < foulChance)
         {
             Debug.Log("FOUL");
+            gameManager.playerMatchText.text = "You put in a textbook tackle, wrapping around the ball carrier and taking him to the ground with authority, but the referee's whistle blows and he adjudges that your " +
+                "tackle was high. You've committed a foul (Fouls not yet implemented).";
             gameManager.DefencePhase();
             return;
         }
+
+        gameManager.playerMatchText.text = "You put in a textbook tackle, wrapping around the ball carrier and taking him to the ground with authority. His teammates pile over into the ruck, but you've succesfully" +
+            "prevented the opposition from advancing too far.";
 
         int meters = resourceBars.startingMeters += Random.Range(3, 7);
         resourceBars.ChangeMeters(meters);
@@ -38,12 +45,12 @@ public class DefencePhase : MonoBehaviour
         int fatigue = resourceBars.startingFatigue += 5;
         resourceBars.ChangeFatigue(fatigue);
         Debug.Log(fatigue);
-
-        gameManager.enemyController.EnemyAttack();
     }
 
     public void UseMoveTwo()
     {
+        gameManager.enemyController.EnemyAttack();
+
         int foulCheck = Random.Range(1, 101);
 
         //This will come from the move
@@ -52,9 +59,14 @@ public class DefencePhase : MonoBehaviour
         if (foulCheck < foulChance)
         {
             Debug.Log("FOUL");
+            gameManager.playerMatchText.text = "As your teammate makes the tackle, you follow up, getting yourself over the ball and attempting to rip it from the ball carriers grip. You hear the shrill " +
+                "whine of the whistle as the referee says you were off your feet. You've committed a foul (Fouls not yet implemented).";
             gameManager.DefencePhase();
             return;
         }
+
+        gameManager.playerMatchText.text = "As your teammate makes the tackle, you follow up, getting yourself over the ball and attempting to rip it from the ball carriers grip. You aren't able to take " +
+            "control of the ball, but your efforts slow down the opponent and force them to reset their offence.";
 
         int meters = resourceBars.startingMeters += Random.Range(5, 10);
         resourceBars.ChangeMeters(meters);
@@ -63,12 +75,12 @@ public class DefencePhase : MonoBehaviour
         int fatigue = resourceBars.startingFatigue += 10;
         resourceBars.ChangeFatigue(fatigue);
         Debug.Log(fatigue);
-
-        gameManager.enemyController.EnemyAttack();
     }
 
     public void UseMoveThree()
     {
+        gameManager.enemyController.EnemyAttack();
+
         int foulCheck = Random.Range(1, 101);
 
         //This will come from the move
@@ -77,9 +89,14 @@ public class DefencePhase : MonoBehaviour
         if (foulCheck < foulChance)
         {
             Debug.Log("FOUL");
+            gameManager.playerMatchText.text = "The opposition winger flys forward as he catches the pass, and looks to drive past your lines. You square up and go in hard to drive the winger backwards " +
+                "but the referee blows up and tells you you've hit them too high. You've committed a foul (Fouls not yet implemented).";
             gameManager.DefencePhase();
             return;
         }
+
+        gameManager.playerMatchText.text = "The opposition winger flys forward as he catches the pass, and looks to drive past your lines. You square up and go in hard, driving the winger backwards " +
+            "and stopping their attack dead in it's tracks.";
 
         int meters = resourceBars.startingMeters += Random.Range(10, 15);
         resourceBars.ChangeMeters(meters);
@@ -88,7 +105,5 @@ public class DefencePhase : MonoBehaviour
         int fatigue = resourceBars.startingFatigue += 10;
         resourceBars.ChangeFatigue(fatigue);
         Debug.Log(fatigue);
-
-        gameManager.enemyController.EnemyAttack();
     }
 }
