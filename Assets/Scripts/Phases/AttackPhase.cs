@@ -44,6 +44,9 @@ public class AttackPhase : MonoBehaviour
         resourceBars.ChangeFatigue(fatigue);
         Debug.Log(fatigue);
 
+        if (resourceBars.meterFill.value >= 100)
+            return;
+
         gameManager.enemyController.EnemyAttack();
     }
 
@@ -79,6 +82,9 @@ public class AttackPhase : MonoBehaviour
         int fatigue = resourceBars.startingFatigue += 30;
         resourceBars.ChangeFatigue(fatigue);
 
+        if (resourceBars.meterFill.value >= 100)
+            return;
+
         gameManager.enemyController.EnemyAttack();
     }
 
@@ -108,6 +114,9 @@ public class AttackPhase : MonoBehaviour
 
         int fatigue = resourceBars.startingFatigue += 5;
         resourceBars.ChangeFatigue(fatigue);
+
+        if (resourceBars.meterFill.value >= 100)
+            return;
 
         gameManager.enemyController.EnemyAttack();
     }

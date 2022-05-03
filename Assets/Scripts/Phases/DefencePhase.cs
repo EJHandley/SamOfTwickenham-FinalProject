@@ -21,6 +21,9 @@ public class DefencePhase : MonoBehaviour
     {
         gameManager.enemyController.EnemyAttack();
 
+        if (resourceBars.meterFill.value <= 0)
+            return;
+
         int foulCheck = Random.Range(1, 101);
 
         //This will come from the move
@@ -51,6 +54,9 @@ public class DefencePhase : MonoBehaviour
     {
         gameManager.enemyController.EnemyAttack();
 
+        if (resourceBars.meterFill.value <= 0)
+            return;
+
         int foulCheck = Random.Range(1, 101);
 
         //This will come from the move
@@ -80,6 +86,9 @@ public class DefencePhase : MonoBehaviour
     public void UseMoveThree()
     {
         gameManager.enemyController.EnemyAttack();
+
+        if (resourceBars.meterFill.value <= 0)
+            return;
 
         int foulCheck = Random.Range(1, 101);
 
