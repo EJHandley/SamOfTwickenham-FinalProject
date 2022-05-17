@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ResourceBars : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class ResourceBars : MonoBehaviour
     public int startingMeters;
     public int startingFatigue;
 
+    public TMP_Text indicator;
+
     void Start()
     {
         startingMeters = 50;
@@ -21,7 +24,7 @@ public class ResourceBars : MonoBehaviour
 
     void Update()
     {
-
+        indicator.text = meterFill.value.ToString();
     }
 
     public void ChangeMeters(int currentMeters)

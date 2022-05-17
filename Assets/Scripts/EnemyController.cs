@@ -17,21 +17,17 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    public void CoinTossWon(string text)
+    public void CoinTossWon()
     {
         int coinTossChoice = Random.Range(1, 101);
 
         if (coinTossChoice <= 75)
         {
-            gameManager.tutorialText.text = text + "attack. You will now kick the ball to them. Choose to either kick deep and pin the opponent deep into their half," +
-                "or go short and try to recover the ball.";
             gameManager.KickingPhase();
         }
         else if (coinTossChoice > 75)
         {
             gameManager.KickReturn();
-            gameManager.tutorialText.text = text + "defend. You will now receive the ball from them. Your opponent will either kick it deep into your territory, or go" +
-                "short and attempt to recover the ball.";
         }
     }
 

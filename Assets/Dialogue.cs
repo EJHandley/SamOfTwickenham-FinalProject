@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
-    public List HCList1;
 
     // Start is called before the first frame update
     void Start()
