@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Chip and Chase
   icon: {fileID: 0}
-  BasicType: 0
-  StarType: 1
-  TeamType: 0
-  SpecialType: 0
-  fatigueCost: 35
-  metersGained: 50
-  turnoverChance: 0.75
+  Normal: 0
+  Star: 1
+  Team: 0
+  SetPiece: 0
+  Ground: 0
+  Kick: 1
+  Special: 0
+  fatigueCost: 30
+  successChance: 50
+  criticalSuccess: 0
+  minMeterGain: 20
+  maxMeterGain: 35
+  critMinMeterGain: 0
+  critMaxMeterGain: 0

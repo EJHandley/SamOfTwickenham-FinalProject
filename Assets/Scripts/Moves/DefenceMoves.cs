@@ -5,15 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Defence Move", menuName = "Moves/Defence Move")]
 public class DefenceMoves : Moves
 {
+    public int minMeterStop;
+    public int maxMeterStop;
 
-
-    public int metersStopped;
-    public float foulChance;
+    public int critMinMeterStop;
+    public int critMaxMeterStop;
 
     public override void Use()
     {
         base.Use();
     }
-
-
 }

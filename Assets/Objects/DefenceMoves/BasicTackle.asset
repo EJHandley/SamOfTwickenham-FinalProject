@@ -12,12 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2338fc07b7bb6f440a1974757ea63838, type: 3}
   m_Name: BasicTackle
   m_EditorClassIdentifier: 
-  name: Basic Tackle
+  name: Wrap Tackle
   icon: {fileID: 0}
-  BasicType: 1
-  StarType: 0
-  TeamType: 0
-  SpecialType: 0
+  Normal: 1
+  Star: 0
+  Team: 0
+  SetPiece: 0
+  Ground: 0
+  Kick: 0
+  Special: 0
   fatigueCost: 5
-  metersStopped: 20
-  foulChance: 0.1
+  successChance: 95
+  criticalSuccess: 0
+  minMeterStop: 0
+  maxMeterStop: 0
+  critMinMeterStop: 0
+  critMaxMeterStop: 0
