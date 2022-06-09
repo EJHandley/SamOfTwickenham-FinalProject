@@ -9,15 +9,10 @@ public class Moves : ScriptableObject
     public Sprite icon = null;
 
     [Header("Move Type")]
-    public bool Normal;
-    public bool Star;
-    public bool Team;
-    public bool SetPiece;
+    public string type;
 
     [Header("Move Style")]
-    public bool Ground;
-    public bool Kick;
-    public bool Special;
+    public string style;
 
     [Header("Move Stats")]
     public int fatigueCost;

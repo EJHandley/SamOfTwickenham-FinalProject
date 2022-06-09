@@ -3061,7 +3061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &355830091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3825,7 +3825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 0}
+  tooltipText: []
 --- !u!114 &424981689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4898,7 +4898,7 @@ GameObject:
   - component: {fileID: 547197849}
   - component: {fileID: 547197848}
   m_Layer: 5
-  m_Name: Tooltip
+  m_Name: TooltipBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4921,8 +4921,8 @@ RectTransform:
   - {fileID: 613019466}
   - {fileID: 390207849}
   - {fileID: 1094920861}
-  m_Father: {fileID: 835828018}
-  m_RootOrder: 1
+  m_Father: {fileID: 1869780850}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5971,7 +5971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 1183141675}
+  tooltipText: []
 --- !u!114 &646210111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6616,7 +6616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 0}
+  tooltipText: []
 --- !u!114 &706517467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7611,7 +7611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 478948213}
+  tooltipText: []
 --- !u!1 &825315701
 GameObject:
   m_ObjectHideFlags: 0
@@ -7835,7 +7835,7 @@ GameObject:
   - component: {fileID: 835828018}
   - component: {fileID: 835828021}
   - component: {fileID: 835828020}
-  - component: {fileID: 835828022}
+  - component: {fileID: 835828024}
   - component: {fileID: 835828019}
   - component: {fileID: 835828023}
   m_Layer: 5
@@ -7858,7 +7858,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1001899444}
-  - {fileID: 547197847}
+  - {fileID: 1869780850}
   m_Father: {fileID: 1477491111}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7911,9 +7911,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709267578}
-        m_TargetAssemblyTypeName: MoveInterface, Assembly-CSharp
-        m_MethodName: UseMoveOne
+      - m_Target: {fileID: 835828024}
+        m_TargetAssemblyTypeName: ButtonControlller, Assembly-CSharp
+        m_MethodName: OnPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7961,19 +7961,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835828017}
   m_CullTransparentMesh: 0
---- !u!114 &835828022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835828017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltip: {fileID: 547197846}
 --- !u!114 &835828023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7991,7 +7978,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 835828022}
+        - m_Target: {fileID: 1869780851}
           m_TargetAssemblyTypeName: Tooltip, Assembly-CSharp
           m_MethodName: ShowTooltip
           m_Mode: 1
@@ -8007,7 +7994,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 835828022}
+        - m_Target: {fileID: 1869780851}
           m_TargetAssemblyTypeName: Tooltip, Assembly-CSharp
           m_MethodName: HideTooltip
           m_Mode: 1
@@ -8019,6 +8006,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &835828024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835828017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6491234f94655dc4fb12a43d4ecbdf7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisMove: {fileID: 11400000, guid: 1a366fa97f9232c4481f2f1c6f1b36ef, type: 2}
 --- !u!1 &840065491
 GameObject:
   m_ObjectHideFlags: 0
@@ -8175,7 +8175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 783170134}
+  tooltipText: []
 --- !u!114 &840065496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8449,7 +8449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 160684094}
+  tooltipText: []
 --- !u!114 &854768825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9981,7 +9981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 0}
+  tooltipText: []
 --- !u!114 &1134162607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11324,7 +11324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BEF
+  m_text: 2ND TEAM XV
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12310,7 +12310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1477491111
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12744,7 +12744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 325036867}
+  tooltipText: []
 --- !u!1 &1552863128
 GameObject:
   m_ObjectHideFlags: 0
@@ -13270,7 +13270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 686715994}
+  tooltipText: []
 --- !u!114 &1623166409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13816,6 +13816,7 @@ GameObject:
   - component: {fileID: 1709267581}
   - component: {fileID: 1709267583}
   - component: {fileID: 1709267584}
+  - component: {fileID: 1709267585}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13946,6 +13947,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1709267579}
+--- !u!114 &1709267585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709267577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7957c27b48a29469193a89d508655a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1713318846
 GameObject:
   m_ObjectHideFlags: 0
@@ -14673,7 +14686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 905017978}
+  tooltipText: []
 --- !u!114 &1767004716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14770,7 +14783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TWI
+  m_text: 1XV
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15194,7 +15207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BEF
+  m_text: 2XV
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15329,7 +15342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TWI
+  m_text: 1ST TEAM XV
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15693,6 +15706,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847698002}
   m_CullTransparentMesh: 0
+--- !u!1 &1869780849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869780850}
+  - component: {fileID: 1869780851}
+  m_Layer: 5
+  m_Name: Tooltip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1869780850
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869780849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 547197847}
+  m_Father: {fileID: 835828018}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1869780851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869780849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipText: []
 --- !u!1 &1879701595
 GameObject:
   m_ObjectHideFlags: 0
@@ -16528,7 +16592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 0}
+  tooltipText: []
 --- !u!114 &1931810305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17761,7 +17825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2040456092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18141,7 +18205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88002a9e43fb1524899040d6fc5ed274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 1466507440}
+  tooltipText: []
 --- !u!114 &2129045159
 MonoBehaviour:
   m_ObjectHideFlags: 0
