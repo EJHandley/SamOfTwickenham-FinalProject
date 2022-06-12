@@ -8,6 +8,9 @@ public class Moves : ScriptableObject
     new public string name = "New Item";
     public Sprite icon = null;
 
+    [Header("Phase")]
+    public string phase;
+
     [Header("Move Type")]
     public string type;
 

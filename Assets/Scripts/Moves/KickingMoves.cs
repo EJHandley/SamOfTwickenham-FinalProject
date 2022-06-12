@@ -5,10 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Kicking Move", menuName = "Moves/Kicking Move")]
 public class KickingMoves : Moves
 {
+    public int minMeterGain;
+    public int maxMeterGain;
 
-
-    public int ballLanded;
-    public float recoveryChance;
+    public int critMinMeterGain;
+    public int critMaxMeterGain;
 
     public override void Use()
     {

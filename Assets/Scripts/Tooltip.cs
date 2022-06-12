@@ -8,8 +8,7 @@ public class Tooltip : MonoBehaviour
 {
     private Transform tooltip;
 
-    [Header("Tooltip Text Variables")]
-    public TMP_Text[] tooltipText;
+    private TMP_Text[] tooltipText;
     private TMP_Text titleText;
     private TMP_Text moveTypeText;
     private TMP_Text successChanceText;
@@ -22,7 +21,7 @@ public class Tooltip : MonoBehaviour
 
         //Assign the correct object index to each text entry for the Tooltip
         tooltipText = GetComponentsInChildren<TMP_Text>(true);
-        
+
         titleText = tooltipText[0];
         moveTypeText = tooltipText[1];
         successChanceText = tooltipText[2];
@@ -42,11 +41,30 @@ public class Tooltip : MonoBehaviour
         tooltip.gameObject.SetActive(false);
     }
 
-    public void SetTooltip(Moves thisMove)
+    public void SetAttackTooltip(AttackMoves thisMove)
     {
         titleText.text = thisMove.name;
         moveTypeText.text = thisMove.type + " (" + thisMove.style + ")";
         successChanceText.text = "Success Chance: " + thisMove.successChance.ToString() + "%";
         fatigueCostText.text = "Fatigue Cost: " + thisMove.fatigueCost.ToString();
+        meterChangeText.text = "Meter Change: " + thisMove.minMeterGain.ToString() + " - " + thisMove.maxMeterGain.ToString();
+    }
+
+    public void SetDefenceTooltip(DefenceMoves thisMove)
+    {
+        titleText.text = thisMove.name;
+        moveTypeText.text = thisMove.type + " (" + thisMove.style + ")";
+        successChanceText.text = "Success Chance: " + thisMove.successChance.ToString() + "%";
+        fatigueCostText.text = "Fatigue Cost: " + thisMove.fatigueCost.ToString();
+        meterChangeText.text = "Meter Change: " + thisMove.minMeterStop.ToString() + " - " + thisMove.maxMeterStop.ToString();
+    }
+
+    public void SetKickTooltop(KickingMoves thisMove)
+    {
+        titleText.text = thisMove.name;
+        moveTypeText.text = thisMove.type + " (" + thisMove.style + ")";
+        successChanceText.text = "Success Chance: " + thisMove.successChance.ToString() + "%";
+        fatigueCostText.text = "Fatigue Cost: " + thisMove.fatigueCost.ToString();
+        meterChangeText.text = "Meter Change: " + thisMove.minMeterGain.ToString() + " - " + thisMove.maxMeterGain.ToString();
     }
 }

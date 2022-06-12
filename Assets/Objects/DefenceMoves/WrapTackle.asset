@@ -10,21 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2338fc07b7bb6f440a1974757ea63838, type: 3}
-  m_Name: BasicTackle
+  m_Name: WrapTackle
   m_EditorClassIdentifier: 
   name: Wrap Tackle
-  icon: {fileID: 0}
-  Normal: 1
-  Star: 0
-  Team: 0
-  SetPiece: 0
-  Ground: 0
-  Kick: 0
-  Special: 0
-  fatigueCost: 5
-  successChance: 95
-  criticalSuccess: 0
+  icon: {fileID: 21300000, guid: 9a3c3c57504e0a244ab0db81a753d331, type: 3}
+  phase: Defence Phase
+  type: Normal
+  style: 
+  fatigueCost: 10
+  successChance: 100
+  criticalSuccess: 15
   minMeterStop: 0
-  maxMeterStop: 0
-  critMinMeterStop: 0
-  critMaxMeterStop: 0
+  maxMeterStop: 3
+  critMinMeterStop: 4
+  critMaxMeterStop: 7

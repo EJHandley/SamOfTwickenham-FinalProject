@@ -32,14 +32,9 @@ public class DefencePhase : MonoBehaviour
         if (foulCheck < foulChance)
         {
             Debug.Log("FOUL");
-            gameManager.playerMatchText.text = "You put in a textbook tackle, wrapping around the ball carrier and taking him to the ground with authority, but the referee's whistle blows and he adjudges that your " +
-                "tackle was high. You've committed a foul (Fouls not yet implemented).";
             gameManager.DefencePhase();
             return;
         }
-
-        gameManager.playerMatchText.text = "You put in a textbook tackle, wrapping around the ball carrier and taking him to the ground with authority. His teammates pile over into the ruck, but you've succesfully" +
-            "prevented the opposition from advancing too far.";
 
         int meters = resourceBars.startingMeters += Random.Range(3, 7);
         resourceBars.ChangeMeters(meters);
