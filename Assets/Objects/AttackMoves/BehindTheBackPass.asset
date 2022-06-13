@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8415be7cebab24541840142c0ae68877, type: 3}
-  m_Name: CrashBall
+  m_Name: BehindTheBackPass
   m_EditorClassIdentifier: 
-  name: Crash Ball
-  icon: {fileID: 21300000, guid: 5b33ff53f60c7924189d7609789e11ab, type: 3}
+  name: Behind The Back Pass
+  icon: {fileID: 0}
   phase: Attack Phase
-  type: Normal
+  type: Star
   style: Ground
   fatigueCost: 10
-  successChance: 100
-  criticalSuccess: 15
-  minMeterGain: 0
-  maxMeterGain: 5
-  critMinMeterGain: 6
-  critMaxMeterGain: 10
+  successChance: 70
+  criticalSuccess: 7
+  minMeterGain: 10
+  maxMeterGain: 20
+  critMinMeterGain: 21
+  critMaxMeterGain: 25

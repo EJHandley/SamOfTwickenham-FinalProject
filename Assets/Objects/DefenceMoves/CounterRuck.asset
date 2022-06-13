@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2338fc07b7bb6f440a1974757ea63838, type: 3}
-  m_Name: WrapTackle
+  m_Name: CounterRuck
   m_EditorClassIdentifier: 
-  name: Wrap Tackle
-  icon: {fileID: 21300000, guid: 9a3c3c57504e0a244ab0db81a753d331, type: 3}
+  name: CounterRuck
+  icon: {fileID: 0}
   phase: Defence Phase
-  type: Normal
-  style: 
-  fatigueCost: 5
-  successChance: 100
-  criticalSuccess: 15
-  minMeterStop: 0
-  maxMeterStop: 3
-  critMinMeterStop: 4
-  critMaxMeterStop: 7
+  type: Team
+  style: Special
+  fatigueCost: 15
+  successChance: 80
+  criticalSuccess: 8
+  minMeterStop: 3
+  maxMeterStop: 5
+  critMinMeterStop: 0
+  critMaxMeterStop: 0

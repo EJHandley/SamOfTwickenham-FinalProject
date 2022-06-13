@@ -9,22 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8415be7cebab24541840142c0ae68877, type: 3}
-  m_Name: New Attack Move
+  m_Script: {fileID: 11500000, guid: 2338fc07b7bb6f440a1974757ea63838, type: 3}
+  m_Name: Interception!
   m_EditorClassIdentifier: 
-  name: New Item
+  name: Interception!
   icon: {fileID: 0}
-  Normal: 0
-  Star: 0
-  Team: 0
-  SetPiece: 0
-  Ground: 0
-  Kick: 0
-  Special: 0
-  fatigueCost: 0
-  successChance: 0
+  phase: Defence Phase
+  type: Star
+  style: Special
+  fatigueCost: 20
+  successChance: 20
   criticalSuccess: 0
-  minMeterGain: 0
-  maxMeterGain: 0
-  critMinMeterGain: 0
-  critMaxMeterGain: 0
+  minMeterStop: 0
+  maxMeterStop: 0
+  critMinMeterStop: 0
+  critMaxMeterStop: 0

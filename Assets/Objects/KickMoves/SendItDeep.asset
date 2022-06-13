@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8415be7cebab24541840142c0ae68877, type: 3}
-  m_Name: QuickPass
+  m_Script: {fileID: 11500000, guid: b2d783c9f5e9a0b4c8f33590cc858507, type: 3}
+  m_Name: SendItDeep
   m_EditorClassIdentifier: 
-  name: Quick Pass
+  name: Send It Deep
   icon: {fileID: 0}
-  phase: Attack Phase
+  phase: Kick Phase
   type: Normal
-  style: Ground
-  fatigueCost: 5
-  successChance: 90
-  criticalSuccess: 9
-  minMeterGain: 0
-  maxMeterGain: 10
-  critMinMeterGain: 11
-  critMaxMeterGain: 15
+  style: Kick
+  fatigueCost: 0
+  successChance: 10
+  criticalSuccess: 1
+  minMeterGain: 25
+  maxMeterGain: 40
+  critMinMeterGain: 0
+  critMaxMeterGain: 0

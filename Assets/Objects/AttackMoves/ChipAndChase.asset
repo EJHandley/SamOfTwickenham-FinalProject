@@ -14,13 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Chip and Chase
   icon: {fileID: 0}
-  Normal: 0
-  Star: 1
-  Team: 0
-  SetPiece: 0
-  Ground: 0
-  Kick: 1
-  Special: 0
+  phase: Attack Phase
+  type: Star
+  style: Kick
   fatigueCost: 30
   successChance: 50
   criticalSuccess: 0
