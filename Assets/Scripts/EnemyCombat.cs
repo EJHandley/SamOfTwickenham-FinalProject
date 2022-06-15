@@ -6,12 +6,42 @@ public class EnemyCombat : MonoBehaviour
 {
     public GameManager gameManager;
 
+    public AttackMoves a_Move1;
+    public AttackMoves a_Move2;
+    public AttackMoves a_Move3; 
+    public AttackMoves a_Move4;
+    public AttackMoves a_Move5;
+    public AttackMoves a_Move6;
+
+    public DefenceMoves d_Move1;
+    public DefenceMoves d_Move2;
+    public DefenceMoves d_Move3;
+    public DefenceMoves d_Move4;
+    public DefenceMoves d_Move5;
+    public DefenceMoves d_Move6;
+
+    public KickingMoves k_Move1;
+    public KickingMoves k_Move2;
+
     void Start()
     {
 
     }
 
     void Update()
+    {
+
+    }
+
+    public void PicKMove()
+    {
+        if(gameManager.isAttackPhase == true)
+        {
+
+        }
+    }
+
+    public void EnemyAttack()
     {
 
     }
@@ -31,12 +61,12 @@ public class EnemyCombat : MonoBehaviour
         if (recoveryCheck < recoveryChance)
         {
             Debug.Log("OPPONENT RECOVERED THE BALL!");
-            gameManager.DefencePhase();
+            gameManager.ChangePhase("Defence Phase");
             return;
         }
         else if (recoveryCheck > recoveryChance)
         {
-            gameManager.AttackPhase();
+            gameManager.ChangePhase("Attack Phase");
         }
     }
 
@@ -52,12 +82,12 @@ public class EnemyCombat : MonoBehaviour
 
         if (recoveryCheck < recoveryChance)
         {
-            gameManager.DefencePhase();
+            gameManager.ChangePhase("Defence Phase");
             return;
         }
         else if (recoveryCheck > recoveryChance)
         {
-            gameManager.AttackPhase();
+            gameManager.ChangePhase("Attack Phase");
         }
     }
 
@@ -78,7 +108,7 @@ public class EnemyCombat : MonoBehaviour
         if (turnoverCheck < turnoverChance)
         {
             Debug.Log("TURNOVER");
-            gameManager.AttackPhase();
+            gameManager.ChangePhase("Attack Phase");
             return;
         }
 
@@ -99,7 +129,7 @@ public class EnemyCombat : MonoBehaviour
         if (turnoverCheck < turnoverChance)
         {
             Debug.Log("TURNOVER");
-            gameManager.AttackPhase();
+            gameManager.ChangePhase("Attack Phase");
             return;
         }
 
@@ -129,7 +159,7 @@ public class EnemyCombat : MonoBehaviour
             int turnoverFatigue = gameManager.resourceBars.startingFatigue -= 30;
             gameManager.resourceBars.ChangeFatigue(turnoverFatigue);
 
-            gameManager.AttackPhase();
+            gameManager.ChangePhase("Attack Phase");
             return;
         }
 
@@ -168,7 +198,7 @@ public class EnemyCombat : MonoBehaviour
         if (foulCheck < foulChance)
         {
             Debug.Log("FOUL");
-            gameManager.DefencePhase();
+            gameManager.ChangePhase("Defence Phase");
             return;
         }
 
@@ -192,7 +222,7 @@ public class EnemyCombat : MonoBehaviour
         if (foulCheck < foulChance)
         {
             Debug.Log("FOUL");
-            gameManager.DefencePhase();
+            gameManager.ChangePhase("Defence Phase");
             return;
         }
 
@@ -217,7 +247,7 @@ public class EnemyCombat : MonoBehaviour
         if (foulCheck < foulChance)
         {
             Debug.Log("FOUL");
-            gameManager.DefencePhase();
+            gameManager.ChangePhase("Defence Phase");
             return;
         }
 

@@ -11,27 +11,19 @@ public class GameManager : MonoBehaviour
     public int currentPlayerScore;
     public int currentOppoScore;
 
+    public TMP_Text phaseText;
+
     public TMP_Text playerScoreText;
     public TMP_Text oppoScoreText;
     public TMP_Text tryScoredText;
 
-    public TMP_Text coinTossText;
     public GameObject coinTossUI;
     public GameObject coinTossWonUI;
-
-    public TMP_Text attackPhaseText;
     public GameObject attackUI;
-
-    public TMP_Text defencePhaseText;
     public GameObject defenceUI;
-
-    public TMP_Text kickingPhaseText;
     public GameObject kickingUI;
-
-    public TMP_Text kickReturnText;
     public GameObject kickReturnUI;
 
-    public TMP_Text tutorialText;
     public TMP_Text playerMatchText;
     public TMP_Text oppoMatchText;
 
@@ -48,7 +40,7 @@ public class GameManager : MonoBehaviour
         currentPlayerScore = 0;
         currentOppoScore = 0;
 
-        CoinToss();
+        ChangePhase("Coin Toss");
     }
 
     void Update()
@@ -71,144 +63,133 @@ public class GameManager : MonoBehaviour
 
     //All Methods and Mechanic related to the Coin Toss Phase are held below
     #region Coin Toss Methods
-    public void CoinTossUI()
-    {
-        coinTossText.gameObject.SetActive(true);
-        coinTossUI.SetActive(true);
-    }
 
     public void ChoseHeads()
     {
-        choseHeads = true;
-        choseTails = false;
+        CoinToss(0);
     }
 
     public void ChoseTails()
     {
-        choseTails = true;
-        choseHeads = false;
+        CoinToss(1);
     }
 
-    public void CoinToss()
+    public void CoinToss(int choice)
     {
-        CoinTossUI();
-
         int coinToss = Random.Range(1, 101);
 
-        if(choseHeads && coinToss <= 50)
+        if(choice == 0 && coinToss <= 50)
         {
             Debug.Log("You chose Heads and it's Heads!");
-            CoinFlipWon();
+            ChangePhase("Coin Toss Won");
         } 
-        else if (choseHeads && coinToss > 50)
+        else if (choice == 0 && coinToss > 50)
         {
             Debug.Log("You chose Heads but it's Tails!");
-            CoinFlipLost();
+            ChangePhase("Coin Toss Lost");
         }
 
-        if(choseTails && coinToss <= 50)
+        if(choice == 1 && coinToss <= 50)
         {
             Debug.Log("You chose Tails but it's Heads!");
-            CoinFlipLost();
+            ChangePhase("Coin Toss Lost");
         }
-        else if (choseTails && coinToss > 50)
+        else if (choice == 1 && coinToss > 50)
         {
             Debug.Log("You chose Tails and it's Tails!");
-            CoinFlipWon();
+            ChangePhase("Coin Toss Won");
+        }
+    }
+    #endregion
+    
+    public void ChangePhase(string phase)
+    {
+        if(phase == "Coin Toss")
+        {
+            coinTossUI.SetActive(true);
+            ChangePhaseText(phase);
+        }
+
+        if(phase == "Coin Toss Won")
+        {
+            coinTossWonUI.SetActive(true);
+            ChangePhaseText("Coin Toss");
+        }
+
+        if(phase == "Coin Toss Lost")
+        {
+            enemyController.CoinTossWon();
+            ChangePhaseText("Coin Toss");
+        }
+
+        if(phase == "Attack Phase")
+        {
+            isDefencePhase = true;
+            isKickingPhase = false;
+            isKickReturn = false;
+            isAttackPhase = false;
+
+            attackUI.SetActive(true);
+            defenceUI.SetActive(false);
+            kickingUI.SetActive(false);
+            kickReturnUI.SetActive(false);
+            coinTossUI.SetActive(false);
+
+            ChangePhaseText(phase);
+        }
+
+        if(phase == "Defence Phase")
+        {
+            isAttackPhase = true;
+            isKickingPhase = false;
+            isKickReturn = false;
+            isDefencePhase = false;
+
+            defenceUI.SetActive(true);
+            attackUI.SetActive(false);
+            kickingUI.SetActive(false);
+            kickReturnUI.SetActive(false);
+            coinTossUI.SetActive(false);
+
+            ChangePhaseText(phase);
+        }
+
+        if(phase == "Kicking Phase")
+        {
+            isKickReturn = true;
+            isDefencePhase = false;
+            isKickingPhase = false;
+            isAttackPhase = false;
+
+            kickingUI.SetActive(true);
+            attackUI.SetActive(false);
+            defenceUI.SetActive(false);
+            kickReturnUI.SetActive(false);
+            coinTossUI.SetActive(false);
+
+            ChangePhaseText(phase);
+        }
+
+        if(phase == "Kick Return")
+        {
+            isKickingPhase = true;
+            isAttackPhase = false;
+            isDefencePhase = false;
+            isKickReturn = false;
+
+            kickReturnUI.SetActive(true);
+
+            attackUI.SetActive(false);
+            defenceUI.SetActive(false);
+            kickingUI.SetActive(false);
+            coinTossUI.SetActive(false);
+
+            ChangePhaseText(phase);
         }
     }
 
-    public void CoinFlipWon()
+    public void ChangePhaseText(string phase)
     {
-        coinTossWonUI.SetActive(true);
-    }
-
-    public void CoinFlipLost()
-    {
-        enemyController.CoinTossWon();
-    }
-    #endregion
-
-    public void AttackPhase()
-    {
-        isDefencePhase = true;
-        isKickingPhase = false;
-        isKickReturn = false;
-        isAttackPhase = false;
-
-        attackPhaseText.gameObject.SetActive(true);
-        attackUI.SetActive(true);
-
-        defencePhaseText.gameObject.SetActive(false);
-        kickingPhaseText.gameObject.SetActive(false);
-        kickReturnText.gameObject.SetActive(false);
-        coinTossText.gameObject.SetActive(false);
-
-        defenceUI.SetActive(false);
-        kickingUI.SetActive(false);
-        kickReturnUI.SetActive(false);
-        coinTossUI.SetActive(false);
-    }
-
-    public void DefencePhase()
-    {
-        isAttackPhase = true;
-        isKickingPhase = false;
-        isKickReturn = false;
-        isDefencePhase = false;
-
-        defencePhaseText.gameObject.SetActive(true);
-        defenceUI.SetActive(true);
-
-        attackPhaseText.gameObject.SetActive(false);
-        kickingPhaseText.gameObject.SetActive(false);
-        kickReturnText.gameObject.SetActive(false);
-        coinTossText.gameObject.SetActive(false);
-
-        attackUI.SetActive(false);
-        kickingUI.SetActive(false);
-        kickReturnUI.SetActive(false);
-        coinTossUI.SetActive(false);
-    }
-
-    public void KickingPhase()
-    {
-       isKickReturn = true;
-       isDefencePhase = false;
-       isKickingPhase = false;
-       isAttackPhase = false;
-
-       kickingPhaseText.gameObject.SetActive(true);
-       kickingUI.SetActive(true);
-
-       attackPhaseText.gameObject.SetActive(false);
-       defencePhaseText.gameObject.SetActive(false);
-       kickReturnText.gameObject.SetActive(false);
-       coinTossText.gameObject.SetActive(false);
-
-       attackUI.SetActive(false);
-       defenceUI.SetActive(false);
-       kickReturnUI.SetActive(false);
-       coinTossUI.SetActive(false);
-    }
-
-    public void KickReturn()
-    {
-        isKickingPhase = true;
-        isAttackPhase = false;
-        isDefencePhase = false;
-        isKickReturn = false;
-
-        kickReturnText.gameObject.SetActive(true);
-        kickReturnUI.SetActive(true);
-
-        attackPhaseText.gameObject.SetActive(false);
-        defencePhaseText.gameObject.SetActive(false);
-        coinTossText.gameObject.SetActive(false);
-
-        attackUI.SetActive(false);
-        defenceUI.SetActive(false);
-        kickingUI.SetActive(false);
-        coinTossUI.SetActive(false);
+        phaseText.text = phase;
     }
 }

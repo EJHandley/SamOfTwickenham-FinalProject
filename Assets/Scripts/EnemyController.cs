@@ -21,13 +21,13 @@ public class EnemyController : MonoBehaviour
     {
         int coinTossChoice = Random.Range(1, 101);
 
-        if (coinTossChoice <= 75)
+        if (coinTossChoice <= 80)
         {
-            gameManager.KickingPhase();
+            gameManager.ChangePhase("Kicking Phase");
         }
-        else if (coinTossChoice > 75)
+        else if (coinTossChoice > 80)
         {
-            gameManager.KickReturn();
+            gameManager.ChangePhase("Kick Return");
         }
     }
 

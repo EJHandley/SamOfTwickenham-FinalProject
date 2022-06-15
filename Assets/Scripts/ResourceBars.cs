@@ -39,7 +39,7 @@ public class ResourceBars : MonoBehaviour
                 meterFill.value = 50;
                 startingMeters = 50;
                 gameManager.PlayerScores();
-                gameManager.KickReturn();
+                gameManager.ChangePhase("Kick Return");
                 return;
             }
             else if (meterFill.value <= 0)
@@ -47,7 +47,7 @@ public class ResourceBars : MonoBehaviour
                 meterFill.value = 50;
                 startingMeters = 50;
                 gameManager.OppoScores();
-                gameManager.KickingPhase();
+                gameManager.ChangePhase("Kicking Phase");
                 return;
             }
         }

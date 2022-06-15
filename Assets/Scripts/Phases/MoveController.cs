@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveController : MonoBehaviour
 {
     public ResourceBars resourceBars;
+    public GameManager gameManager;
 
     void Start()
     {
@@ -27,16 +28,27 @@ public class MoveController : MonoBehaviour
         {
             Debug.Log(successCheck);
             Debug.Log("TURNOVER");
+            thisMove.Turnover();
             return;
         }
 
-        int meters = resourceBars.startingMeters += Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
-        resourceBars.ChangeMeters(meters);
-        Debug.Log(meters);
+        if(successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
+        {
+            int meters = resourceBars.startingMeters += Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
+            resourceBars.ChangeMeters(meters);
+            Debug.Log(meters);
+        } 
+        else if(successCheck < thisMove.criticalSuccess)
+        {
+            int meters = resourceBars.startingMeters += Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
+            resourceBars.ChangeMeters(meters);
+            Debug.Log(meters);
+        }
 
         int fatigue = resourceBars.startingFatigue += thisMove.fatigueCost;
         resourceBars.ChangeFatigue(fatigue);
         Debug.Log(fatigue);
+
     }
 
     public void UseDefenceMove(DefenceMoves thisMove)
@@ -45,7 +57,9 @@ public class MoveController : MonoBehaviour
 
         if (successCheck > thisMove.successChance)
         {
+            Debug.Log(successCheck);
             Debug.Log("FOUL");
+
             return;
         }
 

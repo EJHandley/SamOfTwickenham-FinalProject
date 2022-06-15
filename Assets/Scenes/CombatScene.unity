@@ -2064,7 +2064,7 @@ RectTransform:
   m_Children:
   - {fileID: 840065492}
   m_Father: {fileID: 1052482453}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3250,7 +3250,7 @@ RectTransform:
   - {fileID: 1767004712}
   - {fileID: 646210108}
   m_Father: {fileID: 1052482453}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5907,10 +5907,10 @@ RectTransform:
   - {fileID: 1234447186}
   - {fileID: 2040456092}
   - {fileID: 1137787606}
-  - {fileID: 1477491111}
-  - {fileID: 1373683656}
   - {fileID: 494842930}
   - {fileID: 309103475}
+  - {fileID: 1477491111}
+  - {fileID: 1373683656}
   - {fileID: 1932788073}
   m_Father: {fileID: 275639845}
   m_RootOrder: 3
@@ -5971,6 +5971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceBars: {fileID: 1932788074}
+  gameManager: {fileID: 0}
 --- !u!1 &1104200624
 GameObject:
   m_ObjectHideFlags: 0
@@ -7447,7 +7448,7 @@ RectTransform:
   - {fileID: 202992566}
   - {fileID: 782010609}
   m_Father: {fileID: 1052482453}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7990,7 +7991,7 @@ RectTransform:
   - {fileID: 1613337839}
   - {fileID: 1878221662}
   m_Father: {fileID: 1052482453}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8872,21 +8873,16 @@ MonoBehaviour:
   resourceBars: {fileID: 1932788074}
   currentPlayerScore: 0
   currentOppoScore: 0
+  phaseText: {fileID: 0}
   playerScoreText: {fileID: 94112240}
   oppoScoreText: {fileID: 580629485}
   tryScoredText: {fileID: 0}
-  coinTossText: {fileID: 7557412}
   coinTossUI: {fileID: 2040456091}
   coinTossWonUI: {fileID: 1137787605}
-  attackPhaseText: {fileID: 7557412}
   attackUI: {fileID: 1477491110}
-  defencePhaseText: {fileID: 7557412}
   defenceUI: {fileID: 1373683655}
-  kickingPhaseText: {fileID: 7557412}
   kickingUI: {fileID: 494842929}
-  kickReturnText: {fileID: 7557412}
   kickReturnUI: {fileID: 309103474}
-  tutorialText: {fileID: 0}
   playerMatchText: {fileID: 0}
   oppoMatchText: {fileID: 0}
   isKickingPhase: 0
@@ -8965,6 +8961,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1709267579}
+  a_Move1: {fileID: 0}
+  a_Move2: {fileID: 0}
+  a_Move3: {fileID: 0}
+  a_Move4: {fileID: 0}
+  a_Move5: {fileID: 0}
+  a_Move6: {fileID: 0}
+  d_Move1: {fileID: 0}
+  d_Move2: {fileID: 0}
+  d_Move3: {fileID: 0}
+  d_Move4: {fileID: 0}
+  d_Move5: {fileID: 0}
+  d_Move6: {fileID: 0}
+  k_Move1: {fileID: 0}
+  k_Move2: {fileID: 0}
 --- !u!114 &1709267585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8978,6 +8988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceBars: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!1 &1726040645
 GameObject:
   m_ObjectHideFlags: 0
