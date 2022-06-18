@@ -23,11 +23,11 @@ public class EnemyController : MonoBehaviour
 
         if (coinTossChoice <= 80)
         {
-            gameManager.ChangePhase("Kicking Phase");
+            gameManager.ChangePhase("Kick Return");
         }
         else if (coinTossChoice > 80)
         {
-            gameManager.ChangePhase("Kick Return");
+            gameManager.ChangePhase("Kicking Phase");
         }
     }
 

@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public bool choseHeads;
     public bool choseTails;
 
+    private bool coinTossWon = false;
+
     void Start()
     {
         currentPlayerScore = 0;
@@ -112,6 +114,7 @@ public class GameManager : MonoBehaviour
 
         if(phase == "Coin Toss Won")
         {
+            coinTossWon = true;
             coinTossWonUI.SetActive(true);
             ChangePhaseText("Coin Toss");
         }
@@ -191,5 +194,24 @@ public class GameManager : MonoBehaviour
     public void ChangePhaseText(string phase)
     {
         phaseText.text = phase;
+    }
+
+    public void HalfTime()
+    {
+        Debug.Log("Half Time");
+
+        if(coinTossWon == true)
+        {
+            ChangePhase("Kicking Phase");
+        }
+        else
+        {
+            ChangePhase("Kick Return");
+        }
+    }
+
+    public void FullTime()
+    {
+        Debug.Log("Full Time");
     }
 }

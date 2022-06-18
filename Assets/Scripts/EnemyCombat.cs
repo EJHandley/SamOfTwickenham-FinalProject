@@ -33,17 +33,17 @@ public class EnemyCombat : MonoBehaviour
 
     }
 
+    public void EnemyAttack()
+    {
+
+    }
+
     public void PicKMove()
     {
         if(gameManager.isAttackPhase == true)
         {
 
         }
-    }
-
-    public void EnemyAttack()
-    {
-
     }
 
     #region Kicks

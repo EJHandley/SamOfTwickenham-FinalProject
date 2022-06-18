@@ -3234,7 +3234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &494842930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4220,7 +4220,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709267581}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KickingPhase, Assembly-CSharp
         m_MethodName: UseMoveTwo
         m_Mode: 1
@@ -5437,7 +5437,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709267581}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KickingPhase, Assembly-CSharp
         m_MethodName: KickReturn
         m_Mode: 1
@@ -7679,7 +7679,7 @@ GameObject:
   - component: {fileID: 1456733937}
   - component: {fileID: 1456733936}
   m_Layer: 5
-  m_Name: PlayerTeamText
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7762,7 +7762,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -7.5
+  m_characterSpacing: -2
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -7971,7 +7971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1477491111
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8830,9 +8830,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1709267580}
   - component: {fileID: 1709267579}
-  - component: {fileID: 1709267578}
-  - component: {fileID: 1709267582}
-  - component: {fileID: 1709267581}
   - component: {fileID: 1709267583}
   - component: {fileID: 1709267584}
   - component: {fileID: 1709267585}
@@ -8843,20 +8840,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1709267578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709267577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21c534d68d011ee4aa8187ee8857527a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1709267579}
-  resourceBars: {fileID: 1932788074}
 --- !u!114 &1709267579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8873,7 +8856,7 @@ MonoBehaviour:
   resourceBars: {fileID: 1932788074}
   currentPlayerScore: 0
   currentOppoScore: 0
-  phaseText: {fileID: 0}
+  phaseText: {fileID: 7557412}
   playerScoreText: {fileID: 94112240}
   oppoScoreText: {fileID: 580629485}
   tryScoredText: {fileID: 0}
@@ -8906,34 +8889,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1709267581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709267577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3f1c1e412029144e9aee8000618e149, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1709267579}
-  resourceBars: {fileID: 1932788074}
---- !u!114 &1709267582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709267577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f61a0a4637d96ea48937259e6be5b1e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1709267579}
-  resourceBars: {fileID: 1932788074}
 --- !u!114 &1709267583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8987,8 +8942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7957c27b48a29469193a89d508655a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceBars: {fileID: 0}
-  gameManager: {fileID: 0}
+  resourceBars: {fileID: 1932788074}
+  gameManager: {fileID: 1709267579}
 --- !u!1 &1726040645
 GameObject:
   m_ObjectHideFlags: 0
@@ -9422,7 +9377,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709267581}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KickingPhase, Assembly-CSharp
         m_MethodName: UseMoveOne
         m_Mode: 1
@@ -10898,6 +10853,7 @@ MonoBehaviour:
   startingMeters: 0
   startingFatigue: 0
   indicator: {fileID: 400870021}
+  timeText: {fileID: 1456733936}
 --- !u!1001 &1939279923
 PrefabInstance:
   m_ObjectHideFlags: 0

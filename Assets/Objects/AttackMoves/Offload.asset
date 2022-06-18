@@ -20,6 +20,7 @@ MonoBehaviour:
   fatigueCost: 10
   successChance: 80
   criticalSuccess: 12
+  timeCost: 45
   minMeterGain: 5
   maxMeterGain: 15
   critMinMeterGain: 16

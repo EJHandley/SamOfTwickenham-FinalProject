@@ -22,6 +22,8 @@ public class MoveController : MonoBehaviour
 
     public void UseAttackMove(AttackMoves thisMove)
     {
+        resourceBars.SetTime(thisMove.timeCost);
+
         int successCheck = Random.Range(1, 101);
 
         if (successCheck > thisMove.successChance)
@@ -32,23 +34,16 @@ public class MoveController : MonoBehaviour
             return;
         }
 
-        if(successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
+        if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
         {
-            int meters = resourceBars.startingMeters += Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
-            resourceBars.ChangeMeters(meters);
-            Debug.Log(meters);
+            resourceBars.ChangeMeters(Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain));
         } 
         else if(successCheck < thisMove.criticalSuccess)
         {
-            int meters = resourceBars.startingMeters += Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
-            resourceBars.ChangeMeters(meters);
-            Debug.Log(meters);
+            resourceBars.ChangeMeters(Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain));
         }
 
-        int fatigue = resourceBars.startingFatigue += thisMove.fatigueCost;
-        resourceBars.ChangeFatigue(fatigue);
-        Debug.Log(fatigue);
-
+        resourceBars.ChangeFatigue(thisMove.fatigueCost);
     }
 
     public void UseDefenceMove(DefenceMoves thisMove)
@@ -59,17 +54,12 @@ public class MoveController : MonoBehaviour
         {
             Debug.Log(successCheck);
             Debug.Log("FOUL");
-
             return;
         }
 
-        int meters = resourceBars.startingMeters += Random.Range(thisMove.minMeterStop, thisMove.maxMeterStop);
-        resourceBars.ChangeMeters(meters);
-        Debug.Log(meters);
+        resourceBars.ChangeMeters(Random.Range(thisMove.minMeterStop, thisMove.maxMeterStop));
 
-        int fatigue = resourceBars.startingFatigue += thisMove.fatigueCost;
-        resourceBars.ChangeFatigue(fatigue);
-        Debug.Log(fatigue);
+        resourceBars.ChangeFatigue(thisMove.fatigueCost);
     }
 
     public void UseKickMove(KickingMoves thisMove)
