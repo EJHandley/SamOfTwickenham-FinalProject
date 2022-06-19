@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Choose Tails
   icon: {fileID: 0}
   phase: Coin Toss
-  type: Tails
-  style: None
+  type: Choice
+  style: Tails
   fatigueCost: 0
   successChance: 0
   criticalSuccess: 0

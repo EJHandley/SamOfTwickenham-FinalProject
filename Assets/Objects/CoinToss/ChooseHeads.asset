@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Choose Heads
   icon: {fileID: 0}
   phase: Coin Toss
-  type: Heads
-  style: None
+  type: Choice
+  style: Heads
   fatigueCost: 0
   successChance: 0
   criticalSuccess: 0

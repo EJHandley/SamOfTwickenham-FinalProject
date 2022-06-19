@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
-    public ResourceBars resourceBars;
-
     void Start()
     {
         
@@ -33,20 +31,20 @@ public class MoveController : MonoBehaviour
 
     public void UseAttackMove(AttackMoves thisMove)
     {
-        resourceBars.SetTime(thisMove.timeCost);
+        GameManager.instance.resourceBars.SetTime(thisMove.timeCost);
 
         int successCheck = Random.Range(1, 101);
 
         if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
         {
-            resourceBars.ChangeMeters(Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain));
+            GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain));
         } 
         else if(successCheck < thisMove.criticalSuccess)
         {
-            resourceBars.ChangeMeters(Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain));
+            GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain));
         }
 
-        resourceBars.ChangeFatigue(thisMove.fatigueCost);
+        GameManager.instance.resourceBars.ChangeFatigue(thisMove.fatigueCost);
 
         if (successCheck > thisMove.successChance)
         {
@@ -64,14 +62,14 @@ public class MoveController : MonoBehaviour
 
         if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
         {
-            resourceBars.ChangeMeters(Random.Range(thisMove.minMeterStop, thisMove.maxMeterStop));
+            GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.minMeterStop, thisMove.maxMeterStop));
         }
         else if (successCheck < thisMove.criticalSuccess)
         {
-            resourceBars.ChangeMeters(Random.Range(thisMove.critMinMeterStop, thisMove.critMaxMeterStop));
+            GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.critMinMeterStop, thisMove.critMaxMeterStop));
         }
 
-        resourceBars.ChangeFatigue(thisMove.fatigueCost);
+        GameManager.instance.resourceBars.ChangeFatigue(thisMove.fatigueCost);
 
         if (successCheck > thisMove.successChance)
         {
@@ -85,13 +83,13 @@ public class MoveController : MonoBehaviour
 
     public void UseKickMove(KickingMoves thisMove)
     {
-        resourceBars.SetTime(thisMove.timeCost);
+        GameManager.instance.resourceBars.SetTime(thisMove.timeCost);
 
         int successCheck = Random.Range(1, 101);
 
-        resourceBars.ChangeMeters(Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain));
+        GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain));
 
-        resourceBars.ChangeFatigue(thisMove.fatigueCost);
+        GameManager.instance.resourceBars.ChangeFatigue(thisMove.fatigueCost);
 
         if (successCheck <= thisMove.successChance)
         {
@@ -100,5 +98,7 @@ public class MoveController : MonoBehaviour
         }
 
         thisMove.Turnover();
+
+        GameManager.instance.enemyCombat.KickReturn();
     }
 }

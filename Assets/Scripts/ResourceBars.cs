@@ -6,8 +6,6 @@ using TMPro;
 
 public class ResourceBars : MonoBehaviour
 {
-    public GameManager gameManager;
-
     public Slider meterFill;
     public Slider fatigueFill;
 
@@ -40,7 +38,7 @@ public class ResourceBars : MonoBehaviour
         if(time >= 2400f && halfTimeTriggered == false)
         {
             time = 2400f;
-            gameManager.HalfTime();
+            GameManager.instance.HalfTime();
             halfTimeTriggered = true;
             return;
         }
@@ -48,7 +46,7 @@ public class ResourceBars : MonoBehaviour
         if(time >= 4800f && fullTimeTriggered == false)
         {
             time = 4800f;
-            gameManager.FullTime();
+            GameManager.instance.FullTime();
             fullTimeTriggered = true;
             return;
         }
@@ -75,16 +73,16 @@ public class ResourceBars : MonoBehaviour
         {
             startingMeters = 50;
             meterFill.value = startingMeters;
-            gameManager.PlayerScores();
-            gameManager.ChangePhase("Kick Return");
+            GameManager.instance.PlayerScores();
+            GameManager.instance.ChangePhase("Kick Return");
             return;
         }
         else if (meterFill.value <= 0)
         {
             startingMeters = 50;
             meterFill.value = startingMeters;
-            gameManager.OppoScores();
-            gameManager.ChangePhase("Kicking Phase");
+            GameManager.instance.OppoScores();
+            GameManager.instance.ChangePhase("Kicking Phase");
             return;
         }
     }

@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6491234f94655dc4fb12a43d4ecbdf7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisMove: {fileID: 11400000, guid: 81085ee6c01956f48bdbd786ad7d6868, type: 2}
+  thisMove: {fileID: 0}
 --- !u!114 &1692766496758100428
 MonoBehaviour:
   m_ObjectHideFlags: 0

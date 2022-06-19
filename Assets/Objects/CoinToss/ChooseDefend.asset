@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db00973689b4ddb41b2711006f043865, type: 3}
   m_Name: ChooseDefend
   m_EditorClassIdentifier: 
-  name: New Item
+  name: Choose Defend
   icon: {fileID: 0}
-  phase: 
-  type: 
-  style: 
+  phase: Coin Toss
+  type: Winner
+  style: Defend
   fatigueCost: 0
   successChance: 0
   criticalSuccess: 0
