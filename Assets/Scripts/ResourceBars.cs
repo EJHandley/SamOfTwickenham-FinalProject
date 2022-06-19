@@ -25,14 +25,14 @@ public class ResourceBars : MonoBehaviour
     void Start()
     {
         startingMeters = 50;
-        startingFatigue = 0;
+        startingFatigue = 100;
 
         SetTime(time);
     }
 
     void Update()
     {
-        indicator.text = meterFill.value.ToString();
+
     }
 
     public void SetTime(float currentTime)
@@ -69,6 +69,7 @@ public class ResourceBars : MonoBehaviour
         currentMeters = Mathf.Clamp(startingMeters += addMeters, 0, 100);
 
         meterFill.value = currentMeters;
+        indicator.text = meterFill.value.ToString();
 
         if (meterFill.value >= 100)
         {
@@ -88,10 +89,10 @@ public class ResourceBars : MonoBehaviour
         }
     }
 
-    public void ChangeFatigue(int addFatigue)
+    public void ChangeFatigue(int minusFatigue)
     {
         float currentFatigue;
-        currentFatigue = Mathf.Clamp(startingFatigue += addFatigue, 0, 100);
+        currentFatigue = Mathf.Clamp(startingFatigue -= minusFatigue, 0, 100);
 
         fatigueFill.value = currentFatigue;
     }

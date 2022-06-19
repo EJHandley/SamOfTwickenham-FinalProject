@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: SendItDeep
   m_EditorClassIdentifier: 
   name: Send It Deep
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
   phase: Kick Phase
   type: Normal
   style: Kick
   fatigueCost: 0
   successChance: 10
   criticalSuccess: 1
+  timeCost: 0
   minMeterGain: 25
   maxMeterGain: 40
   critMinMeterGain: 0

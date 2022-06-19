@@ -6,6 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public EnemyController enemyController;
+    public EnemyCombat enemyCombat;
     public ResourceBars resourceBars;
 
     public int currentPlayerScore;
@@ -27,15 +28,21 @@ public class GameManager : MonoBehaviour
     public TMP_Text playerMatchText;
     public TMP_Text oppoMatchText;
 
-    public bool isKickingPhase;
-    public bool isAttackPhase;
-    public bool isDefencePhase;
-    public bool isKickReturn;
-
-    public bool choseHeads;
-    public bool choseTails;
-
     private bool coinTossWon = false;
+
+    #region Singleton
+    public static GameManager instance;
+
+    private void Awake()
+    {
+        if(instance != null)
+        {
+            return;
+        }
+
+        instance = this;
+    }
+    #endregion
 
     void Start()
     {
@@ -47,33 +54,36 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        playerScoreText.text = currentPlayerScore.ToString();
-        oppoScoreText.text = currentOppoScore.ToString();
+
     }
 
     #region Scoring
     public void PlayerScores()
     {
         currentPlayerScore += 7;
+        playerScoreText.text = currentPlayerScore.ToString();
     }
 
     public void OppoScores()
     {
         currentOppoScore += 7;
+        oppoScoreText.text = currentOppoScore.ToString();
     }
     #endregion
 
     //All Methods and Mechanic related to the Coin Toss Phase are held below
     #region Coin Toss Methods
 
-    public void ChoseHeads()
+    public void CoinTossChoice(string choice)
     {
-        CoinToss(0);
-    }
-
-    public void ChoseTails()
-    {
-        CoinToss(1);
+        if(choice == "Heads")
+        {
+            CoinToss(0);
+        }
+        else if(choice == "Tails")
+        {
+            CoinToss(1);
+        }
     }
 
     public void CoinToss(int choice)
@@ -102,6 +112,18 @@ public class GameManager : MonoBehaviour
             ChangePhase("Coin Toss Won");
         }
     }
+
+    public void CoinTossWon(string choice)
+    {
+        if(choice == "Attack")
+        {
+            ChangePhase("Attack Phase");
+        } 
+        else if (choice == "Defend")
+        {
+            ChangePhase("Defence Phase");
+        }
+    }
     #endregion
     
     public void ChangePhase(string phase)
@@ -114,25 +136,18 @@ public class GameManager : MonoBehaviour
 
         if(phase == "Coin Toss Won")
         {
-            coinTossWon = true;
             coinTossWonUI.SetActive(true);
-            ChangePhaseText("Coin Toss");
         }
 
         if(phase == "Coin Toss Lost")
         {
             enemyController.CoinTossWon();
-            ChangePhaseText("Coin Toss");
         }
 
         if(phase == "Attack Phase")
         {
-            isDefencePhase = true;
-            isKickingPhase = false;
-            isKickReturn = false;
-            isAttackPhase = false;
-
             attackUI.SetActive(true);
+
             defenceUI.SetActive(false);
             kickingUI.SetActive(false);
             kickReturnUI.SetActive(false);
@@ -143,12 +158,8 @@ public class GameManager : MonoBehaviour
 
         if(phase == "Defence Phase")
         {
-            isAttackPhase = true;
-            isKickingPhase = false;
-            isKickReturn = false;
-            isDefencePhase = false;
-
             defenceUI.SetActive(true);
+
             attackUI.SetActive(false);
             kickingUI.SetActive(false);
             kickReturnUI.SetActive(false);
@@ -159,12 +170,8 @@ public class GameManager : MonoBehaviour
 
         if(phase == "Kicking Phase")
         {
-            isKickReturn = true;
-            isDefencePhase = false;
-            isKickingPhase = false;
-            isAttackPhase = false;
-
             kickingUI.SetActive(true);
+
             attackUI.SetActive(false);
             defenceUI.SetActive(false);
             kickReturnUI.SetActive(false);
@@ -175,11 +182,6 @@ public class GameManager : MonoBehaviour
 
         if(phase == "Kick Return")
         {
-            isKickingPhase = true;
-            isAttackPhase = false;
-            isDefencePhase = false;
-            isKickReturn = false;
-
             kickReturnUI.SetActive(true);
 
             attackUI.SetActive(false);

@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Conversion
   m_EditorClassIdentifier: 
   name: Conversion
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
   phase: Kick Phase
   type: Normal
   style: Special
   fatigueCost: 0
   successChance: 75
   criticalSuccess: 0
+  timeCost: 0
   minMeterGain: 0
   maxMeterGain: 0
   critMinMeterGain: 0

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {
-    public GameManager gameManager;
-
+    [Header("Enemy Attack Moves")]
     public AttackMoves a_Move1;
     public AttackMoves a_Move2;
     public AttackMoves a_Move3; 
@@ -13,6 +12,7 @@ public class EnemyCombat : MonoBehaviour
     public AttackMoves a_Move5;
     public AttackMoves a_Move6;
 
+    [Header("Enemy Defence Moves")]
     public DefenceMoves d_Move1;
     public DefenceMoves d_Move2;
     public DefenceMoves d_Move3;
@@ -20,8 +20,10 @@ public class EnemyCombat : MonoBehaviour
     public DefenceMoves d_Move5;
     public DefenceMoves d_Move6;
 
+    [Header("Enemy Kick Moves")]
     public KickingMoves k_Move1;
     public KickingMoves k_Move2;
+    public KickingMoves k_Return;
 
     void Start()
     {
@@ -33,247 +35,84 @@ public class EnemyCombat : MonoBehaviour
 
     }
 
-    public void EnemyAttack()
+    public void PickKick()
     {
+        int x = Random.Range(1, 101);
 
-    }
-
-    public void PicKMove()
-    {
-        if(gameManager.isAttackPhase == true)
+        if (x <= 75)
         {
-
+            GameManager.instance.enemyController.EnemyKickMove(k_Move1);
         }
-    }
-
-    #region Kicks
-    public void UseKickOne()
-    {
-        int recoveryCheck = Random.Range(1, 101);
-
-        //This will come from the move
-        int recoveryChance = 10;
-
-        int meters = gameManager.resourceBars.startingMeters -= Random.Range(25, 41);
-        gameManager.resourceBars.ChangeMeters(meters);
-        Debug.Log(meters);
-
-        if (recoveryCheck < recoveryChance)
+        else if (x > 75)
         {
-            Debug.Log("OPPONENT RECOVERED THE BALL!");
-            gameManager.ChangePhase("Defence Phase");
-            return;
+            GameManager.instance.enemyController.EnemyKickMove(k_Move2);
         }
-        else if (recoveryCheck > recoveryChance)
-        {
-            gameManager.ChangePhase("Attack Phase");
-        }
-    }
-
-    public void UseKickTwo()
-    {
-        int recoveryCheck = Random.Range(1, 101);
-
-        //This will come from the move
-        int recoveryChance = 40;
-
-        int meters = gameManager.resourceBars.startingMeters -= Random.Range(10, 16);
-        gameManager.resourceBars.ChangeMeters(meters);
-
-        if (recoveryCheck < recoveryChance)
-        {
-            gameManager.ChangePhase("Defence Phase");
-            return;
-        }
-        else if (recoveryCheck > recoveryChance)
-        {
-            gameManager.ChangePhase("Attack Phase");
-        }
+        return;
     }
 
     public void KickReturn()
     {
-
+        GameManager.instance.enemyController.EnemyKickReturn(k_Return);
     }
-    #endregion
 
-    #region Attacks
-    public void UseAttackOne()
+    public void PickAttack()
     {
-        int turnoverCheck = Random.Range(1, 101);
+        int y = Random.Range(1, 101);
 
-        //This will come from the move
-        int turnoverChance = 10;
-
-        if (turnoverCheck < turnoverChance)
+        if (y <= 40)
         {
-            Debug.Log("TURNOVER");
-            gameManager.ChangePhase("Attack Phase");
-            return;
+            GameManager.instance.enemyController.EnemyAttackMove(a_Move1);
         }
-
-        int meters = gameManager.resourceBars.startingMeters -= Random.Range(5, 11);
-        gameManager.resourceBars.ChangeMeters(meters);
-
-        int fatigue = gameManager.resourceBars.startingFatigue -= 5;
-        gameManager.resourceBars.ChangeFatigue(fatigue);
-    }
-
-    public void UseAttackTwo()
-    {
-        int turnoverCheck = Random.Range(1, 101);
-
-        //This will come from the move
-        int turnoverChance = 40;
-
-        if (turnoverCheck < turnoverChance)
+        else if (y > 40 && y <= 55)
         {
-            Debug.Log("TURNOVER");
-            gameManager.ChangePhase("Attack Phase");
-            return;
+            GameManager.instance.enemyController.EnemyAttackMove(a_Move2);
         }
-
-        int meters = gameManager.resourceBars.startingMeters -= Random.Range(15, 21);
-        gameManager.resourceBars.ChangeMeters(meters);
-        Debug.Log(meters);
-
-        int fatigue = gameManager.resourceBars.startingFatigue -= 10;
-        gameManager.resourceBars.ChangeFatigue(fatigue);
-        Debug.Log(fatigue);
-    }
-
-    public void UseAttackThree()
-    {
-        int turnoverCheck = Random.Range(1, 101);
-
-        //This will come from the move
-        int turnoverChance = 75;
-
-        if (turnoverCheck < turnoverChance)
+        else if (y > 55 && y <= 80)
         {
-            Debug.Log("TURNOVER");
-
-            int turnoverMeters = gameManager.resourceBars.startingMeters -= Random.Range(40, 61);
-            gameManager.resourceBars.ChangeMeters(turnoverMeters);
-
-            int turnoverFatigue = gameManager.resourceBars.startingFatigue -= 30;
-            gameManager.resourceBars.ChangeFatigue(turnoverFatigue);
-
-            gameManager.ChangePhase("Attack Phase");
-            return;
+            GameManager.instance.enemyController.EnemyAttackMove(a_Move3);
         }
-
-        int meters = gameManager.resourceBars.startingMeters -= Random.Range(40, 61);
-        gameManager.resourceBars.ChangeMeters(meters);
-
-        int fatigue = gameManager.resourceBars.startingFatigue -= 30;
-        gameManager.resourceBars.ChangeFatigue(fatigue);
-    }
-
-    public void UseAttackFour()
-    {
-
-    }
-
-    public void UseAttackFive()
-    {
-
-    }
-
-    public void UseAttackSix()
-    {
-
-    }
-    #endregion
-
-    #region Defence
-    public void UseDefenceOne()
-    {
-        Debug.Log("THE OPPOSITION IS DEFENDING HARD");
-        int foulCheck = Random.Range(1, 101);
-
-        //This will come from the move
-        int foulChance = 0;
-
-        if (foulCheck < foulChance)
+        else if (y > 80 && y <= 90)
         {
-            Debug.Log("FOUL");
-            gameManager.ChangePhase("Defence Phase");
-            return;
+            GameManager.instance.enemyController.EnemyAttackMove(a_Move4);
         }
-
-        int meters = gameManager.resourceBars.startingMeters -= Random.Range(2, 6);
-        gameManager.resourceBars.ChangeMeters(meters);
-        Debug.Log(meters);
-
-        int fatigue = gameManager.resourceBars.startingFatigue -= 5;
-        gameManager.resourceBars.ChangeFatigue(fatigue);
-        Debug.Log(fatigue);
-    }
-
-    public void UseDefenceTwo()
-    {
-        Debug.Log("THE OPPOSITION IS DEFENDING HARD");
-        int foulCheck = Random.Range(1, 101);
-
-        //This will come from the move
-        int foulChance = 15;
-
-        if (foulCheck < foulChance)
+        else if (y > 90 && y <= 95)
         {
-            Debug.Log("FOUL");
-            gameManager.ChangePhase("Defence Phase");
-            return;
+            GameManager.instance.enemyController.EnemyAttackMove(a_Move5);
         }
-
-        int meters = gameManager.resourceBars.startingMeters -= Random.Range(3, 8);
-        gameManager.resourceBars.ChangeMeters(meters);
-        Debug.Log(meters);
-
-        int fatigue = gameManager.resourceBars.startingFatigue -= 10;
-        gameManager.resourceBars.ChangeFatigue(fatigue);
-        Debug.Log(fatigue);
-
-    }
-
-    public void UseDefenceThree()
-    {
-        Debug.Log("THE OPPOSITION IS DEFENDING HARD");
-        int foulCheck = Random.Range(1, 101);
-
-        //This will come from the move
-        int foulChance = 20;
-
-        if (foulCheck < foulChance)
+        else if (y > 95)
         {
-            Debug.Log("FOUL");
-            gameManager.ChangePhase("Defence Phase");
-            return;
+            GameManager.instance.enemyController.EnemyAttackMove(a_Move6);
         }
-
-        int meters = gameManager.resourceBars.startingMeters += Random.Range(10, 15);
-        gameManager.resourceBars.ChangeMeters(meters);
-        Debug.Log(meters);
-
-        int fatigue = gameManager.resourceBars.startingFatigue += 10;
-        gameManager.resourceBars.ChangeFatigue(fatigue);
-        Debug.Log(fatigue);
     }
 
-    public void UseDefenceFour()
+    public void PickDefence()
     {
-        Debug.Log("THE OPPOSITION IS DEFENDING HARD");
-    }
+        int z = Random.Range(1, 101);
 
-    public void UseDefenceFive()
-    {
-        Debug.Log("THE OPPOSITION IS DEFENDING HARD");
+        if (z <= 40)
+        {
+            GameManager.instance.enemyController.EnemyDefenceMove(d_Move1);
+        }
+        else if (z > 40 && z <= 60)
+        {
+            GameManager.instance.enemyController.EnemyDefenceMove(d_Move2);
+        }
+        else if (z > 60 && z <= 75)
+        {
+            GameManager.instance.enemyController.EnemyDefenceMove(d_Move3);
+        }
+        else if (z > 75 && z <= 85)
+        {
+            GameManager.instance.enemyController.EnemyDefenceMove(d_Move4);
+        }
+        else if (z > 85 && z <= 95)
+        {
+            GameManager.instance.enemyController.EnemyDefenceMove(d_Move5);
+        }
+        else if (z > 95)
+        {
+            GameManager.instance.enemyController.EnemyDefenceMove(d_Move6);
+        }
+        return;
     }
-
-    public void UseDefenceSix()
-    {
-        Debug.Log("THE OPPOSITION IS DEFENDING HARD");
-    }
-    #endregion
-
 }

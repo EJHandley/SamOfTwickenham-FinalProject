@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8415be7cebab24541840142c0ae68877, type: 3}
   m_Name: Mulligrubber
   m_EditorClassIdentifier: 
-  name: Mulligrubber
-  icon: {fileID: 0}
+  name: Mulli- grubber
+  icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
   phase: Attack Phase
   type: Team
   style: Kick

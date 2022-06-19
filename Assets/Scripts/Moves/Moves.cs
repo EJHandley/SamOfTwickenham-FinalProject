@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Moves : ScriptableObject
 {
-    private GameManager gameManager;
-
     new public string name = "New Item";
     public Sprite icon = null;
 
@@ -30,11 +28,11 @@ public class Moves : ScriptableObject
     
     public virtual void Turnover()
     {
-        gameManager.ChangePhase("Defence Phase");
+        GameManager.instance.ChangePhase("Defence Phase");
     }
 
     public virtual void Foul()
     {
-
+        
     }
 }

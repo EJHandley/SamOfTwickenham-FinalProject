@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Kicking Move", menuName = "Moves/Kicking Move")]
 public class KickingMoves : Moves
 {
+    public float timeCost;
+
     public int minMeterGain;
     public int maxMeterGain;
 

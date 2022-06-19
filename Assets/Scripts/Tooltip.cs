@@ -14,6 +14,7 @@ public class Tooltip : MonoBehaviour
     private TMP_Text successChanceText;
     private TMP_Text fatigueCostText;
     private TMP_Text meterChangeText;
+    private TMP_Text timeCostText;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class Tooltip : MonoBehaviour
         successChanceText = tooltipText[2];
         fatigueCostText = tooltipText[3];
         meterChangeText = tooltipText[4];
+        timeCostText = tooltipText[5];
     }
 
     public void ShowTooltip()
@@ -48,6 +50,10 @@ public class Tooltip : MonoBehaviour
         successChanceText.text = "Success Chance: " + thisMove.successChance.ToString() + "%";
         fatigueCostText.text = "Fatigue Cost: " + thisMove.fatigueCost.ToString();
         meterChangeText.text = "Meter Change: " + thisMove.minMeterGain.ToString() + " - " + thisMove.maxMeterGain.ToString();
+
+        float minutes = Mathf.FloorToInt(thisMove.timeCost / 60);
+        float seconds = Mathf.FloorToInt(thisMove.timeCost % 60);
+        timeCostText.text = "Time Cost: " + string.Format("{00:00}:{01:00}", minutes, seconds);
     }
 
     public void SetDefenceTooltip(DefenceMoves thisMove)
@@ -66,5 +72,9 @@ public class Tooltip : MonoBehaviour
         successChanceText.text = "Success Chance: " + thisMove.successChance.ToString() + "%";
         fatigueCostText.text = "Fatigue Cost: " + thisMove.fatigueCost.ToString();
         meterChangeText.text = "Meter Change: " + thisMove.minMeterGain.ToString() + " - " + thisMove.maxMeterGain.ToString();
+        
+        float minutes = Mathf.FloorToInt(thisMove.timeCost / 60);
+        float seconds = Mathf.FloorToInt(thisMove.timeCost % 60);
+        timeCostText.text = "Time Cost: " + string.Format("{00:00}:{01:00}", minutes, seconds);
     }
 }

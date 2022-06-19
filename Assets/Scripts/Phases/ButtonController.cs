@@ -9,7 +9,7 @@ public class ButtonController : MonoBehaviour
     private MoveController moveController;
 
     private Tooltip tooltip;
-    private Image image;
+    private Image[] images;
     private TMP_Text text;
 
     public Moves thisMove;
@@ -18,8 +18,8 @@ public class ButtonController : MonoBehaviour
     {
         moveController = GetComponentInParent<MoveController>();
 
-        image = GetComponent<Image>();
-        image.sprite = thisMove.icon;
+        images = GetComponentsInChildren<Image>();
+        images[1].sprite = thisMove.icon;
 
         text = GetComponentInChildren<TMP_Text>();
         text.text = thisMove.name;
@@ -49,6 +49,11 @@ public class ButtonController : MonoBehaviour
 
     public void OnPress()
     {
+        if(thisMove.phase == "Coin Toss")
+        {
+            moveController.UseCoinTossMove((CoinTossMoves)thisMove);
+        }
+
         if(thisMove.phase == "Attack Phase")
         {
             moveController.UseAttackMove((AttackMoves)thisMove);
