@@ -26,18 +26,34 @@ public class Moves : ScriptableObject
 
     }
     
-    public virtual void Turnover()
+    public virtual void Turnover(string user)
     {
-        GameManager.instance.ChangePhase("Defence Phase");
+        if(user == "Player")
+        {
+            GameManager.instance.ChangePhase("Defence Phase");
+        }
+
+        if(user == "Enemy")
+        {
+            GameManager.instance.ChangePhase("Attack Phase");
+        }
     }
 
-    public virtual void Foul()
+    public virtual void Foul(string user)
     {
         Debug.Log("You Committed A Foul");
     }
 
-    public virtual void Recover()
+    public virtual void Recover(string user)
     {
-        GameManager.instance.ChangePhase("AttackPhase");
+        if (user == "Player")
+        {
+            GameManager.instance.ChangePhase("Attack Phase");
+        }
+
+        if (user == "Enemy")
+        {
+            GameManager.instance.ChangePhase("Defence Phase");
+        }
     }
 }

@@ -16,9 +16,9 @@ public class AttackMoves : Moves
     public int critMinMeterGain;
     public int critMaxMeterGain;
 
-    public override void Turnover()
+    public override void Turnover(string user)
     {
-        base.Turnover();
+        base.Turnover(user);
     }
 
     public override void Use()

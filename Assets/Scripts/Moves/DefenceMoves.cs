@@ -11,6 +11,11 @@ public class DefenceMoves : Moves
     public int critMinMeterStop;
     public int critMaxMeterStop;
 
+    public override void Foul(string user)
+    {
+        base.Foul(user);
+    }
+
     public override void Use()
     {
         base.Use();

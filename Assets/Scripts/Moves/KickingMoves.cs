@@ -13,10 +13,13 @@ public class KickingMoves : Moves
     public int critMinMeterGain;
     public int critMaxMeterGain;
 
+    public override void Recover(string user)
+    {
+        base.Recover(user);
+    }
+
     public override void Use()
     {
         base.Use();
     }
-
-
 }

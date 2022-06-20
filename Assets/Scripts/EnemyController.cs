@@ -36,27 +36,52 @@ public class EnemyController : MonoBehaviour
 
         int successCheck = Random.Range(1, 101);
 
-        if (successCheck > enemyMove.successChance)
+        if(enemyMove.style == "Ground")
         {
-            Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
-            enemyMove.Turnover();
-            return;
+            GameManager.instance.resourceBars.ChangeFatigue("Enemy", enemyMove.fatigueCost);
+
+            if (successCheck > enemyMove.successChance)
+            {
+                Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
+                enemyMove.Turnover("Enemy");
+                return;
+            }
+
+            if (successCheck > enemyMove.criticalSuccess && successCheck <= enemyMove.successChance)
+            {
+                int meterChange = Random.Range(enemyMove.minMeterGain, enemyMove.maxMeterGain);
+                GameManager.instance.resourceBars.ChangeMeters("Enemy", meterChange);
+                Debug.Log("HIT! The Opposition made " + meterChange + " meters!");
+            }
+            else if (successCheck < enemyMove.criticalSuccess)
+            {
+                int critMeterChange = (Random.Range(enemyMove.critMinMeterGain, enemyMove.critMaxMeterGain));
+                GameManager.instance.resourceBars.ChangeMeters("Enemy", critMeterChange);
+                Debug.Log("CRIT! The Opposition made " + critMeterChange + " meters!");
+            }
         }
 
-        if (successCheck > enemyMove.criticalSuccess && successCheck <= enemyMove.successChance)
+        if(enemyMove.style == "Kick")
         {
             int meterChange = Random.Range(enemyMove.minMeterGain, enemyMove.maxMeterGain);
             GameManager.instance.resourceBars.ChangeMeters("Enemy", meterChange);
             Debug.Log("HIT! The Opposition made " + meterChange + " meters!");
-        }
-        else if (successCheck < enemyMove.criticalSuccess)
-        {
-            int critMeterChange = (Random.Range(enemyMove.critMinMeterGain, enemyMove.critMaxMeterGain));
-            GameManager.instance.resourceBars.ChangeMeters("Enemy", critMeterChange);
-            Debug.Log("CRIT! The Opposition made " + critMeterChange + " meters!");
+
+            GameManager.instance.resourceBars.ChangeFatigue("Enemy", enemyMove.fatigueCost);
+
+            if (successCheck > enemyMove.successChance)
+            {
+                Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
+                enemyMove.Turnover("Enemy");
+                return;
+            }
+            else if (successCheck <= enemyMove.successChance)
+            {
+                enemyMove.Recover("Enemy");
+            }
+
         }
 
-        GameManager.instance.resourceBars.ChangeFatigue("Enemy", enemyMove.fatigueCost);
     }
 
     public void EnemyDefenceMove(DefenceMoves enemyMove)
@@ -68,7 +93,7 @@ public class EnemyController : MonoBehaviour
         if (successCheck > enemyMove.successChance)
         {
             Debug.Log("You rolled:" + successCheck + ". Move Failed. Foul!");
-            enemyMove.Foul();
+            enemyMove.Foul("Enemy");
             return;
         }
 
@@ -96,23 +121,14 @@ public class EnemyController : MonoBehaviour
 
         int successCheck = Random.Range(1, 101);
 
-        if (successCheck > enemyMove.criticalSuccess && successCheck <= enemyMove.successChance)
-        {
+        if(enemyMove.style == "Normal")
+        { 
+            GameManager.instance.resourceBars.ChangeFatigue("Enemy", enemyMove.fatigueCost);
+
             int meterChange = Random.Range(enemyMove.minMeterGain, enemyMove.maxMeterGain);
             GameManager.instance.resourceBars.ChangeMeters("Enemy", meterChange);
             Debug.Log("HIT! The Opposition kicked it " + meterChange + " meters!");
-        }
-        else if (successCheck < enemyMove.criticalSuccess)
-        {
-            int critMeterChange = Random.Range(enemyMove.critMinMeterGain, enemyMove.critMaxMeterGain);
-            GameManager.instance.resourceBars.ChangeMeters("Enemy", critMeterChange);
-            Debug.Log("CRIT! The Opposition kicked it " + critMeterChange + " meters!");
-        }
 
-        GameManager.instance.resourceBars.ChangeFatigue("Enemy", enemyMove.fatigueCost);
-
-        if (enemyMove.style == "Normal")
-        {
             if (successCheck > enemyMove.successChance)
             {
                 Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
@@ -121,7 +137,7 @@ public class EnemyController : MonoBehaviour
             }
             else if (successCheck <= enemyMove.successChance)
             {
-                enemyMove.Recover();
+                enemyMove.Recover("Enemy");
                 return;
             }
         }
@@ -130,12 +146,26 @@ public class EnemyController : MonoBehaviour
         {
             if(successCheck > enemyMove.successChance)
             {
-                enemyMove.Turnover();
+                enemyMove.Turnover("Enemy");
+                return;
             }
-            else if (successCheck <= enemyMove.successChance)
+
+            if (successCheck > enemyMove.criticalSuccess && successCheck <= enemyMove.successChance)
             {
-                GameManager.instance.ChangePhase("Defence Phase");
+                int meterChange = Random.Range(enemyMove.minMeterGain, enemyMove.maxMeterGain);
+                GameManager.instance.resourceBars.ChangeMeters("Enemy", meterChange);
+                Debug.Log("HIT! The Opposition kicked it " + meterChange + " meters!");
             }
+            else if (successCheck < enemyMove.criticalSuccess)
+            {
+                int critMeterChange = Random.Range(enemyMove.critMinMeterGain, enemyMove.critMaxMeterGain);
+                GameManager.instance.resourceBars.ChangeMeters("Enemy", critMeterChange);
+                Debug.Log("CRIT! The Opposition kicked it " + critMeterChange + " meters!");
+            }
+
+            GameManager.instance.resourceBars.ChangeFatigue("Enemy", enemyMove.fatigueCost);
+
+            GameManager.instance.ChangePhase("Defence Phase");
         }
     }
 }

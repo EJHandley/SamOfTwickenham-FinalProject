@@ -37,41 +37,46 @@ public class MoveController : MonoBehaviour
 
         if(thisMove.style == "Ground")
         {
+            GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
+
             if (successCheck > thisMove.successChance)
             {
                 Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
-                thisMove.Turnover();
+                thisMove.Turnover("Player");
                 return;
+            }
+
+            if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
+            {
+                int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
+                GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
+                Debug.Log("HIT! You made " + meterChange + " meters!");
+            }
+            else if (successCheck < thisMove.criticalSuccess)
+            {
+                int critMeterChange = Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
+                GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
+                Debug.Log("CRIT! You made " + critMeterChange + " meters!");
             }
         }
 
-        if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
+        if(thisMove.style == "Kick")
         {
             int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
             GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
             Debug.Log("HIT! You made " + meterChange + " meters!");
-        } 
-        else if(successCheck < thisMove.criticalSuccess)
-        {
-            int critMeterChange = Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
-            GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
-            Debug.Log("CRIT! You made " + critMeterChange + " meters!");
-        }
 
-        GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
+            GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
 
-        if(thisMove.style == "Kick")
-        {
             if (successCheck > thisMove.successChance)
             {
                 Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
-                thisMove.Turnover();
+                thisMove.Turnover("Player");
                 return;
             }
             else if (successCheck <= thisMove.successChance)
             {
-                Debug.Log("You rolled:" + successCheck + ". Move Succeeded. You Recover the Ball!");
-                thisMove.Recover();
+                thisMove.Recover("Player");
             }
         }
 
@@ -85,7 +90,7 @@ public class MoveController : MonoBehaviour
         if (successCheck > thisMove.successChance)
         {
             Debug.Log("You rolled:" + successCheck + ". Move Failed. Foul!");
-            thisMove.Foul();
+            thisMove.Foul("Player");
             return;
         }
 
@@ -109,36 +114,31 @@ public class MoveController : MonoBehaviour
 
     public void UseKickMove(KickingMoves thisMove)
     {
+        Debug.Log("You Used " + thisMove.name);
+        
         GameManager.instance.resourceBars.SetTime(thisMove.timeCost);
 
         int successCheck = Random.Range(1, 101);
 
-        if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
-        {
-            int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
-            GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
-            Debug.Log("HIT! You kicked it " + meterChange + " meters!");
-        }
-        else if (successCheck < thisMove.criticalSuccess)
-        {
-            int critMeterChange = Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
-            GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
-            Debug.Log("CRIT! You kicked it " + critMeterChange + " meters!");
-        }
-
-        GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
-
         if(thisMove.style == "Normal")
         {
+            GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
+
+            int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
+            GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
+            Debug.Log("HIT! You made " + meterChange + " meters!");
+
             if (successCheck > thisMove.successChance)
             {
                 Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
+                thisMove.Turnover("Player");
                 GameManager.instance.enemyCombat.KickReturn();
                 return;
             }
             else if (successCheck <= thisMove.successChance)
             {
-                thisMove.Recover();
+                thisMove.Recover("Player");
+                GameManager.instance.enemyCombat.PickDefence();
                 return;
             }
         }
@@ -147,12 +147,26 @@ public class MoveController : MonoBehaviour
         {
             if (successCheck > thisMove.successChance)
             {
-                thisMove.Turnover();
+                thisMove.Turnover("Player");
+                return;
             }
-            else if (successCheck <= thisMove.successChance)
+
+            if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
             {
-                GameManager.instance.enemyCombat.PickKick();
+                int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
+                GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
+                Debug.Log("HIT! You kicked it " + meterChange + " meters!");
             }
+            else if (successCheck < thisMove.criticalSuccess)
+            {
+                int critMeterChange = Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
+                GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
+                Debug.Log("CRIT! You kicked it " + critMeterChange + " meters!");
+            }
+
+            GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
+
+            GameManager.instance.enemyCombat.PickKick();
         }
     }
 }
