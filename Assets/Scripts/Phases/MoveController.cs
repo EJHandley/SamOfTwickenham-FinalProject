@@ -35,22 +35,44 @@ public class MoveController : MonoBehaviour
 
         int successCheck = Random.Range(1, 101);
 
+        if(thisMove.style == "Ground")
+        {
+            if (successCheck > thisMove.successChance)
+            {
+                Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
+                thisMove.Turnover();
+                return;
+            }
+        }
+
         if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
         {
-            GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain));
+            int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
+            GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
+            Debug.Log("HIT! You made " + meterChange + " meters!");
         } 
         else if(successCheck < thisMove.criticalSuccess)
         {
-            GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain));
+            int critMeterChange = Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
+            GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
+            Debug.Log("CRIT! You made " + critMeterChange + " meters!");
         }
 
-        GameManager.instance.resourceBars.ChangeFatigue(thisMove.fatigueCost);
+        GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
 
-        if (successCheck > thisMove.successChance)
+        if(thisMove.style == "Kick")
         {
-            Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
-            thisMove.Turnover();
-            return;
+            if (successCheck > thisMove.successChance)
+            {
+                Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
+                thisMove.Turnover();
+                return;
+            }
+            else if (successCheck <= thisMove.successChance)
+            {
+                Debug.Log("You rolled:" + successCheck + ". Move Succeeded. You Recover the Ball!");
+                thisMove.Recover();
+            }
         }
 
         GameManager.instance.enemyCombat.PickDefence();
@@ -60,23 +82,27 @@ public class MoveController : MonoBehaviour
     {
         int successCheck = Random.Range(1, 101);
 
-        if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
-        {
-            GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.minMeterStop, thisMove.maxMeterStop));
-        }
-        else if (successCheck < thisMove.criticalSuccess)
-        {
-            GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.critMinMeterStop, thisMove.critMaxMeterStop));
-        }
-
-        GameManager.instance.resourceBars.ChangeFatigue(thisMove.fatigueCost);
-
         if (successCheck > thisMove.successChance)
         {
             Debug.Log("You rolled:" + successCheck + ". Move Failed. Foul!");
             thisMove.Foul();
             return;
         }
+
+        if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
+        {
+            int meterChange = Random.Range(thisMove.minMeterStop, thisMove.maxMeterStop);
+            GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
+            Debug.Log("HIT! You pushed them back " + meterChange + " meters!");
+        }
+        else if (successCheck < thisMove.criticalSuccess)
+        {
+            int critMeterChange = Random.Range(thisMove.critMinMeterStop, thisMove.critMaxMeterStop);
+            GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
+            Debug.Log("CRIT! You pushed them back " + critMeterChange + " meters!");
+        }
+
+        GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
 
         GameManager.instance.enemyCombat.PickAttack();
     }
@@ -87,18 +113,46 @@ public class MoveController : MonoBehaviour
 
         int successCheck = Random.Range(1, 101);
 
-        GameManager.instance.resourceBars.ChangeMeters(Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain));
-
-        GameManager.instance.resourceBars.ChangeFatigue(thisMove.fatigueCost);
-
-        if (successCheck <= thisMove.successChance)
+        if (successCheck > thisMove.criticalSuccess && successCheck <= thisMove.successChance)
         {
-            Debug.Log("YOU'VE RECOVERED THE BALL!");
-            return;
+            int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
+            GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
+            Debug.Log("HIT! You kicked it " + meterChange + " meters!");
+        }
+        else if (successCheck < thisMove.criticalSuccess)
+        {
+            int critMeterChange = Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
+            GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
+            Debug.Log("CRIT! You kicked it " + critMeterChange + " meters!");
         }
 
-        thisMove.Turnover();
+        GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
 
-        GameManager.instance.enemyCombat.KickReturn();
+        if(thisMove.style == "Normal")
+        {
+            if (successCheck > thisMove.successChance)
+            {
+                Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
+                GameManager.instance.enemyCombat.KickReturn();
+                return;
+            }
+            else if (successCheck <= thisMove.successChance)
+            {
+                thisMove.Recover();
+                return;
+            }
+        }
+
+        if(thisMove.style == "Return")
+        {
+            if (successCheck > thisMove.successChance)
+            {
+                thisMove.Turnover();
+            }
+            else if (successCheck <= thisMove.successChance)
+            {
+                GameManager.instance.enemyCombat.PickKick();
+            }
+        }
     }
 }

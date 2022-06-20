@@ -33,13 +33,11 @@ public class Tooltip : MonoBehaviour
 
     public void ShowTooltip()
     {
-        Debug.Log("Hovering");
         tooltip.gameObject.SetActive(true);
     }
 
     public void HideTooltip()
     {
-        Debug.Log("Not Hovering");
         tooltip.gameObject.SetActive(false);
     }
 

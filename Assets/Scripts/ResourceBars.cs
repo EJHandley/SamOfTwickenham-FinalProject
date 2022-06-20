@@ -51,8 +51,6 @@ public class ResourceBars : MonoBehaviour
             return;
         }
 
-        Debug.Log(currentTime);
-
         time += currentTime;
 
         float minutes = Mathf.FloorToInt(time / 60);
@@ -61,13 +59,25 @@ public class ResourceBars : MonoBehaviour
         timeText.text = string.Format("{00:00}:{01:00}", minutes, seconds);
     }
 
-    public void ChangeMeters(int addMeters)
+    public void ChangeMeters(string user, int addMeters)
     {
-        float currentMeters;
-        currentMeters = Mathf.Clamp(startingMeters += addMeters, 0, 100);
+        if(user == "Player")
+        {
+            int currentMeters;
+            currentMeters = Mathf.Clamp(startingMeters += addMeters, 0, 100);
 
-        meterFill.value = currentMeters;
-        indicator.text = meterFill.value.ToString();
+            meterFill.value = currentMeters;
+            indicator.text = meterFill.value.ToString();
+        } 
+        else if(user == "Enemy")
+        {
+            int currentMeters;
+            currentMeters = Mathf.Clamp(startingMeters -= addMeters, 0, 100);
+
+            meterFill.value = currentMeters;
+            indicator.text = meterFill.value.ToString();
+        }
+
 
         if (meterFill.value >= 100)
         {
@@ -87,11 +97,21 @@ public class ResourceBars : MonoBehaviour
         }
     }
 
-    public void ChangeFatigue(int minusFatigue)
+    public void ChangeFatigue(string user, int minusFatigue)
     {
-        float currentFatigue;
-        currentFatigue = Mathf.Clamp(startingFatigue -= minusFatigue, 0, 100);
+        if(user == "Player")
+        {
+            int currentFatigue;
+            currentFatigue = Mathf.Clamp(startingFatigue -= minusFatigue, 0, 100);
 
-        fatigueFill.value = currentFatigue;
+            fatigueFill.value = currentFatigue;
+        }
+        else if(user == "Enemy")
+        {
+            int currentFatigue;
+            currentFatigue = Mathf.Clamp(startingFatigue += minusFatigue, 0, 100);
+
+            fatigueFill.value = currentFatigue;
+        }
     }
 }

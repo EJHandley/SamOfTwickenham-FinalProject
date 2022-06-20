@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Send It Deep
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
   phase: Kick Phase
-  type: Normal
-  style: Kick
+  type: Kick
+  style: Normal
   fatigueCost: 0
   successChance: 10
   criticalSuccess: 1

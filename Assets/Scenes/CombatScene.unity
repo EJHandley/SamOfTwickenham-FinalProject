@@ -3277,7 +3277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7957c27b48a29469193a89d508655a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceBars: {fileID: 1932788074}
 --- !u!1001 &1078064714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5210,20 +5209,18 @@ MonoBehaviour:
   enemyController: {fileID: 1709267583}
   enemyCombat: {fileID: 1709267584}
   resourceBars: {fileID: 1932788074}
-  currentPlayerScore: 0
-  currentOppoScore: 0
   phaseText: {fileID: 7557412}
   playerScoreText: {fileID: 94112240}
   oppoScoreText: {fileID: 580629485}
   tryScoredText: {fileID: 0}
+  playerMatchText: {fileID: 0}
+  oppoMatchText: {fileID: 0}
   coinTossUI: {fileID: 2040456091}
   coinTossWonUI: {fileID: 1137787605}
   attackUI: {fileID: 1477491110}
   defenceUI: {fileID: 1373683655}
   kickingUI: {fileID: 494842929}
   kickReturnUI: {fileID: 309103474}
-  playerMatchText: {fileID: 0}
-  oppoMatchText: {fileID: 0}
 --- !u!4 &1709267580
 Transform:
   m_ObjectHideFlags: 0
@@ -5263,21 +5260,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666dcaa9e2e892c4490fed7eb0639bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a_Move1: {fileID: 0}
-  a_Move2: {fileID: 0}
-  a_Move3: {fileID: 0}
-  a_Move4: {fileID: 0}
-  a_Move5: {fileID: 0}
-  a_Move6: {fileID: 0}
-  d_Move1: {fileID: 0}
-  d_Move2: {fileID: 0}
-  d_Move3: {fileID: 0}
-  d_Move4: {fileID: 0}
-  d_Move5: {fileID: 0}
-  d_Move6: {fileID: 0}
-  k_Move1: {fileID: 0}
-  k_Move2: {fileID: 0}
-  k_Return: {fileID: 0}
+  a_Move1: {fileID: 11400000, guid: 1a366fa97f9232c4481f2f1c6f1b36ef, type: 2}
+  a_Move2: {fileID: 11400000, guid: 984a384bc23345d438c83f664a2bc8e5, type: 2}
+  a_Move3: {fileID: 11400000, guid: 50d5fa3cff4905944844d4c7a599d1de, type: 2}
+  a_Move4: {fileID: 11400000, guid: 08a01aee88b4c1e4fad303b7bbb0193e, type: 2}
+  a_Move5: {fileID: 11400000, guid: 47fa64610911c464eb2b42c71234d515, type: 2}
+  a_Move6: {fileID: 11400000, guid: f77ae3666fd6f804fa70123e351f3519, type: 2}
+  d_Move1: {fileID: 11400000, guid: 7521aee17b05739429ac41c44bc23e10, type: 2}
+  d_Move2: {fileID: 11400000, guid: 38a6ae21aea73dd42956fee616243fa2, type: 2}
+  d_Move3: {fileID: 11400000, guid: 49610dc942675cc4d8a948a60caf3f13, type: 2}
+  d_Move4: {fileID: 11400000, guid: db3978d42c07fdd44adda29173b6e8b9, type: 2}
+  d_Move5: {fileID: 11400000, guid: 7d9bc923c80108746bc8f35da76183c4, type: 2}
+  d_Move6: {fileID: 11400000, guid: acd267d4ce7e8b2459b355a3e7df5e67, type: 2}
+  k_Move1: {fileID: 11400000, guid: b44bdf17a23f26c489728e937a09f654, type: 2}
+  k_Move2: {fileID: 11400000, guid: cd9e072fe4d33c44cb26a3aea6274f34, type: 2}
+  k_Return: {fileID: 11400000, guid: 2dc5cbdeb78afdd4083c9dcb2aeea889, type: 2}
 --- !u!114 &1709267585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5290,7 +5287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7957c27b48a29469193a89d508655a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceBars: {fileID: 1932788074}
 --- !u!1 &1726040645
 GameObject:
   m_ObjectHideFlags: 0
@@ -6402,7 +6398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad12b9df639030d468e72bbded1c128c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1709267579}
   meterFill: {fileID: 1726040647}
   fatigueFill: {fileID: 273261929}
   startingMeters: 0

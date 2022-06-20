@@ -52,7 +52,7 @@ public class EnemyCombat : MonoBehaviour
 
     public void KickReturn()
     {
-        GameManager.instance.enemyController.EnemyKickReturn(k_Return);
+        GameManager.instance.enemyController.EnemyKickMove(k_Return);
     }
 
     public void PickAttack()

@@ -9,15 +9,16 @@ public class GameManager : MonoBehaviour
     public EnemyCombat enemyCombat;
     public ResourceBars resourceBars;
 
-    public int currentPlayerScore;
-    public int currentOppoScore;
-
     public TMP_Text phaseText;
 
     public TMP_Text playerScoreText;
     public TMP_Text oppoScoreText;
     public TMP_Text tryScoredText;
 
+    public TMP_Text playerMatchText;
+    public TMP_Text oppoMatchText;
+
+    [Header("UI Elements")]
     public GameObject coinTossUI;
     public GameObject coinTossWonUI;
     public GameObject attackUI;
@@ -25,8 +26,8 @@ public class GameManager : MonoBehaviour
     public GameObject kickingUI;
     public GameObject kickReturnUI;
 
-    public TMP_Text playerMatchText;
-    public TMP_Text oppoMatchText;
+    private int currentPlayerScore;
+    private int currentOppoScore;
 
     private bool coinTossWon = false;
 
@@ -117,11 +118,11 @@ public class GameManager : MonoBehaviour
     {
         if(choice == "Attack")
         {
-            ChangePhase("Attack Phase");
+            ChangePhase("Kick Return");
         } 
         else if (choice == "Defend")
         {
-            ChangePhase("Defence Phase");
+            ChangePhase("Kicking Phase");
         }
     }
     #endregion

@@ -33,6 +33,11 @@ public class Moves : ScriptableObject
 
     public virtual void Foul()
     {
-        
+        Debug.Log("You Committed A Foul");
+    }
+
+    public virtual void Recover()
+    {
+        GameManager.instance.ChangePhase("AttackPhase");
     }
 }
