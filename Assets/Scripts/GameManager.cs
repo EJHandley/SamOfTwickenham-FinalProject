@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public EnemyController enemyController;
     public EnemyCombat enemyCombat;
     public ResourceBars resourceBars;
+    public TryNotificationUI tryNotification;
 
     public TMP_Text phaseText;
 
@@ -26,10 +27,21 @@ public class GameManager : MonoBehaviour
     public GameObject kickingUI;
     public GameObject kickReturnUI;
 
+    [Header("Tutorial UI Elements")]
+    public GameObject tossWonTut;
+    public GameObject tossChoiceTut;
+    public GameObject attackTut;
+    public GameObject defenceTut;
+
     private int currentPlayerScore;
     private int currentOppoScore;
 
+    public bool isTutorialMatch;
+    private bool attTutEnabled = false;
+    private bool defTutEnabled = false;
     private bool coinTossWon = false;
+
+
 
     #region Singleton
     public static GameManager instance;
@@ -61,12 +73,14 @@ public class GameManager : MonoBehaviour
     #region Scoring
     public void PlayerScores()
     {
+        tryNotification.StartCoroutine("PlayerScored");
         currentPlayerScore += 7;
         playerScoreText.text = currentPlayerScore.ToString();
     }
 
     public void OppoScores()
     {
+        tryNotification.StartCoroutine("EnemyScored");
         currentOppoScore += 7;
         oppoScoreText.text = currentOppoScore.ToString();
     }
@@ -91,7 +105,13 @@ public class GameManager : MonoBehaviour
     {
         int coinToss = Random.Range(1, 101);
 
-        if(choice == 0 && coinToss <= 50)
+        if (isTutorialMatch == true)
+        {
+            ChangePhase("Coin Toss Won");
+            return;
+        }
+
+        if (choice == 0 && coinToss <= 50)
         {
             Debug.Log("You chose Heads and it's Heads!");
             ChangePhase("Coin Toss Won");
@@ -118,10 +138,20 @@ public class GameManager : MonoBehaviour
     {
         if(choice == "Attack")
         {
+            if (isTutorialMatch == true)
+            {
+                tossChoiceTut.SetActive(true);
+            }
+
             ChangePhase("Kick Return");
         } 
         else if (choice == "Defend")
         {
+            if (isTutorialMatch == true)
+            {
+                tossChoiceTut.SetActive(true);
+            }
+
             ChangePhase("Kicking Phase");
         }
     }
@@ -137,6 +167,11 @@ public class GameManager : MonoBehaviour
 
         if(phase == "Coin Toss Won")
         {
+            if(isTutorialMatch == true)
+            {
+                tossWonTut.SetActive(true);
+            }
+
             coinTossWonUI.SetActive(true);
         }
 
@@ -147,6 +182,12 @@ public class GameManager : MonoBehaviour
 
         if(phase == "Attack Phase")
         {
+            if(isTutorialMatch == true && attTutEnabled == false)
+            {
+                attackTut.SetActive(true);
+                attTutEnabled = true;
+            }
+
             attackUI.SetActive(true);
 
             defenceUI.SetActive(false);
@@ -159,6 +200,12 @@ public class GameManager : MonoBehaviour
 
         if(phase == "Defence Phase")
         {
+            if (isTutorialMatch == true && defTutEnabled == false)
+            {
+                defenceTut.SetActive(true);
+                defTutEnabled = true;
+            }
+
             defenceUI.SetActive(true);
 
             attackUI.SetActive(false);
