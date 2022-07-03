@@ -24,10 +24,9 @@ public class DialogueManager : MonoBehaviour
 	private Story story;
 
     [Header("Dialogue UI")]
-	[SerializeField] private TMP_Text playerText = null;
-    [SerializeField] private TMP_Text playerName = null;
-    [SerializeField] private TMP_Text npcText = null;
-    [SerializeField] private TMP_Text npcName = null;
+	[SerializeField] private TMP_Text dialogueText = null;
+    [SerializeField] private TMP_Text npcDialogueText = null;
+    [SerializeField] private TMP_Text npcNameText = null;
 
     [Header("Choice UI")]
     [SerializeField] private Button[] choiceButtons;
@@ -47,42 +46,38 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueStory()
     {
-        string text = "";
-
-        if(story.canContinue)
+        if (story.canContinue)
         {
-            text = story.ContinueMaximally();
+            string currentDialogue = story.Continue();
+
+            if (story.currentTags.Count > 0)
+            {
+                string name = story.currentTags[0] + ":";
+                string npcDialogue = currentDialogue;
+
+                SetNPCDialogue(npcDialogue, name);
+            }
+            else
+            {
+                string playerDialogue = currentDialogue;
+                SetPlayerDialogue(playerDialogue);
+            }
 
             if (story.currentChoices != null)
                 PopulateChoices();
-
-            List<string> tags = story.currentTags;
-
-            if(tags.Count > 0)
-            {
-                if (tags[0] == "The Gaffer")
-                {
-                    npcName.text = tags[0];
-                    SetNPCDialogue(text);
-                }
-
-                if (tags[1] == "Sam")
-                {
-                    playerName.text = tags[1];
-                    SetPlayerDialogue(text);
-                }
-            }
         }
     }
 
-    public void SetPlayerDialogue(string dialogue)
+    public void SetPlayerDialogue(string currentDialogue)
     {
-        playerText.text = dialogue;
+        dialogueText.text = currentDialogue;
+        ContinueStory();
     }
 
-    public void SetNPCDialogue(string dialogue)
+    public void SetNPCDialogue(string currentDialogue, string npcName)
     {
-        npcText.text = dialogue;
+        npcNameText.text = npcName;
+        npcDialogueText.text = currentDialogue;
     }
 
     private void PopulateChoices()
@@ -91,17 +86,24 @@ public class DialogueManager : MonoBehaviour
 
         foreach (Choice choice in story.currentChoices)
         {
-            Debug.Log(choice.index);
-
             choicesText[index].text = choice.text;
             index++;
         }
     }
 
-    public void InputChoice(int choice)
+    public void InputChoice(int choiceIndex)
     {
-        story.ChooseChoiceIndex(choice);
+        story.ChooseChoiceIndex(choiceIndex);
+
+        foreach (TMP_Text choice in choicesText)
+            choice.text = "";
+
         ContinueStory();
+    }
+
+    public void AddBuffs()
+    {
+
     }
 
 }
