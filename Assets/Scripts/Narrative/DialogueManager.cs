@@ -23,14 +23,21 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private TextAsset inkJSONAsset = null;
 	private Story story;
 
+    [Header("Player Stats Ref")]
+    [SerializeField] private Stat playerStats;
+
     [Header("Dialogue UI")]
 	[SerializeField] private TMP_Text dialogueText = null;
     [SerializeField] private TMP_Text npcDialogueText = null;
     [SerializeField] private TMP_Text npcNameText = null;
 
     [Header("Choice UI")]
-    [SerializeField] private Button[] choiceButtons;
     [SerializeField] private TMP_Text[] choicesText;
+
+    [Header("End of Story UI")]
+    [SerializeField] private GameObject endOfStoryScreen;
+    [SerializeField] private TMP_Text egoText;
+    [SerializeField] private TMP_Text tmText;
 
     private void Start()
     {
@@ -66,6 +73,12 @@ public class DialogueManager : MonoBehaviour
             if (story.currentChoices != null)
                 PopulateChoices();
         }
+        else if (!story.canContinue)
+        {
+            EndOfStory();
+            return;
+        }
+
     }
 
     public void SetPlayerDialogue(string currentDialogue)
@@ -103,7 +116,21 @@ public class DialogueManager : MonoBehaviour
 
     public void AddBuffs()
     {
+        string egoStat = story.variablesState["Ego"].ToString();
+        string tmStat = story.variablesState["TeamMorale"].ToString();
 
+        int egoVal = int.Parse(egoStat);
+        int tmVal = int.Parse(tmStat);
+
+        playerStats.egoValue += egoVal;
+        playerStats.teamValue += tmVal;
     }
 
+    public void EndOfStory()
+    {
+        AddBuffs();
+        endOfStoryScreen.SetActive(true);
+        egoText.text = "Your Ego increased to: " + playerStats.egoValue.ToString();
+        tmText.text = "Your Team Morale increased to: " + playerStats.teamValue.ToString();
+    }
 }

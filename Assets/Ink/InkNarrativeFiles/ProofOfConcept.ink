@@ -28,7 +28,7 @@ VAR TeamMorale = 0
                     
                     "You've earnt that much from me Sam, don't let me down." #The Gaffer
                     
-                    
+                    -> Balanced_Buffs
             
             **** "I get it boss but a minor concussion won't stop me from giving you my best."
             
@@ -60,7 +60,7 @@ VAR TeamMorale = 0
             
             **** "I'm don't mean to question the Doc, but I know myself and I can play. I want to be out there for the team."
             
-            "I appreciate that Sam, and I know the team do too. Listen, if you're sure, I'll start you. But the team comes first, and if you're slowing them down, I won't hesitate to pull you out."
+            "I appreciate that Sam, and I know the team do too. Listen, if you're sure, I'll start you. But the team comes first, and if you're slowing them down, I won't hesitate to pull you out." #The Gaffer
             
                 ***** "Absolutely, the last thing I want to do is hold the team back. Thanks for backing me boss."
                 
@@ -73,55 +73,63 @@ VAR TeamMorale = 0
 
 
 == Full_Ego_Buffs ==
-- Ego Increased by 20
-setEgo(20)
-- Team Morale increased by 0
-setTeamMorale(0)
--> Continue
+* ["Laters Boss."]
+    Ego Increased by 20
+    Team Morale increased by 0
+    ~ setEgo(20)
+    ~ setTeamMorale(0)
+    -> Continue
 
 
 == Strong_Ego_Buffs ==
-- Ego Increased by 15
-setEgo(15)
-- Team Morale increased by 5
-setTeamMorale(5)
--> Continue
+* ["See you Boss."]
+    Ego Increased by 15
+    Team Morale increased by 5
+    ~ setEgo(15)
+    ~ setTeamMorale(5)
+    -> Continue
 
 
 == Balanced_Buffs ==
-- Ego Increased by 10
-setEgo(10)
-- Team Morale increased by 10
-setTeamMorale(10)
--> Continue
+* ["Appreciate it Boss, see you."]
+    Ego Increased by 10. <>
+    Team Morale increased by 10.
+    ~ setEgo(10)
+    ~ setTeamMorale(10)
+    -> Continue
 
 
 == Strong_TM_Buffs ==
-- Ego increased by 5
-setEgo(5)
-- Team Morale increased by 15
-setTeamMorale(15)
--> Continue
+* ["Thanks, see you Gaffer."]
+    Ego increased by 5
+    Team Morale increased by 15
+    ~ setEgo(5)
+    ~ setTeamMorale(15)
+    -> Continue
 
 
 == Full_TM_Buffs == 
-- Ego increased by 0
-setEgo(0)
-- Team Morale increased by 20
-setTeamMorale(20)
--> Continue
+* ["Cheers Gaffer! See you."]
+    Ego increased by 0 <>
+    Team Morale increased by 20
+    ~ setEgo(0)
+    ~ setTeamMorale(20)
+    -> Continue
 
 
-==Continue==
-+ Continue
-->->
+== Continue ==
+    * Leave the Room
+        -> End_Story
+
+
+== End_Story ==
+-> END
 
 
 == function setEgo(buff) ==
-Ego = Ego + buff 
+~ Ego = Ego + buff 
 
 
 == function setTeamMorale(buff) ==
-TeamMorale = TeamMorale + buff
-
+~ TeamMorale = TeamMorale + buff
 
