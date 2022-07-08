@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     [Header("UI Elements")]
     public Button storyButton;
     private int storyStatus;
+    public Button matchButton;
 
     void Start()
     {
@@ -27,17 +28,19 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
-        if(storyButton != null)
+        if(storyButton != null && matchButton != null)
         {
             storyStatus = PlayerPrefs.GetInt("Story Completed", 0);
 
             if (storyStatus == 1)
             {
                 storyButton.interactable = false;
+                matchButton.interactable = true;
             }
             else if (storyStatus == 0)
             {
                 storyButton.interactable = true;
+                matchButton.interactable = false;
             }
         }
     }

@@ -1236,6 +1236,7 @@ MonoBehaviour:
   egoValue: {fileID: 481148782}
   tmValue: {fileID: 1126678072}
   storyButton: {fileID: 415980769}
+  matchButton: {fileID: 2123926585}
 --- !u!114 &1298037628
 MonoBehaviour:
   m_ObjectHideFlags: 0
