@@ -17,6 +17,10 @@ public class MainMenu : MonoBehaviour
     private int storyStatus;
     public Button matchButton;
 
+    [Header("Tutorial Elements")]
+    public GameObject tutCanvas1;
+    public GameObject tutCanvas2;
+
     void Start()
     {
         if(playerStats != null)
@@ -36,11 +40,15 @@ public class MainMenu : MonoBehaviour
             {
                 storyButton.interactable = false;
                 matchButton.interactable = true;
+                tutCanvas2.gameObject.SetActive(true);
+                tutCanvas1.gameObject.SetActive(false);
             }
             else if (storyStatus == 0)
             {
                 storyButton.interactable = true;
                 matchButton.interactable = false;
+                tutCanvas1.gameObject.SetActive(true);
+                tutCanvas2.gameObject.SetActive(false);
             }
         }
     }
