@@ -80,6 +80,8 @@ public class MoveController : MonoBehaviour
             }
         }
 
+
+
         GameManager.instance.enemyCombat.PickDefence();
     }
 

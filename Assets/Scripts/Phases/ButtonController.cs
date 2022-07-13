@@ -49,6 +49,8 @@ public class ButtonController : MonoBehaviour
 
     public void OnPress()
     {
+        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
+
         if(thisMove.phase == "Coin Toss")
         {
             moveController.UseCoinTossMove((CoinTossMoves)thisMove);

@@ -20,6 +20,7 @@ MonoBehaviour:
   fatigueCost: 15
   successChance: 20
   criticalSuccess: 0
+  mcDialogue1: 
   timeCost: 50
   minMeterGain: 30
   maxMeterGain: 65

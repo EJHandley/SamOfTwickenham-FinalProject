@@ -6,6 +6,7 @@ public class Moves : ScriptableObject
 {
     new public string name = "New Item";
     public Sprite icon = null;
+    public Sprite movePic = null;
 
     [Header("Phase")]
     public string phase;
@@ -20,6 +21,17 @@ public class Moves : ScriptableObject
     public int fatigueCost;
     public float successChance;
     public float criticalSuccess;
+
+    [Header("Commentator Dialogue")]
+    [Header("Comm Choice 1")]
+    [TextArea(3, 10)] public string MCDialogue1;
+    [TextArea(3, 10)] public string CCDialogue1;
+    [Header("Comm Choice 2")]
+    [TextArea(3, 10)] public string MCDialogue2;
+    [TextArea(3, 10)] public string CCDialogue2;
+    [Header("Comm Choice 3")]
+    [TextArea(3, 10)] public string MCDialogue3;
+    [TextArea(3, 10)] public string CCDialogue3;
 
     public virtual void Use()
     {

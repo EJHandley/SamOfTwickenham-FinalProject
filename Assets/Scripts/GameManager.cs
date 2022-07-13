@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public EnemyCombat enemyCombat;
     public ResourceBars resourceBars;
     public TryNotificationUI tryNotification;
+    public CommentatorDialogue commentatorDialogue;
 
     public TMP_Text phaseText;
 
