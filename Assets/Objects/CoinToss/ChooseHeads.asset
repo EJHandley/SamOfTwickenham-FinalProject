@@ -14,9 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Choose Heads
   icon: {fileID: 0}
+  movePic: {fileID: 0}
   phase: Coin Toss
   type: Choice
   style: Heads
   fatigueCost: 0
   successChance: 0
   criticalSuccess: 0
+  MCDialogue1: test1
+  CCDialogue1: test1
+  MCDialogue2: test2
+  CCDialogue2: test2
+  MCDialogue3: test3
+  CCDialogue3: test3

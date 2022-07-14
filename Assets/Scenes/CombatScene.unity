@@ -11879,7 +11879,7 @@ MonoBehaviour:
   enemyCombat: {fileID: 1709267584}
   resourceBars: {fileID: 1932788074}
   tryNotification: {fileID: 417970383}
-  commentatorDialogue: {fileID: 0}
+  commentatorDialogue: {fileID: 355830092}
   phaseText: {fileID: 7557412}
   playerScoreText: {fileID: 94112240}
   oppoScoreText: {fileID: 580629485}
