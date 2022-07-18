@@ -21,9 +21,23 @@ MonoBehaviour:
   fatigueCost: 0
   successChance: 0
   criticalSuccess: 0
-  MCDialogue1: test1
-  CCDialogue1: test1
-  MCDialogue2: test2
-  CCDialogue2: test2
-  MCDialogue3: test3
-  CCDialogue3: test3
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - Ooooo he chose heads
+  - charName: MC
+    sentences:
+    - WOW he chose heads
+  - charName: MC
+    sentences:
+    - OMG HEADS WTF
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - SMH I cant believe its Heads
+  - charName: CC
+    sentences:
+    - lolol heads
+  - charName: CC
+    sentences:
+    - im bored

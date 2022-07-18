@@ -21,9 +21,16 @@ public class MainMenu : MonoBehaviour
     public GameObject tutCanvas1;
     public GameObject tutCanvas2;
 
+    private void Awake()
+    {
+
+    }
+
     void Start()
     {
-        if(playerStats != null)
+        AudioManager.instance.Play("MainTheme1");
+
+        if (playerStats != null)
         {
             SetStats();
         }

@@ -22,11 +22,9 @@ public class Moves : ScriptableObject
     public float successChance;
     public float criticalSuccess;
 
-    [Header("Main Commentator Dialogue")]
-    public DialogueClass[] MCDialogue;
-
-    [Header("Colour Commentator Dialogue")]
-    public DialogueClass[] CCDialogue;
+    [Header("Dialogue")]
+    public DialogueClass[] MainCommentatorDialogue;
+    public DialogueClass[] ColourCommentatorDialogue;
 
     public virtual void Use()
     {

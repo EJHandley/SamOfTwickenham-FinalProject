@@ -7,8 +7,8 @@ public class Dialogue : MonoBehaviour
 {
     private Queue<string> sentences;
 
-    public TMP_Text nameText;
-    public TMP_Text dialogueText;
+    public TMP_Text mcText;
+    public TMP_Text ccText;
 
     private void Start()
     {
@@ -17,8 +17,6 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue(DialogueClass dialogue)
     {
-        nameText.text = dialogue.charName;
-
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
@@ -26,29 +24,37 @@ public class Dialogue : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplaySentence();
+        if(dialogue.charName == "MC")
+        {
+            DisplaySentence(mcText);
+        }
+        
+        if(dialogue.charName == "CC")
+        {
+            DisplaySentence(ccText);
+        }
     }
 
-    public void DisplaySentence()
+    public void DisplaySentence(TMP_Text text)
     {
-        dialogueText.text = " ";
+        text.text = "";
 
         if (sentences.Count == 0)
             return;
 
         string sentence = sentences.Dequeue();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(sentence, text));
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(string sentence, TMP_Text text)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
 
-        dialogueText.text = "";
+        text.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(0.05f);
+            text.text += letter;
+            yield return new WaitForSeconds(0.025f);
         }
     }
 }

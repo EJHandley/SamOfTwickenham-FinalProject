@@ -14,9 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Choose Tails
   icon: {fileID: 0}
+  movePic: {fileID: 0}
   phase: Coin Toss
   type: Choice
   style: Tails
   fatigueCost: 0
   successChance: 0
   criticalSuccess: 0
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - TAILS
+  - charName: MC
+    sentences:
+    - OMG Tails
+  - charName: MC
+    sentences:
+    - Wooow tails
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Tails whuuuuut
+  - charName: CC
+    sentences:
+    - Hah its tails
+  - charName: CC
+    sentences:
+    - Geez louise papa cheese

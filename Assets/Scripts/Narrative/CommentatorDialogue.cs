@@ -1,14 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class CommentatorDialogue : MonoBehaviour
 {
-    public Dialogue dialogueManager;
-
-    public TMP_Text MCText;
-    public TMP_Text CCText;
+    public DialogueClass[] introDialogue;
 
     void Start()
     {
@@ -21,10 +17,35 @@ public class CommentatorDialogue : MonoBehaviour
 
     }
 
-    public IEnumerator IntroComms()
+    public void StartIntro()
     {
+        StartCoroutine(MCIntroComms());
+    }
 
-        yield return new WaitForSeconds(0.5f);
+    public IEnumerator MCIntroComms()
+    {
+        int index = 0;
+
+        GameManager.instance.dialogueManager.StartDialogue(introDialogue[index]);
+
+        index += 2;
+
+        yield return new WaitForSeconds(1.5f);
+
+        StartCoroutine(CCIntroComms());
+    }
+
+    public IEnumerator CCIntroComms()
+    {
+        int index = 1;
+
+        GameManager.instance.dialogueManager.StartDialogue(introDialogue[index]);
+
+        index += 2;
+
+        yield return new WaitForSeconds(1.5f);
+
+        StartCoroutine(MCIntroComms());
     }
 
     public void MoveDialogue(Moves thisMove)
@@ -32,27 +53,24 @@ public class CommentatorDialogue : MonoBehaviour
         int commChoice = Random.Range(1, 4);
         if(commChoice == 1)
         {
-
+            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[0], thisMove.ColourCommentatorDialogue[0]));
         }
         else if(commChoice == 2)
         {
-
+            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[1], thisMove.ColourCommentatorDialogue[1]));
         }
         else if(commChoice == 3)
         {
-            SetMCDialogue(thisMove.MCDialogue[2]);
-            SetCCDialogue(thisMove.CCDialogue[2]);
+            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[2], thisMove.ColourCommentatorDialogue[2]));
         }
-
     }
 
-    private void SetMCDialogue(DialogueClass dialogue)
+    private IEnumerator SetDialogue(DialogueClass mcDialogue, DialogueClass ccDialogue)
     {
-        dialogueManager.StartDialogue(dialogue);
-    }
+        GameManager.instance.dialogueManager.StartDialogue(mcDialogue);
 
-    private void SetCCDialogue(DialogueClass dialogue)
-    {
-        dialogueManager.StartDialogue(dialogue);
+        yield return new WaitForSeconds(1.5f);
+
+        GameManager.instance.dialogueManager.StartDialogue(ccDialogue);
     }
 }

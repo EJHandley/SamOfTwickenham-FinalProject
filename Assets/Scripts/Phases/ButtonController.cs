@@ -71,4 +71,39 @@ public class ButtonController : MonoBehaviour
             moveController.UseKickMove((KickingMoves)thisMove);
         }
     }
+
+    private IEnumerator UseMove()
+    {
+        //Play Move Animation
+
+        yield return new WaitForSeconds(2f);
+
+        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
+
+        yield return new WaitForSeconds(0.5f);
+
+        if (thisMove.phase == "Coin Toss")
+        {
+            moveController.UseCoinTossMove((CoinTossMoves)thisMove);
+        }
+
+        if (thisMove.phase == "Attack Phase")
+        {
+            moveController.UseAttackMove((AttackMoves)thisMove);
+        }
+
+        if (thisMove.phase == "Defence Phase")
+        {
+            moveController.UseDefenceMove((DefenceMoves)thisMove);
+        }
+
+        if (thisMove.phase == "Kick Phase")
+        {
+            moveController.UseKickMove((KickingMoves)thisMove);
+        }
+
+        yield return new WaitForSeconds(2f);
+
+
+    }
 }

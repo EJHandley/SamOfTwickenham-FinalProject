@@ -25,13 +25,8 @@ MonoBehaviour:
   - charName: 
     sentences: []
   CCDialogue:
-  - charName: MC
+  - charName: 
     sentences: []
-  - charName: CC
-    sentences:
-    - 
-    - ads
-    - ads
   timeCost: 50
   minMeterGain: 30
   maxMeterGain: 65
