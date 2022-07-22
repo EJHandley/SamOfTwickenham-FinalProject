@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
     public GameObject tutCanvas1;
     public GameObject tutCanvas2;
 
+    public bool isMainMenu;
+
     private void Awake()
     {
 
@@ -28,7 +30,10 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        AudioManager.instance.Play("MainTheme1");
+        if(isMainMenu)
+        {
+            AudioManager.instance.Play("MainTheme1");
+        }
 
         if (playerStats != null)
         {
@@ -66,20 +71,9 @@ public class MainMenu : MonoBehaviour
         tmValue.text = playerStats.teamValue.ToString();
     }
 
-    public void StartCombat()
+    public void LoadScene(int scene)
     {
-        SceneManager.LoadScene(1);
-    }
-
-    public void HeadCoach()
-    {
-        SceneManager.LoadScene(2);
-        PlayerPrefs.SetInt("Story Completed", 1);
-    }
-
-    public void ReturnToMainMenu()
-    {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(scene);
     }
 
     public void Reset()

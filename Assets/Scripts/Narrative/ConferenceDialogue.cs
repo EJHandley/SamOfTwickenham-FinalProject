@@ -1,35 +1,35 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 using System;
 using Ink.Runtime;
 using TMPro;
 
-public class DialogueManager : MonoBehaviour
+public class ConferenceDialogue : MonoBehaviour
 {
     #region Singleton
-    private static DialogueManager instance;
-	void Awake()
-	{
-		if (instance != null)
-			Debug.Log("More than one instance of this in the scene");
+    private static ConferenceDialogue instance;
+    void Awake()
+    {
+        if (instance != null)
+            Debug.Log("More than one instance of this in the scene");
 
-		instance = this;
-	}
+        instance = this;
+    }
     #endregion
 
     public static event Action<Story> OnCreateStory;
 
-    [SerializeField] private Dialogue dialogue;
+    private Story story;
 
-    [SerializeField] private TextAsset inkJSONAsset = null;
-	private Story story;
+    [SerializeField] private Dialogue dialogue;
 
     [Header("Player Stats Ref")]
     [SerializeField] private Stat playerStats;
 
     [Header("Dialogue UI")]
-	[SerializeField] private TMP_Text dialogueText = null;
+    [SerializeField] private TMP_Text dialogueText = null;
     [SerializeField] private TMP_Text npcDialogueText = null;
     [SerializeField] private TMP_Text npcNameText = null;
 
@@ -43,15 +43,20 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        story = new Story(inkJSONAsset.text);
 
-        ContinueStory();
     }
 
     private void Update()
     {
-        
+
     }
+
+    public void SetStory(TextAsset newStory)
+    {
+        Debug.Log("Clicked");
+        story = new Story(newStory.text);
+        ContinueStory();
+    }    
 
     private void ContinueStory()
     {
@@ -134,6 +139,5 @@ public class DialogueManager : MonoBehaviour
         endOfStoryScreen.SetActive(true);
         egoText.text = "Your Ego increased to: " + playerStats.egoValue.ToString();
         tmText.text = "Your Team Morale increased to: " + playerStats.teamValue.ToString();
-        PlayerPrefs.SetInt("Story Completed", 1);
     }
 }

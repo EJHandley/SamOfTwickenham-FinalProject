@@ -10,6 +10,8 @@ public class Dialogue : MonoBehaviour
     public TMP_Text mcText;
     public TMP_Text ccText;
 
+    public bool typing;
+
     private void Start()
     {
         sentences = new Queue<string>();
@@ -46,15 +48,15 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(TypeSentence(sentence, text));
     }
 
-    IEnumerator TypeSentence(string sentence, TMP_Text text)
+    public IEnumerator TypeSentence(string sentence, TMP_Text text)
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.1f);
 
         text.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             text.text += letter;
-            yield return new WaitForSeconds(0.025f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
