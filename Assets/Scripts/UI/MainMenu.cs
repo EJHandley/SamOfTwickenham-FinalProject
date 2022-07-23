@@ -4,11 +4,6 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    [Header("Player Stats Ref")]
-    public Stat playerStats;
-    public TMP_Text egoValue;
-    public TMP_Text tmValue;
-
     [Header("UI Elements")]
     public Button storyButton;
     private int storyStatus;
@@ -27,16 +22,10 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        if(isMainMenu)
+        if (isMainMenu)
         {
             AudioManager.instance.Play("MainTheme1");
         }
-
-        if (playerStats != null)
-        {
-            DisplayStats();
-        }
-
     }
 
     void Update()
@@ -60,19 +49,5 @@ public class MainMenu : MonoBehaviour
                 tutCanvas2.gameObject.SetActive(false);
             }
         }
-    }
-
-    public void DisplayStats()
-    {
-        egoValue.text = playerStats.egoValue.ToString();
-        tmValue.text = playerStats.teamValue.ToString();
-    }
-
-    public void Reset()
-    {
-        PlayerPrefs.SetInt("Story Completed", 0);
-        playerStats.egoValue = 0;
-        playerStats.teamValue = 0;
-        DisplayStats();
     }
 }

@@ -22,12 +22,25 @@ public class LevelManager : MonoBehaviour
 
     #endregion
 
+    [Header("Stats Screen Variables")]
+    public PlayerStats playerStats;
+    public GameObject statScreen;
+    public TMP_Text egoValue;
+    public TMP_Text tmValue;
+
+    [Header("Date And Time Variables")]
+    public TMP_Text time;
+    public TMP_Text date;
+
+    [Header("Currency Variables")]
+    public Currency currency;
+    public TMP_Text money;
+
+    [Header("Options Variables")]
     private GameObject pauseMenu;
     private GameObject optionsMenu;
     private AudioMixer audioMixer;
-
     public TMP_Dropdown resolutionDropdown;
-
     private Resolution[] resolutions;
 
     void Start()
@@ -38,6 +51,7 @@ public class LevelManager : MonoBehaviour
         audioMixer = AudioManager.instance.master;
         resolutions = Screen.resolutions;
 
+        SetStats();
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
@@ -71,12 +85,47 @@ public class LevelManager : MonoBehaviour
 
             PauseMenu();
         }
+
+        UpdateDateAndTime();
+        UpdateCurrency();
     }
 
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
     }
+
+    #region InfoBar
+    public void DiplayStats()
+    {
+        statScreen.SetActive(!statScreen.activeSelf);
+    }
+
+    public void SetStats()
+    {
+        egoValue.text = playerStats.egoValue.ToString();
+        tmValue.text = playerStats.teamValue.ToString();
+    }
+
+    public void ResetStats()
+    {
+        PlayerPrefs.SetInt("Story Completed", 0);
+        playerStats.egoValue = 50;
+        playerStats.teamValue = 50;
+        SetStats();
+    }
+
+    private void UpdateDateAndTime()
+    {
+        time.text = System.DateTime.Now.ToString("HH:mm");
+        date.text = System.DateTime.Now.ToString("dd/MM/yy");
+    }
+
+    private void UpdateCurrency()
+    {
+        money.text = "£" + currency.pounds.ToString("00") + "." + currency.pence.ToString("00");
+    }
+    #endregion
 
     #region PauseMenu
     public void PauseMenu()

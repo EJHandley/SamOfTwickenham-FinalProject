@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Stats", menuName = "Objects/PlayerStats")]
 public class PlayerStats : Stat
 {
-
+    public int egoValue;
+    public int teamValue;
 }

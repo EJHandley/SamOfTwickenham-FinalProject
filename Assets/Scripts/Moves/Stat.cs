@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class Stat : ScriptableObject
 {
-    public int egoValue;
-    public int teamValue;
+
 }

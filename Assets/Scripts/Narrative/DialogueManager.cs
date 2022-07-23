@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
 	private Story story;
 
     [Header("Player Stats Ref")]
-    [SerializeField] private Stat playerStats;
+    [SerializeField] private PlayerStats playerStats;
 
     [Header("Dialogue UI")]
 	[SerializeField] private TMP_Text dialogueText = null;

@@ -14,12 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Kick Return
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 0
   phase: Kick Phase
   type: Kick
   style: Return
   fatigueCost: 5
   successChance: 100
   criticalSuccess: 5
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - ABC
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - ABC
   timeCost: 15
   minMeterGain: 5
   maxMeterGain: 10

@@ -4,11 +4,14 @@ using TMPro;
 
 public class CommentatorDialogue : MonoBehaviour
 {
+    public Dialogue dialogue;
     public DialogueClass[] introDialogue;
+
+    public int index = 0;
 
     void Start()
     {
-
+        StartIntro();
     }
 
 
@@ -24,11 +27,12 @@ public class CommentatorDialogue : MonoBehaviour
 
     public IEnumerator MCIntroComms()
     {
-        int index = 0;
+        if (index >= introDialogue.Length)
+            StopAllCoroutines();
 
-        GameManager.instance.dialogueManager.StartDialogue(introDialogue[index]);
+        dialogue.StartDialogue(introDialogue[index]);
 
-        index += 2;
+        index += 1;
 
         yield return new WaitForSeconds(1.5f);
 
@@ -37,11 +41,9 @@ public class CommentatorDialogue : MonoBehaviour
 
     public IEnumerator CCIntroComms()
     {
-        int index = 1;
+        dialogue.StartDialogue(introDialogue[index]);
 
-        GameManager.instance.dialogueManager.StartDialogue(introDialogue[index]);
-
-        index += 2;
+        index += 1;
 
         yield return new WaitForSeconds(1.5f);
 
@@ -67,10 +69,10 @@ public class CommentatorDialogue : MonoBehaviour
 
     private IEnumerator SetDialogue(DialogueClass mcDialogue, DialogueClass ccDialogue)
     {
-        GameManager.instance.dialogueManager.StartDialogue(mcDialogue);
+        dialogue.StartDialogue(mcDialogue);
 
         yield return new WaitForSeconds(1.5f);
 
-        GameManager.instance.dialogueManager.StartDialogue(ccDialogue);
+        dialogue.StartDialogue(ccDialogue);
     }
 }
