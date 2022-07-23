@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Behind The Back Pass
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 60
   phase: Attack Phase
   type: Star
   style: Ground
   fatigueCost: 10
   successChance: 70
   criticalSuccess: 7
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []
   timeCost: 30
   minMeterGain: 10
   maxMeterGain: 20

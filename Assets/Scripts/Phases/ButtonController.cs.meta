@@ -4,7 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - buttonMove: {instanceID: 0}
+  - playerStats: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+  - thisMove: {instanceID: 0}
   executionOrder: 100
   icon: {instanceID: 0}
   userData: 

@@ -8,6 +8,9 @@ public class Moves : ScriptableObject
     public Sprite icon = null;
     public Sprite movePic = null;
 
+    [Header("Unlock Value")]
+    public int unlockValue;
+
     [Header("Phase")]
     public string phase;
 

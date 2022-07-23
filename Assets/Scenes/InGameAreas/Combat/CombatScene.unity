@@ -345,7 +345,19 @@ PrefabInstance:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: e0ce93d394caafa4cb6fd71068137ae2, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isDefence
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2077,7 +2089,15 @@ PrefabInstance:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 7521aee17b05739429ac41c44bc23e10, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isDefence
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2415,6 +2435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mcText: {fileID: 1945664424}
   ccText: {fileID: 445694958}
+  typing: 0
 --- !u!1 &358796249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3008,7 +3029,19 @@ PrefabInstance:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 157ec1c0388b5574c909d4a29d2989a8, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isDefence
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3366,9 +3399,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1477491111}
     m_Modifications:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 47fa64610911c464eb2b42c71234d515, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4253,7 +4298,19 @@ PrefabInstance:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 6a70c13b53e8bf4428c16b91e8f633ab, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isDefence
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4853,9 +4910,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1477491111}
     m_Modifications:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 984a384bc23345d438c83f664a2bc8e5, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8478,9 +8547,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1477491111}
     m_Modifications:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 08a01aee88b4c1e4fad303b7bbb0193e, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10989,7 +11070,19 @@ PrefabInstance:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 38a6ae21aea73dd42956fee616243fa2, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isDefence
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11622,9 +11715,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1477491111}
     m_Modifications:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: f4b5d22fb9241b644964e0f3dafb0ee1, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13498,9 +13603,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1477491111}
     m_Modifications:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 3c50ed4496ef75a48bb5b3986f53d7a0, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14164,7 +14281,19 @@ PrefabInstance:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 49610dc942675cc4d8a948a60caf3f13, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isDefence
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: buttonNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -15936,9 +16065,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1477491111}
     m_Modifications:
     - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: isAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: thisMove
       value: 
-      objectReference: {fileID: 11400000, guid: 1a366fa97f9232c4481f2f1c6f1b36ef, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710489064398545090, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
     - target: {fileID: 4710489064398545096, guid: 0370f450c3c9c4e4389e4d8a995232b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

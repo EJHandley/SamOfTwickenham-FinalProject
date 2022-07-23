@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Mulli- grubber
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 60
   phase: Attack Phase
   type: Team
   style: Kick
   fatigueCost: 15
   successChance: 40
   criticalSuccess: 0
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []
   timeCost: 30
   minMeterGain: 10
   maxMeterGain: 25

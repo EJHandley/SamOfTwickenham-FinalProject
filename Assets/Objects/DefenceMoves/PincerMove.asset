@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: PincerMove
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 60
   phase: Defence Phase
   type: Team
   style: 
   fatigueCost: 15
   successChance: 80
   criticalSuccess: 12
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []
   minMeterStop: 8
   maxMeterStop: 10
   critMinMeterStop: 11

@@ -24,8 +24,8 @@ public class LevelManager : MonoBehaviour
 
     private GameObject pauseMenu;
     private GameObject optionsMenu;
+    private AudioMixer audioMixer;
 
-    public AudioMixer audioMixer;
     public TMP_Dropdown resolutionDropdown;
 
     private Resolution[] resolutions;
@@ -63,6 +63,12 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (optionsMenu.activeSelf)
+            {
+                Options();
+                return;
+            }
+
             PauseMenu();
         }
     }

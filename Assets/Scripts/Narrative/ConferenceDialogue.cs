@@ -19,8 +19,6 @@ public class ConferenceDialogue : MonoBehaviour
     }
     #endregion
 
-    public static event Action<Story> OnCreateStory;
-
     private Story story;
 
     [SerializeField] private Dialogue dialogue;

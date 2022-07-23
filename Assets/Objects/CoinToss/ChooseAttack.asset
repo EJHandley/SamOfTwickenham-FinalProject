@@ -14,9 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Choose Attack
   icon: {fileID: 0}
+  movePic: {fileID: 0}
+  unlockValue: 0
   phase: Coin Toss
   type: Winner
   style: Attack
   fatigueCost: 0
   successChance: 0
   criticalSuccess: 0
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - 123
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - 123

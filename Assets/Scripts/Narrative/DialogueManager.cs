@@ -18,8 +18,6 @@ public class DialogueManager : MonoBehaviour
 	}
     #endregion
 
-    public static event Action<Story> OnCreateStory;
-
     [SerializeField] private Dialogue dialogue;
 
     [SerializeField] private TextAsset inkJSONAsset = null;

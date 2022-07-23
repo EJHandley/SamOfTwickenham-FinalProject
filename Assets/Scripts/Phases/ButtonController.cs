@@ -6,25 +6,62 @@ using TMPro;
 
 public class ButtonController : MonoBehaviour
 {
+    public PlayerStats playerStats;
     private MoveController moveController;
 
     private Tooltip tooltip;
     private Image[] images;
     private TMP_Text text;
+    public Button thisButton;
+
+    [Header("Move Selector Variables")]
+    public int buttonNumber;
+    public bool isAttack;
+    public bool isDefence;
 
     public Moves thisMove;
 
     void Start()
     {
         moveController = GetComponentInParent<MoveController>();
-
-        images = GetComponentsInChildren<Image>();
-        images[1].sprite = thisMove.icon;
-
+        thisButton = GetComponent<Button>();
         text = GetComponentInChildren<TMP_Text>();
-        text.text = thisMove.name;
-
+        images = GetComponentsInChildren<Image>();
         tooltip = GetComponentInChildren<Tooltip>(true);
+
+        if (thisMove == null)
+        {
+            if (MoveSelector.attackMoves.Count == 0 || MoveSelector.defenceMoves.Count == 0)
+                return;
+
+            if (isAttack)
+            {
+                thisMove = MoveSelector.attackMoves[buttonNumber];
+            }
+            else if (isDefence)
+            {
+                thisMove = MoveSelector.defenceMoves[buttonNumber];
+            }
+        }
+
+        if(thisMove.type == "Star")
+        {
+            if(playerStats.egoValue >= thisMove.unlockValue)
+            {
+                thisButton.interactable = true;
+            }
+        }
+
+        if(thisMove.type == "Team")
+        {
+            if(playerStats.teamValue >= thisMove.unlockValue)
+            {
+                thisButton.interactable = true;
+            }
+        }
+
+        images[1].sprite = thisMove.icon;
+        text.text = thisMove.name;
 
         if(thisMove.phase == "Attack Phase")
         {

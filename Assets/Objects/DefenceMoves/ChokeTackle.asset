@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Choke Tackle
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 50
   phase: Defence Phase
   type: Team
   style: 
   fatigueCost: 10
   successChance: 90
   criticalSuccess: 9
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []
   minMeterStop: 3
   maxMeterStop: 5
   critMinMeterStop: 6

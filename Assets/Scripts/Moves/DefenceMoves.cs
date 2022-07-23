@@ -5,9 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Defence Move", menuName = "Moves/Defence Move")]
 public class DefenceMoves : Moves
 {
+    [Header("Meter Changes")]
     public int minMeterStop;
     public int maxMeterStop;
 
+    [Header("Critical Meter Changes")]
     public int critMinMeterStop;
     public int critMaxMeterStop;
 
