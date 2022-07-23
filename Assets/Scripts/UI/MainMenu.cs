@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MainMenu : MonoBehaviour
@@ -37,7 +34,7 @@ public class MainMenu : MonoBehaviour
 
         if (playerStats != null)
         {
-            SetStats();
+            DisplayStats();
         }
 
     }
@@ -65,15 +62,10 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void SetStats()
+    public void DisplayStats()
     {
         egoValue.text = playerStats.egoValue.ToString();
         tmValue.text = playerStats.teamValue.ToString();
-    }
-
-    public void LoadScene(int scene)
-    {
-        SceneManager.LoadScene(scene);
     }
 
     public void Reset()
@@ -81,6 +73,6 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("Story Completed", 0);
         playerStats.egoValue = 0;
         playerStats.teamValue = 0;
-        SetStats();
+        DisplayStats();
     }
 }

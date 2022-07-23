@@ -9,18 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 16843a44303ddd347bfdc2a8f63b726b
   - enabled: 1
-    path: Assets/Scenes/CombatScene.unity
+    path: Assets/Scenes/InGameAreas/Combat/CombatScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/TheClubHouse.unity
+    path: Assets/Scenes/InGameAreas/Clubhouse/TheClubHouse.unity
     guid: be0b248a93250b642a969ac2352e70e4
   - enabled: 1
-    path: Assets/Scenes/TrainingPitch.unity
+    path: Assets/Scenes/InGameAreas/TrainingPitch/TrainingPitch.unity
     guid: b95f55e8c473a874996c9d2bdde707d6
   - enabled: 1
-    path: Assets/Scenes/NarrativeScene.unity
+    path: Assets/Scenes/InGameAreas/ClubShop/TheClubShop.unity
+    guid: 78fc409d69ea4f447b4cd99878a9d6a8
+  - enabled: 1
+    path: Assets/Scenes/InGameAreas/Clubhouse/HeadCoach.unity
     guid: 4de08f07c71fa1c4cb7487d414738c99
   - enabled: 1
-    path: Assets/Scenes/PostMatchPressConference.unity
+    path: Assets/Scenes/InGameAreas/Combat/PostMatchPressConference.unity
     guid: ad50a42762c711a47bbf1ceaaeda7718
   m_configObjects: {}

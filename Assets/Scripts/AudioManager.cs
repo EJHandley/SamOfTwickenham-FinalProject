@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public Sound[] sounds;
+    public AudioMixer master;
 
     public static AudioManager instance;
     public bool mainThemePlaying;
