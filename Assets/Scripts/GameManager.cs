@@ -61,6 +61,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        AudioManager.instance.Play("CrowdNoise1");
+
         currentPlayerScore = 0;
         currentOppoScore = 0;
 

@@ -92,6 +92,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(string scene)
     {
+        AudioManager.instance.Play("ButtonClick");
+
         SceneManager.LoadScene(scene);
     }
 

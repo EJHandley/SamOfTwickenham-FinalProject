@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8463484207466207216
 MonoBehaviour:
@@ -50,6 +50,69 @@ MonoBehaviour:
     volume: 0.2
     pitch: 1
     loop: 1
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: Theme2
+    clip: {fileID: 8300000, guid: a3abab6fa5642e54786027171dbf5c2e, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: Theme3
+    clip: {fileID: 8300000, guid: 961eded20e928ac4f87570ef0a72c786, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: CrowdNoise1
+    clip: {fileID: 8300000, guid: 0ed789b3bcdbf0647b0ab071e66088b7, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: CrowdNoise-Boo
+    clip: {fileID: 8300000, guid: f5457352095d7bf498bed996088e0117, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: CrowdNoise3
+    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: CrowdNoise4
+    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: CrowdNoise5
+    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: CrowdNoise6
+    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
   master: {fileID: 24100000, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
