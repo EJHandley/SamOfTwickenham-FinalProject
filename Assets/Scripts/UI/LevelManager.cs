@@ -125,7 +125,7 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateCurrency()
     {
-        money.text = "£" + currency.pounds.ToString("00") + "." + currency.pence.ToString("00");
+        money.text = "$" + currency.pounds.ToString("00") + "." + currency.pence.ToString("00");
     }
     #endregion
 
