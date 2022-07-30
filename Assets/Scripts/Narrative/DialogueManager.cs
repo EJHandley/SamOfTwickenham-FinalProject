@@ -59,7 +59,7 @@ public class DialogueManager : MonoBehaviour
 
             if (story.currentTags.Count > 0)
             {
-                string name = story.currentTags[0] + ":";
+                string name = story.currentTags[0];
                 string npcDialogue = currentDialogue;
 
                 SetNPCDialogue(npcDialogue, name);
