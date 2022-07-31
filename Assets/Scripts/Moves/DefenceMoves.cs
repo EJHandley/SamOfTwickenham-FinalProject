@@ -13,6 +13,12 @@ public class DefenceMoves : Moves
     public int critMinMeterStop;
     public int critMaxMeterStop;
 
+    [Header("For Buff System")]
+    public int baseMinStop;
+    public int baseMaxStop;
+    public int baseCritMin;
+    public int baseCritMax;
+
     public override void Foul(string user)
     {
         base.Foul(user);

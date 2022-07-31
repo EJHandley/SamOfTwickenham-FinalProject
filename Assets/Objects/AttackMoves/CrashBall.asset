@@ -14,14 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Crash Ball
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 0
   phase: Attack Phase
   type: Normal
   style: Ground
   fatigueCost: 10
   successChance: 100
   criticalSuccess: 15
+  baseFatigue: 10
+  baseSuccess: 100
+  baseCrit: 15
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []
   timeCost: 15
   minMeterGain: 0
   maxMeterGain: 5
   critMinMeterGain: 6
   critMaxMeterGain: 10
+  baseMinGain: 0
+  baseMaxGain: 5
+  baseCritMin: 6
+  baseCritMax: 10

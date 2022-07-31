@@ -14,13 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Ankle Tap
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 0
   phase: Defence Phase
   type: Normal
   style: 
   fatigueCost: 10
   successChance: 100
   criticalSuccess: 10
+  baseFatigue: 10
+  baseSuccess: 100
+  baseCrit: 10
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []
   minMeterStop: 3
   maxMeterStop: 5
   critMinMeterStop: 6
   critMaxMeterStop: 10
+  baseMinStop: 3
+  baseMaxStop: 5
+  baseCritMin: 6
+  baseCritMax: 10

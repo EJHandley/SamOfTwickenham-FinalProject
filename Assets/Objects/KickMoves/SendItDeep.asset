@@ -22,6 +22,9 @@ MonoBehaviour:
   fatigueCost: 0
   successChance: 10
   criticalSuccess: 1
+  baseFatigue: 0
+  baseSuccess: 10
+  baseCrit: 1
   MainCommentatorDialogue:
   - charName: MC
     sentences:

@@ -14,12 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Chase The Kick
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 0
   phase: Kick Phase
   type: Kick
   style: Normal
   fatigueCost: 20
   successChance: 40
   criticalSuccess: 4
+  baseFatigue: 20
+  baseSuccess: 40
+  baseCrit: 4
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []
   timeCost: 15
   minMeterGain: 10
   maxMeterGain: 15

@@ -21,9 +21,15 @@ public class Moves : ScriptableObject
     public string style;
 
     [Header("Move Stats")]
+
     public int fatigueCost;
     public float successChance;
     public float criticalSuccess;
+
+    [Header("For Buff System")]
+    public int baseFatigue;
+    public float baseSuccess;
+    public float baseCrit;
 
     [Header("Dialogue")]
     public DialogueClass[] MainCommentatorDialogue;

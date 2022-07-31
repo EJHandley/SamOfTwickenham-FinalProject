@@ -22,9 +22,16 @@ MonoBehaviour:
   fatigueCost: 10
   successChance: 80
   criticalSuccess: 8
+  baseFatigue: 10
+  baseSuccess: 80
+  baseCrit: 8
   MainCommentatorDialogue: []
   ColourCommentatorDialogue: []
   minMeterStop: 5
   maxMeterStop: 8
   critMinMeterStop: 9
   critMaxMeterStop: 12
+  baseMinStop: 5
+  baseMaxStop: 8
+  baseCritMin: 9
+  baseCritMax: 12

@@ -16,6 +16,12 @@ public class AttackMoves : Moves
     public int critMinMeterGain;
     public int critMaxMeterGain;
 
+    [Header("For Buff System")]
+    public int baseMinGain;
+    public int baseMaxGain;
+    public int baseCritMin;
+    public int baseCritMax;
+
     public override void Turnover(string user)
     {
         base.Turnover(user);

@@ -14,13 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Interception!
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 0
   phase: Defence Phase
   type: Star
   style: Special
   fatigueCost: 20
   successChance: 20
   criticalSuccess: 0
+  baseFatigue: 20
+  baseSuccess: 20
+  baseCrit: 0
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []
   minMeterStop: 0
   maxMeterStop: 0
   critMinMeterStop: 0
   critMaxMeterStop: 0
+  baseMinStop: 0
+  baseMaxStop: 0
+  baseCritMin: 0
+  baseCritMax: 0

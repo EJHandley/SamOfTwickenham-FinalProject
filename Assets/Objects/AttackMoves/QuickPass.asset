@@ -14,14 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Quick Pass
   icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 0
   phase: Attack Phase
   type: Normal
   style: Ground
   fatigueCost: 5
   successChance: 90
   criticalSuccess: 9
+  baseFatigue: 5
+  baseSuccess: 90
+  baseCrit: 9
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []
   timeCost: 20
   minMeterGain: 0
   maxMeterGain: 10
   critMinMeterGain: 11
   critMaxMeterGain: 15
+  baseMinGain: 0
+  baseMaxGain: 10
+  baseCritMin: 11
+  baseCritMax: 15

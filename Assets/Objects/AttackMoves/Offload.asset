@@ -21,7 +21,10 @@ MonoBehaviour:
   style: Ground
   fatigueCost: 10
   successChance: 80
-  criticalSuccess: 12
+  criticalSuccess: 8
+  baseFatigue: 10
+  baseSuccess: 80
+  baseCrit: 8
   MainCommentatorDialogue: []
   ColourCommentatorDialogue: []
   timeCost: 45
@@ -29,3 +32,7 @@ MonoBehaviour:
   maxMeterGain: 15
   critMinMeterGain: 16
   critMaxMeterGain: 20
+  baseMinGain: 5
+  baseMaxGain: 15
+  baseCritMin: 16
+  baseCritMax: 20

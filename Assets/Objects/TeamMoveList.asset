@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c261cb3291604e548a6bd12dfd3375bb, type: 3}
+  m_Name: TeamMoveList
+  m_EditorClassIdentifier: 
+  moves:
+  - {fileID: 11400000, guid: 08a01aee88b4c1e4fad303b7bbb0193e, type: 2}
+  - {fileID: 11400000, guid: f4b5d22fb9241b644964e0f3dafb0ee1, type: 2}
+  - {fileID: 11400000, guid: 3c50ed4496ef75a48bb5b3986f53d7a0, type: 2}
+  - {fileID: 11400000, guid: f77ae3666fd6f804fa70123e351f3519, type: 2}
+  - {fileID: 11400000, guid: 14242236f66c575439e7eb24c7c4e7aa, type: 2}
+  - {fileID: 11400000, guid: 4cace9949f256974c8b0374e54a69992, type: 2}
+  - {fileID: 11400000, guid: db3978d42c07fdd44adda29173b6e8b9, type: 2}
+  - {fileID: 11400000, guid: 6a70c13b53e8bf4428c16b91e8f633ab, type: 2}
+  - {fileID: 11400000, guid: acd267d4ce7e8b2459b355a3e7df5e67, type: 2}

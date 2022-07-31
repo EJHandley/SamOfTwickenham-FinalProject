@@ -22,6 +22,9 @@ MonoBehaviour:
   fatigueCost: 20
   successChance: 35
   criticalSuccess: 0
+  baseFatigue: 20
+  baseSuccess: 35
+  baseCrit: 0
   MainCommentatorDialogue: []
   ColourCommentatorDialogue: []
   timeCost: 45
@@ -29,3 +32,7 @@ MonoBehaviour:
   maxMeterGain: 30
   critMinMeterGain: 0
   critMaxMeterGain: 0
+  baseMinGain: 15
+  baseMaxGain: 30
+  baseCritMin: 0
+  baseCritMax: 0

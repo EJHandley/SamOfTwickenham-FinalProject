@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviour
     #endregion
 
     [Header("Stats Screen Variables")]
+    public BuffManager buffManager;
     public PlayerStats playerStats;
     public GameObject statScreen;
     public TMP_Text egoValue;
@@ -114,6 +115,7 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("Story Completed", 0);
         playerStats.egoValue = 50;
         playerStats.teamValue = 50;
+        buffManager.StatCheck();
         SetStats();
     }
 

@@ -9,8 +9,6 @@ public class MoveController : MonoBehaviour
         
     }
 
-
-
     void Update()
     {
         
