@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CrashBall
   m_EditorClassIdentifier: 
   name: Crash Ball
-  icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  icon: {fileID: 21300000, guid: 8137c68c1f7dccb42bf026481f5b2147, type: 3}
   movePic: {fileID: 0}
   unlockValue: 0
   phase: Attack Phase

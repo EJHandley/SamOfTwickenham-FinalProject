@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ChaseTheKick
   m_EditorClassIdentifier: 
   name: Chase The Kick
-  icon: {fileID: 21300000, guid: 89a6ca80231e2114884b7fb3a54cd09a, type: 3}
+  icon: {fileID: 21300000, guid: 058140e6774c58c4886207625dd932e8, type: 3}
   movePic: {fileID: 0}
   unlockValue: 0
   phase: Kick Phase
