@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/InGameAreas/Clubhouse/ScoutTeam.unity
     guid: 6c96de25d9d07f44db363140bd04d562
   - enabled: 1
-    path: Assets/Scenes/InGameAreas/Clubhouse/TacticsBoard.unity
+    path: Assets/Scenes/InGameAreas/Clubhouse/AssistantCoach.unity
     guid: ffc7975da9f379249857fc0c529629dd
   - enabled: 1
     path: Assets/Scenes/InGameAreas/Clubhouse/HeadCoach.unity

@@ -1416,6 +1416,14 @@ PrefabInstance:
       value: LogoSound
       objectReference: {fileID: 0}
     - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a2cb186928bdc254992484c0f105580f, type: 3}
+    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
+      propertyPath: sounds.Array.data[4].name
+      value: ButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
       propertyPath: sounds.Array.data[10].clip
       value: 
       objectReference: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
@@ -1433,6 +1441,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
       propertyPath: sounds.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
+      propertyPath: sounds.Array.data[4].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
