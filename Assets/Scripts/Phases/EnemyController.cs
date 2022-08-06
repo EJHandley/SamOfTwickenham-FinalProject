@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("The Opposition Used " + enemyMove.name);
 
-        GameManager.instance.resourceBars.SetTime(enemyMove.timeCost);
+        GameManager.instance.timeManager.SetTime(enemyMove.timeCost);
 
         int successCheck = Random.Range(1, 101);
 
@@ -117,7 +117,7 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("The Opposition Used " + enemyMove.name);
 
-        GameManager.instance.resourceBars.SetTime(enemyMove.timeCost);
+        GameManager.instance.timeManager.SetTime(enemyMove.timeCost);
 
         int successCheck = Random.Range(1, 101);
 

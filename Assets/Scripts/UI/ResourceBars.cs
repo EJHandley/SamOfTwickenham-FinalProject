@@ -14,49 +14,15 @@ public class ResourceBars : MonoBehaviour
 
     public TMP_Text indicator;
 
-    private float time = 0f;
-    public TMP_Text timeText;
-
-    private bool halfTimeTriggered = false;
-    private bool fullTimeTriggered = false;
-
     void Start()
     {
         startingMeters = 50;
         startingFatigue = 100;
-
-        SetTime(time);
     }
 
     void Update()
     {
 
-    }
-
-    public void SetTime(float currentTime)
-    {
-        if(time >= 2400f && halfTimeTriggered == false)
-        {
-            time = 2400f;
-            GameManager.instance.HalfTime();
-            halfTimeTriggered = true;
-            return;
-        }
-
-        if(time >= 4800f && fullTimeTriggered == false)
-        {
-            time = 4800f;
-            GameManager.instance.FullTime();
-            fullTimeTriggered = true;
-            return;
-        }
-
-        time += currentTime;
-
-        float minutes = Mathf.FloorToInt(time / 60);
-        float seconds = Mathf.FloorToInt(time % 60);
-
-        timeText.text = string.Format("{00:00}:{01:00}", minutes, seconds);
     }
 
     public void ChangeMeters(string user, int addMeters)
@@ -105,6 +71,11 @@ public class ResourceBars : MonoBehaviour
             currentFatigue = Mathf.Clamp(startingFatigue -= minusFatigue, 0, 100);
 
             fatigueFill.value = currentFatigue;
+
+            if(currentFatigue == 0)
+            {
+                //TURNOVER
+            }
         }
         else if(user == "Enemy")
         {

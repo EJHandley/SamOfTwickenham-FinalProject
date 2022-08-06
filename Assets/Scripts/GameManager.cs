@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TryNotificationUI tryNotification;
     public Dialogue dialogueManager;
     public CommentatorDialogue commentatorDialogue;
+    public TimeManager timeManager;
 
     public TMP_Text phaseText;
 
@@ -35,13 +36,13 @@ public class GameManager : MonoBehaviour
     public GameObject attackTut;
     public GameObject defenceTut;
 
-    private int currentPlayerScore;
-    private int currentOppoScore;
+    [HideInInspector] public int currentPlayerScore;
+    [HideInInspector] public int currentOppoScore;
 
     public bool isTutorialMatch;
     private bool attTutEnabled = false;
     private bool defTutEnabled = false;
-    private bool coinTossWon = false;
+    [HideInInspector] public bool coinTossWon = false;
 
 
 
@@ -246,24 +247,5 @@ public class GameManager : MonoBehaviour
     public void ChangePhaseText(string phase)
     {
         phaseText.text = phase;
-    }
-
-    public void HalfTime()
-    {
-        Debug.Log("Half Time");
-
-        if(coinTossWon == true)
-        {
-            ChangePhase("Kicking Phase");
-        }
-        else
-        {
-            ChangePhase("Kick Return");
-        }
-    }
-
-    public void FullTime()
-    {
-        Debug.Log("Full Time");
     }
 }

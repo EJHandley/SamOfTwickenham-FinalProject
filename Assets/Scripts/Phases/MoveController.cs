@@ -29,7 +29,7 @@ public class MoveController : MonoBehaviour
 
     public void UseAttackMove(AttackMoves thisMove)
     {
-        GameManager.instance.resourceBars.SetTime(thisMove.timeCost);
+        GameManager.instance.timeManager.SetTime(thisMove.timeCost);
 
         int successCheck = Random.Range(1, 101);
 
@@ -114,7 +114,7 @@ public class MoveController : MonoBehaviour
     {
         Debug.Log("You Used " + thisMove.name);
         
-        GameManager.instance.resourceBars.SetTime(thisMove.timeCost);
+        GameManager.instance.timeManager.SetTime(thisMove.timeCost);
 
         int successCheck = Random.Range(1, 101);
 
