@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -17,10 +18,6 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text playerScoreText;
     public TMP_Text oppoScoreText;
-    public TMP_Text tryScoredText;
-
-    public TMP_Text playerMatchText;
-    public TMP_Text oppoMatchText;
 
     [Header("UI Elements")]
     public GameObject coinTossUI;
@@ -44,7 +41,9 @@ public class GameManager : MonoBehaviour
     private bool defTutEnabled = false;
     [HideInInspector] public bool coinTossWon = false;
 
-
+    [Header("Move Splash UI")]
+    public GameObject moveSplash;
+    public Image moveImage;
 
     #region Singleton
     public static GameManager instance;
@@ -197,6 +196,7 @@ public class GameManager : MonoBehaviour
             kickingUI.SetActive(false);
             kickReturnUI.SetActive(false);
             coinTossUI.SetActive(false);
+            coinTossWonUI.SetActive(false);
 
             ChangePhaseText(phase);
         }
@@ -215,6 +215,7 @@ public class GameManager : MonoBehaviour
             kickingUI.SetActive(false);
             kickReturnUI.SetActive(false);
             coinTossUI.SetActive(false);
+            coinTossWonUI.SetActive(false);
 
             ChangePhaseText(phase);
         }
@@ -227,6 +228,7 @@ public class GameManager : MonoBehaviour
             defenceUI.SetActive(false);
             kickReturnUI.SetActive(false);
             coinTossUI.SetActive(false);
+            coinTossWonUI.SetActive(false);
 
             ChangePhaseText(phase);
         }
@@ -239,6 +241,7 @@ public class GameManager : MonoBehaviour
             defenceUI.SetActive(false);
             kickingUI.SetActive(false);
             coinTossUI.SetActive(false);
+            coinTossWonUI.SetActive(false);
 
             ChangePhaseText(phase);
         }
@@ -247,5 +250,21 @@ public class GameManager : MonoBehaviour
     public void ChangePhaseText(string phase)
     {
         phaseText.text = phase;
+    }
+
+    public void TestSplash(Moves move)
+    {
+        StartCoroutine(SplashUI(move));
+    }
+
+    public IEnumerator SplashUI(Moves thisMove)
+    {
+        moveSplash.SetActive(true);
+        moveImage.sprite = thisMove.movePic;
+        Debug.Log("TEST");
+
+        yield return new WaitForSeconds(4f);
+
+        moveSplash.SetActive(false);
     }
 }

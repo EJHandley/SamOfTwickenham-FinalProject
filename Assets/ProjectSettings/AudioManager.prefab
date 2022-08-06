@@ -122,5 +122,19 @@ MonoBehaviour:
     loop: 1
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
+  - name: Whistle_HalfTime
+    clip: {fileID: 8300000, guid: 0d0db7a83f85cc34aadf472b3bae9856, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: Whistle_FullTime
+    clip: {fileID: 8300000, guid: 2a1a1b042ec0f224cacbcd15e23039df, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
   master: {fileID: 24100000, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
   mainThemePlaying: 0

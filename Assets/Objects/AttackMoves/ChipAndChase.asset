@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Chip and Chase
   icon: {fileID: 21300000, guid: 2814025e7d989544b96e9d30f8a39e86, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: 856bed6250a1f0c459aaf459a7c63273, type: 3}
   unlockValue: 70
   phase: Attack Phase
   type: Star
@@ -27,7 +27,7 @@ MonoBehaviour:
   baseCrit: 0
   MainCommentatorDialogue: []
   ColourCommentatorDialogue: []
-  timeCost: 45
+  timeCost: 120
   minMeterGain: 20
   maxMeterGain: 35
   critMinMeterGain: 0

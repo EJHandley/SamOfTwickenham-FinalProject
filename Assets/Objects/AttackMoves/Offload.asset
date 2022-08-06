@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Offload
   icon: {fileID: 21300000, guid: a6e3ba710730de643b51a5773d254680, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: dbe3daee2c6118d43984f5454fdc7cff, type: 3}
   unlockValue: 50
   phase: Attack Phase
   type: Team
@@ -27,7 +27,7 @@ MonoBehaviour:
   baseCrit: 8
   MainCommentatorDialogue: []
   ColourCommentatorDialogue: []
-  timeCost: 45
+  timeCost: 90
   minMeterGain: 5
   maxMeterGain: 15
   critMinMeterGain: 16

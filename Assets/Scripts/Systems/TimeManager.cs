@@ -10,21 +10,22 @@ public class TimeManager : MonoBehaviour
 
     public TMP_Text timeText;
 
-    public Image halfTimeSplash;
-    public Image fullTimeSplash;
+    public Sprite halfTimeSplash;
+    public Sprite fullTimeSplash;
 
     public GameObject splashScreen;
     public Image splashScreenImage;
     public TMP_Text splashHomeScore;
     public TMP_Text splashAwayScore;
 
+    public Button halfTimeContinue;
+    public Button fullTimeContinue;
+
     private bool halfTimeTriggered = false;
     private bool fullTimeTriggered = false;
 
     void Start()
     {
-        splashScreenImage = splashScreen.GetComponent<Image>();
-
         SetTime(time);
     }
 
@@ -66,18 +67,21 @@ public class TimeManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         splashScreen.SetActive(true);
-        splashScreenImage = halfTimeSplash;
+        splashScreenImage.sprite = halfTimeSplash;
         splashHomeScore.text = GameManager.instance.currentPlayerScore.ToString();
         splashAwayScore.text = GameManager.instance.currentOppoScore.ToString();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
 
-        splashScreen.SetActive(false);
+        halfTimeContinue.interactable = true;
+    }
+
+    public void StartSecondHalf()
+    {
         splashScreenImage = null;
         splashHomeScore.text = "";
         splashAwayScore.text = "";
-
-        yield return new WaitForSeconds(1f);
+        splashScreen.SetActive(false);
 
         if (GameManager.instance.coinTossWon == true)
         {
@@ -92,7 +96,7 @@ public class TimeManager : MonoBehaviour
     public void FullTime()
     {
         int playerScore = int.Parse(GameManager.instance.playerScoreText.text);
-        int oppoScore = int.Parse(GameManager.instance.oppoMatchText.text);
+        int oppoScore = int.Parse(GameManager.instance.oppoScoreText.text);
 
         if (playerScore > oppoScore)
         {

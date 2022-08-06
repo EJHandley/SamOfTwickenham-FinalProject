@@ -11,7 +11,7 @@ public class CommentatorDialogue : MonoBehaviour
 
     void Start()
     {
-        StartIntro();
+
     }
 
 
@@ -28,7 +28,7 @@ public class CommentatorDialogue : MonoBehaviour
     public IEnumerator MCIntroComms()
     {
         if (index >= introDialogue.Length)
-            StopAllCoroutines();
+            StopCoroutine(MCIntroComms());
 
         dialogue.StartDialogue(introDialogue[index]);
 

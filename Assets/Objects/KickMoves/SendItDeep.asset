@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Send It Deep
   icon: {fileID: 21300000, guid: 1a74c03e548055a4a9dfcff87d4815a5, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: 4d4ed7ddcd7490847b4c6ae311c838a6, type: 3}
   unlockValue: 0
   phase: Kick Phase
   type: Kick

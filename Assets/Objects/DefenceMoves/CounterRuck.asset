@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: CounterRuck
   icon: {fileID: 21300000, guid: bbb7734eb737b314fbb248f068580148, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: 975c5bc53a5c7e34abf721eaf3b56d1e, type: 3}
   unlockValue: 70
   phase: Defence Phase
   type: Team

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Crash Ball
   icon: {fileID: 21300000, guid: 8137c68c1f7dccb42bf026481f5b2147, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: 5e650585a67c76241b89d073d00ad1c3, type: 3}
   unlockValue: 0
   phase: Attack Phase
   type: Normal
@@ -25,9 +25,15 @@ MonoBehaviour:
   baseFatigue: 10
   baseSuccess: 100
   baseCrit: 15
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
-  timeCost: 15
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - asd
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - asd
+  timeCost: 60
   minMeterGain: 0
   maxMeterGain: 5
   critMinMeterGain: 6

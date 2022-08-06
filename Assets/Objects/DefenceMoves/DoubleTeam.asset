@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: DoubleTeam
   icon: {fileID: 21300000, guid: edc36d45e73c7d54689ff2f5b0e9ef64, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: 4a0547717a9dc534cb422b3e80094838, type: 3}
   unlockValue: 50
   phase: Defence Phase
   type: Team

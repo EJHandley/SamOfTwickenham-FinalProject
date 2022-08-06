@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wrap Tackle
   icon: {fileID: 21300000, guid: 5bc4cb6520a451149bf4cb2699dbfc6c, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: c9c36fbc31cafd24290610e3f5c110e4, type: 3}
   unlockValue: 0
   phase: Defence Phase
   type: Normal

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: PincerMove
   icon: {fileID: 21300000, guid: ad5c1d482072182478826f5f0640e961, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: 63600a44989592a45bfacfab8d72ef91, type: 3}
   unlockValue: 60
   phase: Defence Phase
   type: Team

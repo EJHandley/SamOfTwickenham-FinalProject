@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Kick Return
   icon: {fileID: 21300000, guid: 8296042d4d60d184db007a1216a47b1b, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: 526587ef7c3a84e4f9c6b4791490901f, type: 3}
   unlockValue: 0
   phase: Kick Phase
   type: Kick

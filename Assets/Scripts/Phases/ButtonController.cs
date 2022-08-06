@@ -86,38 +86,17 @@ public class ButtonController : MonoBehaviour
 
     public void OnPress()
     {
-        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
-
-        if(thisMove.phase == "Coin Toss")
-        {
-            moveController.UseCoinTossMove((CoinTossMoves)thisMove);
-        }
-
-        if(thisMove.phase == "Attack Phase")
-        {
-            moveController.UseAttackMove((AttackMoves)thisMove);
-        }
-
-        if(thisMove.phase == "Defence Phase")
-        {
-            moveController.UseDefenceMove((DefenceMoves)thisMove);
-        }
-
-        if(thisMove.phase == "Kick Phase")
-        {
-            moveController.UseKickMove((KickingMoves)thisMove);
-        }
+        StartCoroutine(UseMove());
     }
 
     private IEnumerator UseMove()
     {
-        //Play Move Animation
+        if (thisMove.movePic != null)
+        {
+            StartCoroutine(GameManager.instance.SplashUI(thisMove));
 
-        yield return new WaitForSeconds(2f);
-
-        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
-
-        yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(4f);
+        }
 
         if (thisMove.phase == "Coin Toss")
         {
@@ -140,7 +119,35 @@ public class ButtonController : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
+    }
 
+    private void HoldVoid()
+    {
+        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
 
+        if (thisMove.movePic != null)
+        {
+            StartCoroutine(GameManager.instance.SplashUI(thisMove));
+        }
+
+        if (thisMove.phase == "Coin Toss")
+        {
+            moveController.UseCoinTossMove((CoinTossMoves)thisMove);
+        }
+
+        if (thisMove.phase == "Attack Phase")
+        {
+            moveController.UseAttackMove((AttackMoves)thisMove);
+        }
+
+        if (thisMove.phase == "Defence Phase")
+        {
+            moveController.UseDefenceMove((DefenceMoves)thisMove);
+        }
+
+        if (thisMove.phase == "Kick Phase")
+        {
+            moveController.UseKickMove((KickingMoves)thisMove);
+        }
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Garryowen
   icon: {fileID: 21300000, guid: 59bd622a60845014abc95b347ea6a414, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: d081970ead931e64d991fb1fa7daf084, type: 3}
   unlockValue: 70
   phase: Attack Phase
   type: Team
@@ -27,7 +27,7 @@ MonoBehaviour:
   baseCrit: 0
   MainCommentatorDialogue: []
   ColourCommentatorDialogue: []
-  timeCost: 45
+  timeCost: 90
   minMeterGain: 15
   maxMeterGain: 30
   critMinMeterGain: 0

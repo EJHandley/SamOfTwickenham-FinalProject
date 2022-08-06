@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Dump Tackle
   icon: {fileID: 21300000, guid: 78cbf06e8bc301d4097d77bdc385775b, type: 3}
-  movePic: {fileID: 0}
+  movePic: {fileID: 21300000, guid: 48c9fe4e9cbd0b54a8458b3cb25ac1a4, type: 3}
   unlockValue: 50
   phase: Defence Phase
   type: Star
