@@ -44,8 +44,16 @@ public class LevelManager : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     private Resolution[] resolutions;
 
+    [Header("Level Audio")]
+    public string sceneAudio;
+
     void Start()
     {
+        if(sceneAudio != null)
+        {
+            AudioManager.instance.Play(sceneAudio);
+        }
+
         pauseMenu = transform.Find("PauseMenu").gameObject;
         optionsMenu = transform.Find("Options").gameObject;
 

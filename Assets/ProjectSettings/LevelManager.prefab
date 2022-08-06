@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &82602368
 Transform:
   m_ObjectHideFlags: 0
@@ -6631,6 +6631,7 @@ MonoBehaviour:
   currency: {fileID: 11400000, guid: 1ffbe23704163c244aa33caf4af3f7f4, type: 2}
   money: {fileID: 1956096280}
   resolutionDropdown: {fileID: 6092184309871253010}
+  sceneAudio: PressConfAudio
 --- !u!1 &6092184310668202906
 GameObject:
   m_ObjectHideFlags: 0

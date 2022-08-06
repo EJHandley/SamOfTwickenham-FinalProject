@@ -115,5 +115,12 @@ MonoBehaviour:
     loop: 0
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
+  - name: PressConfAudio
+    clip: {fileID: 8300000, guid: 0537e6500eb862b41aee6d398055af91, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
   master: {fileID: 24100000, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
   mainThemePlaying: 0

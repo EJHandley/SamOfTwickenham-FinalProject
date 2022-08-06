@@ -13,14 +13,18 @@ MonoBehaviour:
   m_Name: ChooseHeads
   m_EditorClassIdentifier: 
   name: Choose Heads
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3305ecf8c90b9844e829b6a013cf1cc7, type: 3}
   movePic: {fileID: 0}
+  unlockValue: 0
   phase: Coin Toss
   type: Choice
   style: Heads
   fatigueCost: 0
   successChance: 0
   criticalSuccess: 0
+  baseFatigue: 0
+  baseSuccess: 0
+  baseCrit: 0
   MainCommentatorDialogue:
   - charName: MC
     sentences:
