@@ -13,8 +13,6 @@ public class MainMenu : MonoBehaviour
     public GameObject tutCanvas1;
     public GameObject tutCanvas2;
 
-    public bool isMainMenu;
-
     private void Awake()
     {
 
@@ -22,10 +20,7 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        if (isMainMenu)
-        {
-            AudioManager.instance.Play("MainTheme1");
-        }
+
     }
 
     void Update()
@@ -38,16 +33,27 @@ public class MainMenu : MonoBehaviour
             {
                 storyButton.interactable = false;
                 matchButton.interactable = true;
-                tutCanvas2.gameObject.SetActive(true);
-                tutCanvas1.gameObject.SetActive(false);
             }
             else if (storyStatus == 0)
             {
                 storyButton.interactable = true;
                 matchButton.interactable = false;
+            }
+        }
+
+        if(PlayerPrefs.GetInt("Tutorials Enabled", 0) == 1)
+        {
+            if(PlayerPrefs.GetInt("Story Completed", 0) == 1)
+            {
+                tutCanvas2.gameObject.SetActive(true);
+                tutCanvas1.gameObject.SetActive(false);
+            }
+            else if(PlayerPrefs.GetInt("Story Completed", 0) == 1)
+            {
                 tutCanvas1.gameObject.SetActive(true);
                 tutCanvas2.gameObject.SetActive(false);
             }
+
         }
     }
 }

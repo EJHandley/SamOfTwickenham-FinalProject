@@ -625,7 +625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 268, y: -449}
+  m_AnchoredPosition: {x: 283, y: -663}
   m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305873545
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9af5104a58a3b564f9129c7ca62e8374, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eaeafca5629700b49a53c4162712daeb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1840,7 +1840,6 @@ MonoBehaviour:
   matchButton: {fileID: 2123926585}
   tutCanvas1: {fileID: 163361077}
   tutCanvas2: {fileID: 1973228233}
-  isMainMenu: 0
 --- !u!114 &1298037628
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,6 +22,9 @@ public class LevelManager : MonoBehaviour
 
     #endregion
 
+    [Header("Tutorial Variables")]
+    public bool tutorialsEnabled;
+
     [Header("Stats Screen Variables")]
     public BuffManager buffManager;
     public PlayerStats playerStats;
@@ -104,6 +107,26 @@ public class LevelManager : MonoBehaviour
         AudioManager.instance.Play("ButtonClick");
 
         SceneManager.LoadScene(scene);
+    }
+
+    public void TutorialsEnabled(bool isTrue)
+    {
+        tutorialsEnabled = isTrue;
+        SetTutorialOn();
+    }
+
+    public void SetTutorialOn()
+    {
+        if(!tutorialsEnabled)
+        {
+            PlayerPrefs.SetInt("Tutorials Enabled", 0);
+            Debug.Log(PlayerPrefs.GetInt("Tutorials Enabled", 0).ToString());
+        }
+        else if(tutorialsEnabled)
+        {
+            PlayerPrefs.SetInt("Tutorials Enabled", 1);
+            Debug.Log(PlayerPrefs.GetInt("Tutorials Enabled", 0).ToString());
+        }
     }
 
     #region InfoBar
