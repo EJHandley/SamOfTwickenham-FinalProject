@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1397
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 45
+  controlID: 141
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 46
+  controlID: 45
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 47
+  controlID: 46
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 59
+  controlID: 105
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -459,9 +459,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 00440100
-      m_LastClickedID: 82944
-      m_ExpandedIDs: f044feff584cfeffe04ffeff1256feffd85afefff660feff3c6bfeff8e7bfeff967bfeff4e7ffeff587ffeff5c7ffeffbc80feff8081feff0285feffec91feffa895feffbe96fefff899feff029dfeffb0a0feffb4a3feff22a7feff30aafeff0ab4feff4ab7feff82bafeffaabdfeffb2c0feffdac3feff12c7feff96cafeff38cefeffec08ffffdc0cffff1610ffffe415ffff7619ffff8028ffff162cffff8c3bffff943effff9054fffffe63ffff9872ffffb474ffffb277fffffca4ffff70a5fffff0abffffecadffff14b1ffff94b4ffffa2b7ffff90bbfffff2d1ffff3ad7ffff96dcffff9ae0ffffa4e3ffff86ecffffd6ecfffffaf0ffff24fbfffff4ffffff86610000906100000a7f00001a7f0000227f0000467f0000507f0000627f0000a47f00000080000018800000288000003c810000848100008c8100007c82000096820000128300005a83000062830000f08300003884000090840000aa8400001885000028850000c09b0000009d0000949d0000b0cd0000fccd00003ace0000a6d00000b6d0000002d200004ed200008cd20000fad4000086d50000c0d50000ced5000058d90000b0d90000ead90000f8d9000044da00005eda00006ada00009ada0000920201004e070100700701007807010080070100880701009a070100ac070100b6070100c8070100560d0100660d0100ae0d0100dc0d0100d40e01007a0f01000a1001001e100100381001006811010070110100dc1101005c320100743201001a3c0100323c0100423c0100004401003e44010056440100
+      m_SelectedIDs: 427d0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6acaffffbccdffff2ad1ffffaed4ffff30d8ffffd8e6ffff2aeaffff7eedffffaef0ffff96f6ffff24fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1255,22 +1255,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/InGameAreas/Reception
+    - Assets/Ink/InkNarrativeFiles
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes/InGameAreas/Reception
+  - Assets/Ink/InkNarrativeFiles
   m_LastFoldersGridSize: -1
   m_LastProjectPath: U:\Unity\Projects\SamOfTwickenham-FinalProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 268}
-    m_SelectedIDs: 5e600000
-    m_LastClickedID: 24670
-    m_ExpandedIDs: 00000000d65e0000d85e0000da5e0000dc5e0000de5e0000e05e0000e25e0000e45e0000e65e0000e85e0000ea5e0000ec5e0000ee5e0000f05e0000f25e0000f45e0000f65e0000f85e0000fa5e00000c5f0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 74590000
+    m_LastClickedID: 22900
+    m_ExpandedIDs: 00000000d8580000da580000dc580000de580000e0580000e2580000e4580000e6580000e8580000ea580000ec580000f0580000f2580000f4580000f6580000f858000032590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1298,7 +1298,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d65e0000d85e0000da5e0000dc5e0000de5e0000e05e0000e25e0000e45e0000e65e0000e85e0000ea5e0000ec5e0000ee5e0000f05e0000f25e0000f45e0000f65e0000f85e0000fa5e0000
+    m_ExpandedIDs: 00000000d8580000da580000dc580000de580000e0580000e2580000e4580000e6580000e8580000ea580000ec580000ee580000f0580000f2580000f4580000f6580000f8580000fa580000fc580000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

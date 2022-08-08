@@ -1,7 +1,6 @@
 VAR Ego = 0
 VAR TeamMorale = 0
 
-
 "Come in!" #The Gaffer
 
  * "Hey boss, I was hoping I could talk to you about my injury..." 

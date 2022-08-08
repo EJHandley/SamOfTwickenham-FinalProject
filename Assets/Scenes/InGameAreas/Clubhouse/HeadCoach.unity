@@ -322,6 +322,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6092184310633262402, guid: d928227e3a008b544b510489d2c3a329, type: 3}
+      propertyPath: sceneAudio
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6092184310633262403, guid: d928227e3a008b544b510489d2c3a329, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -701,7 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 930721708}
-  inkJSONAsset: {fileID: 4900000, guid: cc4dc158a82f1e04f82569675e0c47f7, type: 3}
+  inkJSONAsset: {fileID: 4900000, guid: a4e02997e538db64aac701344669ff78, type: 3}
   playerStats: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
   dialogueText: {fileID: 1810180061}
   npcDialogueText: {fileID: 1818677603}
