@@ -46,8 +46,6 @@ public class MoveSelectorUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        Debug.Log("TEST");
-
         images = this.GetComponentsInChildren<Image>();
         images[1].sprite = setMove.icon;
 

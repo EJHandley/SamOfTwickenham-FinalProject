@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using TMPro;
 
 public class LevelManager : MonoBehaviour
@@ -24,6 +25,11 @@ public class LevelManager : MonoBehaviour
 
     [Header("Tutorial Variables")]
     public bool tutorialsEnabled;
+
+    [Header("UI Elements")]
+    public Button coachButton;
+    public Button matchButton;
+    private int storyStatus;
 
     [Header("Stats Screen Variables")]
     public BuffManager buffManager;
@@ -52,7 +58,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if(sceneAudio != null)
+        if(sceneAudio != "")
         {
             AudioManager.instance.Play(sceneAudio);
         }
@@ -97,6 +103,34 @@ public class LevelManager : MonoBehaviour
 
             PauseMenu();
         }
+
+
+        storyStatus = PlayerPrefs.GetInt("Story Completed", 0);
+
+        if(matchButton != null)
+        {
+            if (storyStatus == 1)
+            {
+                matchButton.interactable = true;
+            }
+            else if (storyStatus == 0)
+            {
+                matchButton.interactable = false;
+            }
+        }
+
+        if(coachButton != null)
+        {
+            if (storyStatus == 1)
+            {
+                coachButton.interactable = false;
+            }
+            else if (storyStatus == 0)
+            {
+                coachButton.interactable = true;
+            }
+        }
+
 
         UpdateDateAndTime();
         UpdateCurrency();

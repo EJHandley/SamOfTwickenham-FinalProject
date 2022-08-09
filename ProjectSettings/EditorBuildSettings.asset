@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/InGameAreas/SplashScreen.unity
     guid: c046f8fe12711174398e4e3da7580a18
   - enabled: 1
+    path: Assets/Scenes/InGameAreas/IntroSequence.unity
+    guid: 028060b391f868d489e73c0eabcc7e35
+  - enabled: 1
     path: Assets/Scenes/InGameAreas/Reception/MainMenu.unity
     guid: 16843a44303ddd347bfdc2a8f63b726b
   - enabled: 1

@@ -564,7 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -616,6 +616,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 82602367, guid: d928227e3a008b544b510489d2c3a329, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168771113, guid: d928227e3a008b544b510489d2c3a329, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1400234112}
     - target: {fileID: 6092184310551306938, guid: d928227e3a008b544b510489d2c3a329, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TutorialsEnabled
@@ -672,6 +680,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6092184311221217094, guid: d928227e3a008b544b510489d2c3a329, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1400234112}
+    - target: {fileID: 6092184311269310109, guid: d928227e3a008b544b510489d2c3a329, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1400234112}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d928227e3a008b544b510489d2c3a329, type: 3}
@@ -1018,7 +1034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1116,7 +1132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.015686275, g: 0.015686275, b: 0.015686275, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1178,6 +1194,7 @@ MonoBehaviour:
   twickenham: {fileID: 987048943}
   ballKick: {fileID: 554386041}
   start: {fileID: 1898303533}
+  tutorial: {fileID: 1638842013}
 --- !u!4 &938967678
 Transform:
   m_ObjectHideFlags: 0
@@ -1245,7 +1262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1618,52 +1635,8 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[3].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 952295578b49cd64d84a142195d4bd75, type: 3}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[3].name
-      value: LogoSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: a2cb186928bdc254992484c0f105580f, type: 3}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[4].name
-      value: ButtonClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[10].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[10].name
-      value: LogoNoise
-      objectReference: {fileID: 0}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[10].mixer
-      value: 
-      objectReference: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[10].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
       propertyPath: sounds.Array.data[3].volume
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8463484207466207216, guid: 9bb2c7bbba699664f9be71e9730eddd6, type: 3}
-      propertyPath: sounds.Array.data[10].volume
-      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2077,7 +2050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1638842014
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2369,7 +2342,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMenu
+          m_StringArgument: IntroSequence
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1898303536
@@ -2385,7 +2358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0.7882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -132,6 +132,5 @@ public class IntroDialogue : MonoBehaviour
         endOfStoryScreen.SetActive(true);
         egoText.text = "Your Ego increased to: " + playerStats.egoValue.ToString();
         tmText.text = "Your Team Morale increased to: " + playerStats.teamValue.ToString();
-        PlayerPrefs.SetInt("Story Completed", 1);
     }
 }

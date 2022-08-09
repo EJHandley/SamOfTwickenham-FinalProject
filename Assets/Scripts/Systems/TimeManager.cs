@@ -18,8 +18,10 @@ public class TimeManager : MonoBehaviour
     public TMP_Text splashHomeScore;
     public TMP_Text splashAwayScore;
 
-    public Button halfTimeContinue;
-    public Button fullTimeContinue;
+    public GameObject halfTimeContinue;
+    public Button halfTimeContinueButton;
+    public GameObject fullTimeContinue;
+    public Button fullTimeContinueButton;
 
     private bool halfTimeTriggered = false;
     private bool fullTimeTriggered = false;
@@ -73,7 +75,8 @@ public class TimeManager : MonoBehaviour
 
         yield return new WaitForSeconds(4f);
 
-        halfTimeContinue.interactable = true;
+        halfTimeContinue.SetActive(true);
+        halfTimeContinueButton.interactable = true;
     }
 
     public void StartSecondHalf()

@@ -19,6 +19,7 @@ public class SplashScreen : MonoBehaviour
 
     [Header("Button")]
     public GameObject start;
+    public GameObject tutorial;
 
     void Start()
     {
@@ -53,10 +54,12 @@ public class SplashScreen : MonoBehaviour
 
     public IEnumerator PlayTitle()
     {
+
         background.SetBool("Play", true);
 
         yield return new WaitForSeconds(1f);
 
+        AudioManager.instance.Play("MainTheme");
         sam.SetBool("Play", true);
 
         yield return new WaitForSeconds(1f);
@@ -74,6 +77,7 @@ public class SplashScreen : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         start.SetActive(true);
+        tutorial.SetActive(true);
     }
 
     public void StartGame()
