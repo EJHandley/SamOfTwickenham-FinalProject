@@ -7,47 +7,71 @@ public class CommentatorDialogue : MonoBehaviour
     public Dialogue dialogue;
     public DialogueClass[] introDialogue;
 
+    [Header("Animations")]
+    public Animator mc_anim;
+    public Animator cc_anim;
+
+    public bool wait = false;
     public int index = 0;
 
     void Start()
     {
-
+        StartIntro();
     }
 
 
     void Update()
     {
-
+        while (dialogue.typing == true)
+        {
+            wait = true;
+        }
     }
 
     public void StartIntro()
     {
-        StartCoroutine(MCIntroComms());
+        StartCoroutine(IntroComms());
     }
 
-    public IEnumerator MCIntroComms()
+    public IEnumerator IntroComms()
     {
-        if (index >= introDialogue.Length)
-            StopCoroutine(MCIntroComms());
+        if(mc_anim.GetBool("Start") != true)
+        {
+            mc_anim.SetBool("Start", true);
+        }
+
+        yield return new WaitForSeconds(1.5f);
+
+        if (introDialogue.Length == index)
+        {
+            Debug.Log(index);
+            Debug.Log(introDialogue.Length);
+            mc_anim.SetBool("End", true);
+            cc_anim.SetBool("End", true);
+            StopCoroutine(IntroComms());
+        }
 
         dialogue.StartDialogue(introDialogue[index]);
 
         index += 1;
 
+        yield return new WaitWhile(() => wait);
+
         yield return new WaitForSeconds(1.5f);
 
-        StartCoroutine(CCIntroComms());
+        StartCoroutine(ContinueIntro());
     }
 
-    public IEnumerator CCIntroComms()
+    public IEnumerator ContinueIntro()
     {
-        dialogue.StartDialogue(introDialogue[index]);
-
-        index += 1;
+        if(cc_anim.GetBool("Start") != true)
+        {
+            cc_anim.SetBool("Start", true);
+        }
 
         yield return new WaitForSeconds(1.5f);
 
-        StartCoroutine(MCIntroComms());
+        StartCoroutine(IntroComms());
     }
 
     public void MoveDialogue(Moves thisMove)
@@ -69,10 +93,17 @@ public class CommentatorDialogue : MonoBehaviour
 
     private IEnumerator SetDialogue(DialogueClass mcDialogue, DialogueClass ccDialogue)
     {
+        mc_anim.SetBool("Start", true);
         dialogue.StartDialogue(mcDialogue);
 
         yield return new WaitForSeconds(1.5f);
 
+        cc_anim.SetBool("Start", true);
         dialogue.StartDialogue(ccDialogue);
+
+        yield return new WaitForSeconds(2f);
+
+        mc_anim.SetBool("End", true);
+        cc_anim.SetBool("End", true);
     }
 }

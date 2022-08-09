@@ -28,27 +28,32 @@ public class Dialogue : MonoBehaviour
 
         if(dialogue.charName == "MC")
         {
-            DisplaySentence(mcText);
+            DisplayNextSentence(mcText, "MC");
         }
         
         if(dialogue.charName == "CC")
         {
-            DisplaySentence(ccText);
+            DisplayNextSentence(ccText, "CC");
         }
     }
 
-    public void DisplaySentence(TMP_Text text)
+    public void DisplayNextSentence(TMP_Text text, string name)
     {
-        text.text = "";
+        typing = true;
 
         if (sentences.Count == 0)
+        {
+            typing = false;
             return;
+        }
+
+        text.text = "";
 
         string sentence = sentences.Dequeue();
-        StartCoroutine(TypeSentence(sentence, text));
+        StartCoroutine(TypeSentence(sentence, text, name));
     }
 
-    public IEnumerator TypeSentence(string sentence, TMP_Text text)
+    public IEnumerator TypeSentence(string sentence, TMP_Text text, string name)
     {
         yield return new WaitForSeconds(0.1f);
 
@@ -57,6 +62,18 @@ public class Dialogue : MonoBehaviour
         {
             text.text += letter;
             yield return new WaitForSeconds(0.01f);
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        if (name == "MC")
+        {
+            DisplayNextSentence(mcText, "MC");
+        }
+
+        if (name == "CC")
+        {
+            DisplayNextSentence(ccText, "CC");
         }
     }
 }

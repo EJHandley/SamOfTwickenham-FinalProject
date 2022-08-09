@@ -83,14 +83,14 @@ public class IntroDialogue : MonoBehaviour
 
     public void SetPlayerDialogue(string currentDialogue)
     {
-        StartCoroutine(dialogue.TypeSentence(currentDialogue, dialogueText));
+        StartCoroutine(dialogue.TypeSentence(currentDialogue, dialogueText, "Player"));
         ContinueStory();
     }
 
     public void SetNPCDialogue(string currentDialogue, string npcName)
     {
-        StartCoroutine(dialogue.TypeSentence(npcName, npcNameText));
-        StartCoroutine(dialogue.TypeSentence(currentDialogue, npcDialogueText));
+        StartCoroutine(dialogue.TypeSentence(npcName, npcNameText, "NPC"));
+        StartCoroutine(dialogue.TypeSentence(currentDialogue, npcDialogueText, "NPC"));
     }
 
     private void PopulateChoices()

@@ -80,8 +80,15 @@ MonoBehaviour:
     loop: 0
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
-  - name: CrowdNoise-Boo
+  - name: CrowdNoise1
     clip: {fileID: 8300000, guid: f5457352095d7bf498bed996088e0117, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: CrowdNoise2
+    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
@@ -94,21 +101,14 @@ MonoBehaviour:
     loop: 0
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
-  - name: CrowdNoise4
+  - name: CrowdNoise-Cheer
     clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
-  - name: CrowdNoise5
-    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
-    volume: 0.3
-    pitch: 1
-    loop: 0
-    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
-    source: {fileID: 0}
-  - name: CrowdNoise6
+  - name: CrowdNoise-Boo
     clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
     volume: 0.3
     pitch: 1
