@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db00973689b4ddb41b2711006f043865, type: 3}
   m_Name: ChooseDefend
   m_EditorClassIdentifier: 
-  name: Choose Defend
-  icon: {fileID: 0}
+  name: Defend First
+  icon: {fileID: 21300000, guid: be220f4bd1c90fb40b8e5493a1182b83, type: 3}
+  movePic: {fileID: 0}
+  unlockValue: 0
   phase: Coin Toss
   type: Winner
   style: Defend
   fatigueCost: 0
   successChance: 0
   criticalSuccess: 0
+  baseFatigue: 0
+  baseSuccess: 0
+  baseCrit: 0
+  MainCommentatorDialogue: []
+  ColourCommentatorDialogue: []

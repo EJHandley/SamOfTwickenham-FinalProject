@@ -22,10 +22,7 @@ public class CommentatorDialogue : MonoBehaviour
 
     void Update()
     {
-        while (dialogue.typing == true)
-        {
-            wait = true;
-        }
+
     }
 
     public void StartIntro()
@@ -55,9 +52,7 @@ public class CommentatorDialogue : MonoBehaviour
 
         index += 1;
 
-        yield return new WaitWhile(() => wait);
-
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitWhile(() => dialogue.typing);
 
         StartCoroutine(ContinueIntro());
     }
@@ -76,6 +71,12 @@ public class CommentatorDialogue : MonoBehaviour
 
     public void MoveDialogue(Moves thisMove)
     {
+        if(thisMove.phase == "Coin Toss")
+        {
+            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[0], thisMove.ColourCommentatorDialogue[0]));
+            return;
+        }
+
         int commChoice = Random.Range(1, 4);
         if(commChoice == 1)
         {

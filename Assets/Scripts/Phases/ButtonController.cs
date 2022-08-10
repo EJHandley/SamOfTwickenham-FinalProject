@@ -91,6 +91,8 @@ public class ButtonController : MonoBehaviour
 
     private IEnumerator UseMove()
     {
+        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
+
         if (thisMove.movePic != null)
         {
             StartCoroutine(GameManager.instance.SplashUI(thisMove));

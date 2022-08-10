@@ -10,7 +10,7 @@ public class Dialogue : MonoBehaviour
     public TMP_Text mcText;
     public TMP_Text ccText;
 
-    public bool typing;
+    public bool typing = false;
 
     private void Start()
     {

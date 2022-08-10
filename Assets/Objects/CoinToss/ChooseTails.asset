@@ -28,20 +28,10 @@ MonoBehaviour:
   MainCommentatorDialogue:
   - charName: MC
     sentences:
-    - TAILS
-  - charName: MC
-    sentences:
-    - OMG Tails
-  - charName: MC
-    sentences:
-    - Wooow tails
+    - And it looks like Twickenham have chosen...
+    - Tails.
   ColourCommentatorDialogue:
   - charName: CC
     sentences:
-    - Tails whuuuuut
-  - charName: CC
-    sentences:
-    - Hah its tails
-  - charName: CC
-    sentences:
-    - Geez louise papa cheese
+    - I always went tails during my career...
+    - I reckon I won about 50% of the time.
