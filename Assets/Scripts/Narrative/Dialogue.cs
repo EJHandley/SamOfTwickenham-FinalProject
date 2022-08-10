@@ -44,6 +44,7 @@ public class Dialogue : MonoBehaviour
         if (sentences.Count == 0)
         {
             typing = false;
+            text.text = "";
             return;
         }
 

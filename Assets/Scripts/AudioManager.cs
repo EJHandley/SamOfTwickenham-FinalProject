@@ -30,6 +30,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     public bool mainThemePlaying;
 
+    public string currentlyPlaying;
+
     void Awake()
     {
         if (instance == null)
@@ -80,5 +82,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+        currentlyPlaying = s.name;
     }
 }

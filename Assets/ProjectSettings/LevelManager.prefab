@@ -3018,7 +3018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 0.8862745}
+  m_Color: {r: 0.38431373, g: 0.5411765, b: 0.7921569, a: 0.8862745}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6622,6 +6622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialsEnabled: 0
+  coachButton: {fileID: 0}
+  matchButton: {fileID: 0}
   buffManager: {fileID: 458123441}
   playerStats: {fileID: 11400000, guid: 1414782f468a69641b7566772ed38cf6, type: 2}
   statScreen: {fileID: 560022153}

@@ -32,27 +32,21 @@ public class CommentatorDialogue : MonoBehaviour
 
     public void ResetAnims()
     {
-        mc_anim.SetBool("Start", false);
-        cc_anim.SetBool("Start", false);
-        mc_anim.SetBool("End", false);
-        cc_anim.SetBool("End", false);
+        mc_anim.SetTrigger("Default");
+        cc_anim.SetTrigger("Default");
     }
 
     public IEnumerator IntroComms()
     {
-        if(mc_anim.GetBool("Start") != true)
-        {
-            mc_anim.SetBool("Start", true);
-        }
+        mc_anim.SetTrigger("Start");
 
         yield return new WaitForSeconds(1f);
 
         if (introDialogue.Length == index)
         {
-            Debug.Log(index);
-            Debug.Log(introDialogue.Length);
-            mc_anim.SetBool("End", true);
-            cc_anim.SetBool("End", true);
+            Debug.Log("Narrative Ended");
+            mc_anim.SetTrigger("End");
+            cc_anim.SetTrigger("End");
             StopCoroutine(IntroComms());
         }
 
@@ -67,10 +61,7 @@ public class CommentatorDialogue : MonoBehaviour
 
     public IEnumerator ContinueIntro()
     {
-        if(cc_anim.GetBool("Start") != true)
-        {
-            cc_anim.SetBool("Start", true);
-        }
+        cc_anim.SetTrigger("Start");
 
         yield return new WaitForSeconds(0.1f);
 
@@ -104,19 +95,19 @@ public class CommentatorDialogue : MonoBehaviour
     {
         ResetAnims();
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
 
-        mc_anim.SetBool("Start", true);
+        mc_anim.SetTrigger("Start");
         dialogue.StartDialogue(mcDialogue);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitWhile(() => dialogue.typing);
 
-        cc_anim.SetBool("Start", true);
+        cc_anim.SetTrigger("Start");
         dialogue.StartDialogue(ccDialogue);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitWhile(() => dialogue.typing);
 
-        mc_anim.SetBool("End", true);
-        cc_anim.SetBool("End", true);
+        mc_anim.SetTrigger("End");
+        cc_anim.SetTrigger("End");
     }
 }

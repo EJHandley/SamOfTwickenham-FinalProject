@@ -60,7 +60,10 @@ public class LevelManager : MonoBehaviour
     {
         if(sceneAudio != "")
         {
-            AudioManager.instance.Play(sceneAudio);
+            if(AudioManager.instance.currentlyPlaying != sceneAudio)
+            {
+                AudioManager.instance.Play(sceneAudio);
+            }
         }
 
         pauseMenu = transform.Find("PauseMenu").gameObject;
@@ -114,6 +117,14 @@ public class LevelManager : MonoBehaviour
                 matchButton.interactable = true;
             }
             else if (storyStatus == 0)
+            {
+                matchButton.interactable = false;
+            }
+        }
+
+        if(matchButton != null)
+        {
+            if(MoveSelector.attackMoves.Count < 6 || MoveSelector.defenceMoves.Count < 6)
             {
                 matchButton.interactable = false;
             }

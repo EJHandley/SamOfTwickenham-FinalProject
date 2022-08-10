@@ -81,35 +81,28 @@ MonoBehaviour:
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
   - name: CrowdNoise1
-    clip: {fileID: 8300000, guid: f5457352095d7bf498bed996088e0117, type: 3}
+    clip: {fileID: 8300000, guid: 0ed789b3bcdbf0647b0ab071e66088b7, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
   - name: CrowdNoise2
-    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
-    volume: 0.3
-    pitch: 1
-    loop: 0
-    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
-    source: {fileID: 0}
-  - name: CrowdNoise3
-    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
+    clip: {fileID: 8300000, guid: 823614a7c3f422f4d93527e817a57cc5, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
   - name: CrowdNoise-Cheer
-    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
+    clip: {fileID: 8300000, guid: 204ee448e4cc61d45bee28394079819d, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
   - name: CrowdNoise-Boo
-    clip: {fileID: 8300000, guid: 25a5a50ff089c7043a2298cca32b85c4, type: 3}
+    clip: {fileID: 8300000, guid: f5457352095d7bf498bed996088e0117, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
@@ -131,6 +124,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Whistle_FullTime
     clip: {fileID: 8300000, guid: 2a1a1b042ec0f224cacbcd15e23039df, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
+  - name: Whistle_Foul
+    clip: {fileID: 8300000, guid: c4f67e4fc10701f4ebb0a4e656a5661a, type: 3}
     volume: 0.75
     pitch: 1
     loop: 0
