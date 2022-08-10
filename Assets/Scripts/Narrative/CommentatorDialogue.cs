@@ -30,6 +30,14 @@ public class CommentatorDialogue : MonoBehaviour
         StartCoroutine(IntroComms());
     }
 
+    public void ResetAnims()
+    {
+        mc_anim.SetBool("Start", false);
+        cc_anim.SetBool("Start", false);
+        mc_anim.SetBool("End", false);
+        cc_anim.SetBool("End", false);
+    }
+
     public IEnumerator IntroComms()
     {
         if(mc_anim.GetBool("Start") != true)
@@ -37,7 +45,7 @@ public class CommentatorDialogue : MonoBehaviour
             mc_anim.SetBool("Start", true);
         }
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
 
         if (introDialogue.Length == index)
         {
@@ -64,7 +72,7 @@ public class CommentatorDialogue : MonoBehaviour
             cc_anim.SetBool("Start", true);
         }
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.1f);
 
         StartCoroutine(IntroComms());
     }
@@ -94,6 +102,10 @@ public class CommentatorDialogue : MonoBehaviour
 
     private IEnumerator SetDialogue(DialogueClass mcDialogue, DialogueClass ccDialogue)
     {
+        ResetAnims();
+
+        yield return new WaitForSeconds(0.1f);
+
         mc_anim.SetBool("Start", true);
         dialogue.StartDialogue(mcDialogue);
 
