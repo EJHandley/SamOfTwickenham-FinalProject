@@ -84,7 +84,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0ed789b3bcdbf0647b0ab071e66088b7, type: 3}
     volume: 0.3
     pitch: 1
-    loop: 0
+    loop: 1
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
   - name: CrowdNoise2
@@ -136,5 +136,13 @@ MonoBehaviour:
     loop: 0
     mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
     source: {fileID: 0}
+  - name: NonCombatSceneNoise
+    clip: {fileID: 8300000, guid: 513c21d35b958d949af3f6993bd8535e, type: 3}
+    volume: 0.107
+    pitch: 1
+    loop: 1
+    mixer: {fileID: 24300002, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
+    source: {fileID: 0}
   master: {fileID: 24100000, guid: a4c2c3a1f77f20042b94542637e7e8b6, type: 2}
   mainThemePlaying: 0
+  currentlyPlaying: 
