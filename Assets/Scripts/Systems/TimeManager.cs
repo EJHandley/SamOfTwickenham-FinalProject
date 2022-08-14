@@ -123,6 +123,7 @@ public class TimeManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
+        ConferenceDialogue.gameWon = true;
         LevelManager.instance.LoadScene("PostMatchPressConference");
     }
 
@@ -130,6 +131,7 @@ public class TimeManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
+        ConferenceDialogue.gameWon = false;
         LevelManager.instance.LoadScene("PostMatchPressConference");
     }
 

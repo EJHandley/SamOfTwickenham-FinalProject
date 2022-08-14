@@ -21,6 +21,8 @@ public class ConferenceDialogue : MonoBehaviour
 
     private Story story;
 
+    public static bool gameWon;
+
     [SerializeField] private Dialogue dialogue;
 
     [Header("Player Stats Ref")]

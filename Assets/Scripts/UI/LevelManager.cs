@@ -58,14 +58,6 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if(sceneAudio != "")
-        {
-            if(AudioManager.instance.currentlyPlaying != sceneAudio)
-            {
-                AudioManager.instance.Play(sceneAudio);
-            }
-        }
-
         pauseMenu = transform.Find("PauseMenu").gameObject;
         optionsMenu = transform.Find("Options").gameObject;
 
@@ -142,6 +134,17 @@ public class LevelManager : MonoBehaviour
             }
         }
 
+        if(sceneAudio != "")
+        {
+            Debug.Log("Playing: " + AudioManager.currentlyPlaying);
+
+            if (AudioManager.currentlyPlaying != sceneAudio)
+            {
+                LoadAudio();
+            }
+        }
+
+
 
         UpdateDateAndTime();
         UpdateCurrency();
@@ -152,6 +155,14 @@ public class LevelManager : MonoBehaviour
         AudioManager.instance.Play("ButtonClick");
 
         SceneManager.LoadScene(scene);
+    }
+
+    public void LoadAudio()
+    {
+        Debug.Log("Now Playing: " + AudioManager.currentlyPlaying);
+
+        AudioManager.instance.StopPlaying(AudioManager.currentlyPlaying);
+        AudioManager.instance.Play(sceneAudio);
     }
 
     public void TutorialsEnabled(bool isTrue)

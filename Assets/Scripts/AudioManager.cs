@@ -28,9 +28,8 @@ public class AudioManager : MonoBehaviour
     public AudioMixer master;
 
     public static AudioManager instance;
-    public bool mainThemePlaying;
 
-    public string currentlyPlaying;
+    public static string currentlyPlaying;
 
     void Awake()
     {
@@ -63,6 +62,8 @@ public class AudioManager : MonoBehaviour
 
     public void StopPlaying(string sound)
     {
+        Debug.Log(sound);
+
         Sound s = Array.Find(sounds, item => item.name == sound);
         if (s == null)
         {
@@ -82,6 +83,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
-        currentlyPlaying = s.name;
+
+        if(s.source.loop == true)
+        {
+            currentlyPlaying = name;
+        }
     }
 }

@@ -296,6 +296,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6092184310633262402, guid: d928227e3a008b544b510489d2c3a329, type: 3}
+      propertyPath: sceneAudio
+      value: PressConfAudio
+      objectReference: {fileID: 0}
     - target: {fileID: 6092184310633262403, guid: d928227e3a008b544b510489d2c3a329, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -1048,6 +1052,30 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 899894159}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetStory
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConferenceDialogue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4900000, guid: 4c3d029ac598b214a9fa6434209f7f91, type: 3}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.TextAsset, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4982774609670588162, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1481,6 +1509,30 @@ PrefabInstance:
     - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 899894159}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetStory
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConferenceDialogue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4900000, guid: e69bfa7ca49bfed499344224a34d29ca, type: 3}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.TextAsset, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4982774609670588162, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
       propertyPath: m_Pivot.x
@@ -3533,7 +3585,7 @@ PrefabInstance:
     - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 4900000, guid: caf45c6d45847f946a400fae0b73cf2b, type: 3}
+      objectReference: {fileID: 4900000, guid: a45ae418430d7dc44b9ce0d6779a513a, type: 3}
     - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.TextAsset, UnityEngine
@@ -4002,6 +4054,30 @@ PrefabInstance:
     - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 899894159}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetStory
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConferenceDialogue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4900000, guid: 8f6959edf35b41343932600b1ee620a4, type: 3}
+    - target: {fileID: 2705484883246807127, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.TextAsset, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4982774609670588162, guid: 470166551e3f69c4daa1a29d4ee08b44, type: 3}
       propertyPath: m_Pivot.x
