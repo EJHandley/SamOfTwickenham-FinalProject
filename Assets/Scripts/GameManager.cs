@@ -44,12 +44,14 @@ public class GameManager : MonoBehaviour
     [Header("Move Splash UI")]
     public GameObject moveSplash;
     public Image moveImage;
+    public GameObject _animation;
 
     [Header("Foul, Turnover and Recovery Methods")]
     public Moves foul;
 
     public GameObject combatFeedbackBox;
     public Transform feedbackArea;
+    public List<GameObject> boxes = new List<GameObject>();
 
     #region Singleton
     public static GameManager instance;
@@ -121,23 +123,23 @@ public class GameManager : MonoBehaviour
 
         if (choice == 0 && coinToss <= 50)
         {
-            Debug.Log("You chose Heads and it's Heads!");
+            SetMoveFeedback("you won the toss!", "Player");
             ChangePhase("Coin Toss Won");
         }
         else if (choice == 0 && coinToss > 50)
         {
-            Debug.Log("You chose Heads but it's Tails!");
+            SetMoveFeedback("you lost the toss!", "Player");
             ChangePhase("Coin Toss Lost");
         }
 
         if (choice == 1 && coinToss <= 50)
         {
-            Debug.Log("You chose Tails but it's Heads!");
+            SetMoveFeedback("you lost the toss!", "Player");
             ChangePhase("Coin Toss Lost");
         }
         else if (choice == 1 && coinToss > 50)
         {
-            Debug.Log("You chose Tails and it's Tails!");
+            SetMoveFeedback("you won the toss!", "Player");
             ChangePhase("Coin Toss Won");
         }
     }
@@ -253,9 +255,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetMoveFeedback(string info)
+    public void SetMoveFeedback(string info, string id)
     {
-        Instantiate(combatFeedbackBox, feedbackArea);
+        while (boxes.Count >= 5)
+        {
+            Destroy(boxes[0]);
+            boxes.Remove(boxes[0]);
+        }
+
+        GameObject feedbackBox = Instantiate(combatFeedbackBox, feedbackArea);
+        boxes.Add(feedbackBox);
+
+        TMP_Text feedbackText = feedbackBox.GetComponentInChildren<TMP_Text>();
+        Image[] teamID = feedbackBox.GetComponentsInChildren<Image>();
+
+        feedbackText.text = info;
+        if(id == "Player")
+        {
+            teamID[1].color = new Color32(73,194,255,255);
+        } else
+        {
+            teamID[1].color = new Color32(126,56,35,255);
+        }
     }
 
     public void ChangePhaseText(string phase)
@@ -263,19 +284,17 @@ public class GameManager : MonoBehaviour
         phaseText.text = phase;
     }
 
-    public void TestSplash(Moves move)
-    {
-        StartCoroutine(SplashUI(move));
-    }
-
     public IEnumerator SplashUI(Moves thisMove)
     {
+        _animation.SetActive(true);
+        VideoController.instance.Play(thisMove.moveAnimation);
         moveSplash.SetActive(true);
         moveImage.sprite = thisMove.movePic;
-        Debug.Log("TEST");
+
 
         yield return new WaitForSeconds(4f);
 
+        _animation.SetActive(false);
         moveSplash.SetActive(false);
     }
 

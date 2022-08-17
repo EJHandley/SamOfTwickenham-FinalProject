@@ -7,6 +7,7 @@ public class Moves : ScriptableObject
     new public string name = "New Item";
     public Sprite icon = null;
     public Sprite movePic = null;
+    public string moveAnimation = "";
 
     [Header("Unlock Value")]
     public int unlockValue;

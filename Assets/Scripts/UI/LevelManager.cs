@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
     #endregion
 
     [Header("Tutorial Variables")]
-    public bool tutorialsEnabled;
+    public static bool tutorialsEnabled;
 
     [Header("UI Elements")]
     public Button coachButton;
@@ -145,8 +145,6 @@ public class LevelManager : MonoBehaviour
 
         if(sceneAudio != "")
         {
-            Debug.Log("Playing: " + AudioManager.currentlyPlaying);
-
             if (AudioManager.currentlyPlaying != sceneAudio)
             {
                 LoadAudio();
@@ -168,8 +166,6 @@ public class LevelManager : MonoBehaviour
 
     public void LoadAudio()
     {
-        Debug.Log("Now Playing: " + AudioManager.currentlyPlaying);
-
         AudioManager.instance.StopPlaying(AudioManager.currentlyPlaying);
         AudioManager.instance.Play(sceneAudio);
     }
@@ -177,7 +173,6 @@ public class LevelManager : MonoBehaviour
     public void TutorialsEnabled(bool isTrue)
     {
         tutorialsEnabled = isTrue;
-        SetTutorialOn();
     }
 
     public void SetTutorialOn()

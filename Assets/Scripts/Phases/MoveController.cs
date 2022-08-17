@@ -18,11 +18,13 @@ public class MoveController : MonoBehaviour
     {
         if(thisMove.type == "Choice")
         {
+            GameManager.instance.SetMoveFeedback("you " + thisMove.name, "Player");
             GameManager.instance.CoinTossChoice(thisMove.style);
         }
 
         if(thisMove.type == "Winner")
         {
+            GameManager.instance.SetMoveFeedback("you chose to " + thisMove.name, "Player");
             GameManager.instance.CoinTossWon(thisMove.style);
         }
     }
@@ -31,7 +33,7 @@ public class MoveController : MonoBehaviour
     {
         GameManager.instance.timeManager.SetTime(thisMove.timeCost);
 
-        GameManager.instance.SetMoveFeedback(thisMove.name);
+        GameManager.instance.SetMoveFeedback("you used " + thisMove.name, "Player");
 
         int successCheck = Random.Range(1, 101);
 
@@ -41,7 +43,7 @@ public class MoveController : MonoBehaviour
 
             if (successCheck > thisMove.successChance)
             {
-                Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
+                GameManager.instance.SetMoveFeedback("move failed! you turned the ball over", "Player");
                 thisMove.Turnover("Player");
                 return;
             }
@@ -50,34 +52,33 @@ public class MoveController : MonoBehaviour
             {
                 int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
                 GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
-                GameManager.instance.SetMoveFeedback(meterChange.ToString());
-                Debug.Log("HIT! You made " + meterChange + " meters!");
+                GameManager.instance.SetMoveFeedback("you made " + meterChange.ToString() + " meters", "Player");
             }
             else if (successCheck < thisMove.criticalSuccess)
             {
                 int critMeterChange = Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
                 GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
-                GameManager.instance.SetMoveFeedback(critMeterChange.ToString());
-                Debug.Log("CRIT! You made " + critMeterChange + " meters!");
+                GameManager.instance.SetMoveFeedback("crit! you made " + critMeterChange.ToString() + " meters", "Player");
             }
         }
 
         if(thisMove.style == "Kick")
-        {
+        {          
             int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
             GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
-            Debug.Log("HIT! You made " + meterChange + " meters!");
+            GameManager.instance.SetMoveFeedback("you kicked it " + meterChange.ToString() + " meters", "Player");
 
             GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
 
             if (successCheck > thisMove.successChance)
             {
-                Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
+                GameManager.instance.SetMoveFeedback("move failed! you turned the ball over", "Player");
                 thisMove.Turnover("Player");
                 return;
             }
             else if (successCheck <= thisMove.successChance)
             {
+                GameManager.instance.SetMoveFeedback("moved succeeded! you recover the ball", "Player");
                 thisMove.Recover("Player");
             }
         }
@@ -87,11 +88,13 @@ public class MoveController : MonoBehaviour
 
     public void UseDefenceMove(DefenceMoves thisMove)
     {
+        GameManager.instance.SetMoveFeedback("you used " + thisMove.name, "Player");
+
         int successCheck = Random.Range(1, 101);
 
         if (successCheck > thisMove.successChance)
         {
-            Debug.Log("You rolled:" + successCheck + ". Move Failed. Foul!");
+            GameManager.instance.SetMoveFeedback("move failed! you commit a foul", "Player");
             thisMove.Foul("Player");
             return;
         }
@@ -100,13 +103,13 @@ public class MoveController : MonoBehaviour
         {
             int meterChange = Random.Range(thisMove.minMeterStop, thisMove.maxMeterStop);
             GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
-            Debug.Log("HIT! You pushed them back " + meterChange + " meters!");
+            GameManager.instance.SetMoveFeedback("you pushed them back " + meterChange.ToString() + " meters", "Player");
         }
         else if (successCheck < thisMove.criticalSuccess)
         {
             int critMeterChange = Random.Range(thisMove.critMinMeterStop, thisMove.critMaxMeterStop);
             GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
-            Debug.Log("CRIT! You pushed them back " + critMeterChange + " meters!");
+            GameManager.instance.SetMoveFeedback("crit! you pushed them back " + critMeterChange.ToString() + " meters", "Player");
         }
 
         GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);
@@ -116,8 +119,8 @@ public class MoveController : MonoBehaviour
 
     public void UseKickMove(KickingMoves thisMove)
     {
-        Debug.Log("You Used " + thisMove.name);
-        
+        GameManager.instance.SetMoveFeedback("you used " + thisMove.name, "Player");
+
         GameManager.instance.timeManager.SetTime(thisMove.timeCost);
 
         int successCheck = Random.Range(1, 101);
@@ -128,17 +131,18 @@ public class MoveController : MonoBehaviour
 
             int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
             GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
-            Debug.Log("HIT! You made " + meterChange + " meters!");
+            GameManager.instance.SetMoveFeedback("you kicked it " + meterChange.ToString() + " meters", "Player");
 
             if (successCheck > thisMove.successChance)
             {
-                Debug.Log("You rolled:" + successCheck + ". Move Failed. Turnover!");
+                GameManager.instance.SetMoveFeedback("move failed! you turned the ball over", "Player");
                 thisMove.Turnover("Player");
                 GameManager.instance.enemyCombat.KickReturn();
                 return;
             }
             else if (successCheck <= thisMove.successChance)
             {
+                GameManager.instance.SetMoveFeedback("moved succeeded! you recover the ball", "Player");
                 thisMove.Recover("Player");
                 GameManager.instance.enemyCombat.PickDefence();
                 return;
@@ -149,6 +153,7 @@ public class MoveController : MonoBehaviour
         {
             if (successCheck > thisMove.successChance)
             {
+                GameManager.instance.SetMoveFeedback("move failed! you turned the ball over", "Player");
                 thisMove.Turnover("Player");
                 return;
             }
@@ -157,13 +162,13 @@ public class MoveController : MonoBehaviour
             {
                 int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
                 GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
-                Debug.Log("HIT! You kicked it " + meterChange + " meters!");
+                GameManager.instance.SetMoveFeedback("you made " + meterChange.ToString() + " meters", "Player");
             }
             else if (successCheck < thisMove.criticalSuccess)
             {
                 int critMeterChange = Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
                 GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
-                Debug.Log("CRIT! You kicked it " + critMeterChange + " meters!");
+                GameManager.instance.SetMoveFeedback("crit! you made " + critMeterChange.ToString() + " meters", "Player");
             }
 
             GameManager.instance.resourceBars.ChangeFatigue("Player", thisMove.fatigueCost);

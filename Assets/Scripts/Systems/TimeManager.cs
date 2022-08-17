@@ -17,6 +17,7 @@ public class TimeManager : MonoBehaviour
     public Image splashScreenImage;
     public TMP_Text splashHomeScore;
     public TMP_Text splashAwayScore;
+    public GameObject _animation;
 
     public GameObject halfTimeContinue;
     public Button halfTimeContinueButton;
@@ -71,6 +72,7 @@ public class TimeManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         splashScreen.SetActive(true);
+        _animation.SetActive(true);
         VideoController.instance.Play(halfTimeAnimation);
         splashScreenImage.sprite = halfTimeSplash;
         splashHomeScore.text = GameManager.instance.currentPlayerScore.ToString();
@@ -84,6 +86,7 @@ public class TimeManager : MonoBehaviour
 
     public void StartSecondHalf()
     {
+        _animation.SetActive(false);
         splashScreenImage.sprite = null;
         splashHomeScore.text = "";
         splashAwayScore.text = "";
@@ -106,6 +109,7 @@ public class TimeManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         splashScreen.SetActive(true);
+        _animation.SetActive(true);
         splashScreenImage.sprite = fullTimeSplash;
         splashHomeScore.text = GameManager.instance.currentPlayerScore.ToString();
         splashAwayScore.text = GameManager.instance.currentOppoScore.ToString();

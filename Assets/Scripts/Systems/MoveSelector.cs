@@ -36,19 +36,13 @@ public class MoveSelector : MonoBehaviour
 
     public void SelectAttackMove(Moves thisMove)
     {
-        if (!attackMoves.Contains(thisMove))
-        {
-            Debug.Log("Adding " + thisMove);
-            attackMoves.Add(thisMove);
-            return;
-        }
-
         if (attackMoves.Contains(thisMove))
         {
-            Debug.Log("Removing " + thisMove);
             attackMoves.Remove(thisMove);
             return;
         }
+
+        attackMoves.Add(thisMove);
     }
 
     public void SelectDefenceMove(Moves thisMove)

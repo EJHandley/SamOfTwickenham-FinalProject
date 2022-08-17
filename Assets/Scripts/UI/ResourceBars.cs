@@ -74,6 +74,7 @@ public class ResourceBars : MonoBehaviour
 
             if(currentFatigue == 0)
             {
+                GameManager.instance.SetMoveFeedback("you ran out of energy! turnover", "Player");
                 GameManager.instance.Turnover(user);
             }
         }
