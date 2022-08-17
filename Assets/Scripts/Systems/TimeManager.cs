@@ -26,6 +26,8 @@ public class TimeManager : MonoBehaviour
     private bool halfTimeTriggered = false;
     private bool fullTimeTriggered = false;
 
+    public string halfTimeAnimation;
+
     void Start()
     {
         SetTime(time);
@@ -69,6 +71,7 @@ public class TimeManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         splashScreen.SetActive(true);
+        VideoController.instance.Play(halfTimeAnimation);
         splashScreenImage.sprite = halfTimeSplash;
         splashHomeScore.text = GameManager.instance.currentPlayerScore.ToString();
         splashAwayScore.text = GameManager.instance.currentOppoScore.ToString();

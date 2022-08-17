@@ -4441,6 +4441,8 @@ GameObject:
   - component: {fileID: 571794481}
   - component: {fileID: 571794483}
   - component: {fileID: 571794482}
+  - component: {fileID: 571794484}
+  - component: {fileID: 571794485}
   m_Layer: 5
   m_Name: MoveAnimation
   m_TagString: Untagged
@@ -4506,6 +4508,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571794480}
   m_CullTransparentMesh: 1
+--- !u!114 &571794484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571794480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3350c4f687c72e49a1c6c4624d44f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidplayer: {fileID: 571794485}
+--- !u!328 &571794485
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571794480}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 0}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 0
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 0
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &572308671
 GameObject:
   m_ObjectHideFlags: 0
@@ -14122,6 +14172,7 @@ MonoBehaviour:
   halfTimeContinueButton: {fileID: 61726782}
   fullTimeContinue: {fileID: 1529535668}
   fullTimeContinueButton: {fileID: 1529535670}
+  halfTimeAnimation: https://media.giphy.com/media/lv0QGQL5dFHKZZuUzH/giphy.gif
 --- !u!1 &1711087173
 GameObject:
   m_ObjectHideFlags: 0
