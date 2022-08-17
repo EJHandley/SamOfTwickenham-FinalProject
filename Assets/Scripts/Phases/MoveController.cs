@@ -31,6 +31,8 @@ public class MoveController : MonoBehaviour
     {
         GameManager.instance.timeManager.SetTime(thisMove.timeCost);
 
+        GameManager.instance.SetMoveFeedback(thisMove.name);
+
         int successCheck = Random.Range(1, 101);
 
         if(thisMove.style == "Ground")
@@ -48,12 +50,14 @@ public class MoveController : MonoBehaviour
             {
                 int meterChange = Random.Range(thisMove.minMeterGain, thisMove.maxMeterGain);
                 GameManager.instance.resourceBars.ChangeMeters("Player", meterChange);
+                GameManager.instance.SetMoveFeedback(meterChange.ToString());
                 Debug.Log("HIT! You made " + meterChange + " meters!");
             }
             else if (successCheck < thisMove.criticalSuccess)
             {
                 int critMeterChange = Random.Range(thisMove.critMinMeterGain, thisMove.critMaxMeterGain);
                 GameManager.instance.resourceBars.ChangeMeters("Player", critMeterChange);
+                GameManager.instance.SetMoveFeedback(critMeterChange.ToString());
                 Debug.Log("CRIT! You made " + critMeterChange + " meters!");
             }
         }

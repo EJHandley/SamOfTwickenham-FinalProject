@@ -16,6 +16,12 @@ public class BuffManager : MonoBehaviour
     [HideInInspector] public List<AttackMoves> teamAttackMoves;
     [HideInInspector] public List<DefenceMoves> teamDefenceMoves;
 
+    [Header("Buff Tracking Text")]
+    public GameObject minEgoBuff;
+    public GameObject maxEgoBuff;
+    public GameObject minTMBuff;
+    public GameObject maxTMBuff;
+
     void Start()
     {
         foreach (Moves move in starMoves.moves)
@@ -67,21 +73,41 @@ public class BuffManager : MonoBehaviour
 
         if (playerStats.egoValue >= 60 && playerStats.egoValue < 70)
         {
+            if(minEgoBuff != null)
+            {
+                minEgoBuff.SetActive(true);
+            }
+
             StarMinorBuff();
         }
 
         if (playerStats.egoValue >= 70)
         {
+            if(maxEgoBuff != null)
+            {
+                maxEgoBuff.SetActive(true);
+            }
+
             StarMaxBuff();
         }
 
         if (playerStats.teamValue >= 60 && playerStats.teamValue < 70)
         {
+            if(minTMBuff != null)
+            {
+                minTMBuff.SetActive(true);
+            }
+
             TeamMinorBuff();
         }
 
         if (playerStats.teamValue >= 70)
         {
+            if(maxTMBuff != null)
+            {
+                maxTMBuff.SetActive(true);
+            }
+
             TeamMaxBuff();
         }
     }

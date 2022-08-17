@@ -10,6 +10,7 @@ public class ButtonController : MonoBehaviour
     private MoveController moveController;
 
     private Tooltip tooltip;
+    private MoveSelectorTooltip moveSelectorTooltip;
     private Image[] images;
     private TMP_Text text;
     public Button thisButton;
@@ -18,6 +19,9 @@ public class ButtonController : MonoBehaviour
     public int buttonNumber;
     public bool isAttack;
     public bool isDefence;
+    public bool moveSelectionScreen;
+
+    public TMP_Text unlockStatus;
 
     public Moves thisMove;
 
@@ -27,6 +31,7 @@ public class ButtonController : MonoBehaviour
         thisButton = GetComponent<Button>();
         text = GetComponentInChildren<TMP_Text>();
         images = GetComponentsInChildren<Image>();
+        moveSelectorTooltip = GetComponentInChildren<MoveSelectorTooltip>(true);
         tooltip = GetComponentInChildren<Tooltip>(true);
 
         if (thisMove == null)
@@ -64,11 +69,26 @@ public class ButtonController : MonoBehaviour
 
         if(thisButton.interactable == false)
         {
-            Debug.Log("Change Colour");
-            images[1].color = new Color(100, 100, 100, 255);
+            unlockStatus.color = new Color32(255,0,0,255);
+            images[1].color = new Color32(100,100,100,255);
         }    
 
         text.text = thisMove.name;
+
+        if(moveSelectionScreen)
+        {
+            if (thisMove.phase == "Attack Phase")
+            {
+                moveSelectorTooltip.SetAttackTooltip((AttackMoves)thisMove);
+            }
+
+            if (thisMove.phase == "Defence Phase")
+            {
+                moveSelectorTooltip.SetDefenceTooltip((DefenceMoves)thisMove);
+            }
+
+            return;
+        }
 
         if(thisMove.phase == "Attack Phase")
         {

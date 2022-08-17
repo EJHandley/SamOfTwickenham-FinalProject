@@ -34,6 +34,7 @@ public class CommentatorDialogue : MonoBehaviour
     {
         mc_anim.SetTrigger("Default");
         cc_anim.SetTrigger("Default");
+        dialogue.typing = false;
     }
 
     public IEnumerator IntroComms()

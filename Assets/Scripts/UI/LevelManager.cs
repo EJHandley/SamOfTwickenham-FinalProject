@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
     [Header("UI Elements")]
     public Button coachButton;
     public Button matchButton;
+    public GameObject combatTooltip;
     private int storyStatus;
 
     [Header("Stats Screen Variables")]
@@ -119,6 +120,14 @@ public class LevelManager : MonoBehaviour
             if(MoveSelector.attackMoves.Count < 6 || MoveSelector.defenceMoves.Count < 6)
             {
                 matchButton.interactable = false;
+            }
+        }
+
+        if (matchButton != null)
+        {
+            if (matchButton.interactable == true)
+            {
+                Destroy(combatTooltip);
             }
         }
 

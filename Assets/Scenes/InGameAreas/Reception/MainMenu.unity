@@ -3244,6 +3244,10 @@ PrefabInstance:
       propertyPath: matchButton
       value: 
       objectReference: {fileID: 2123926585}
+    - target: {fileID: 6092184310633262402, guid: d928227e3a008b544b510489d2c3a329, type: 3}
+      propertyPath: combatTooltip
+      value: 
+      objectReference: {fileID: 25404483}
     - target: {fileID: 6092184310633262403, guid: d928227e3a008b544b510489d2c3a329, type: 3}
       propertyPath: m_Name
       value: LevelManager

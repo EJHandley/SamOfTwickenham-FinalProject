@@ -48,12 +48,15 @@ public class GameManager : MonoBehaviour
     [Header("Foul, Turnover and Recovery Methods")]
     public Moves foul;
 
+    public GameObject combatFeedbackBox;
+    public Transform feedbackArea;
+
     #region Singleton
     public static GameManager instance;
 
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             return;
         }
@@ -96,11 +99,11 @@ public class GameManager : MonoBehaviour
 
     public void CoinTossChoice(string choice)
     {
-        if(choice == "Heads")
+        if (choice == "Heads")
         {
             CoinToss(0);
         }
-        else if(choice == "Tails")
+        else if (choice == "Tails")
         {
             CoinToss(1);
         }
@@ -120,14 +123,14 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You chose Heads and it's Heads!");
             ChangePhase("Coin Toss Won");
-        } 
+        }
         else if (choice == 0 && coinToss > 50)
         {
             Debug.Log("You chose Heads but it's Tails!");
             ChangePhase("Coin Toss Lost");
         }
 
-        if(choice == 1 && coinToss <= 50)
+        if (choice == 1 && coinToss <= 50)
         {
             Debug.Log("You chose Tails but it's Heads!");
             ChangePhase("Coin Toss Lost");
@@ -141,7 +144,7 @@ public class GameManager : MonoBehaviour
 
     public void CoinTossWon(string choice)
     {
-        if(choice == "Attack")
+        if (choice == "Attack")
         {
             if (isTutorialMatch == true)
             {
@@ -149,7 +152,7 @@ public class GameManager : MonoBehaviour
             }
 
             ChangePhase("Kick Return");
-        } 
+        }
         else if (choice == "Defend")
         {
             if (isTutorialMatch == true)
@@ -161,18 +164,18 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
-    
+
     public void ChangePhase(string phase)
     {
-        if(phase == "Coin Toss")
+        if (phase == "Coin Toss")
         {
             coinTossUI.SetActive(true);
             ChangePhaseText(phase);
         }
 
-        if(phase == "Coin Toss Won")
+        if (phase == "Coin Toss Won")
         {
-            if(isTutorialMatch == true)
+            if (isTutorialMatch == true)
             {
                 tossWonTut.SetActive(true);
             }
@@ -180,14 +183,14 @@ public class GameManager : MonoBehaviour
             coinTossWonUI.SetActive(true);
         }
 
-        if(phase == "Coin Toss Lost")
+        if (phase == "Coin Toss Lost")
         {
             enemyController.CoinTossWon();
         }
 
-        if(phase == "Attack Phase")
+        if (phase == "Attack Phase")
         {
-            if(isTutorialMatch == true && attTutEnabled == false)
+            if (isTutorialMatch == true && attTutEnabled == false)
             {
                 attackTut.SetActive(true);
                 attTutEnabled = true;
@@ -204,7 +207,7 @@ public class GameManager : MonoBehaviour
             ChangePhaseText(phase);
         }
 
-        if(phase == "Defence Phase")
+        if (phase == "Defence Phase")
         {
             if (isTutorialMatch == true && defTutEnabled == false)
             {
@@ -223,7 +226,7 @@ public class GameManager : MonoBehaviour
             ChangePhaseText(phase);
         }
 
-        if(phase == "Kicking Phase")
+        if (phase == "Kicking Phase")
         {
             kickingUI.SetActive(true);
 
@@ -236,7 +239,7 @@ public class GameManager : MonoBehaviour
             ChangePhaseText(phase);
         }
 
-        if(phase == "Kick Return")
+        if (phase == "Kick Return")
         {
             kickReturnUI.SetActive(true);
 
@@ -248,6 +251,11 @@ public class GameManager : MonoBehaviour
 
             ChangePhaseText(phase);
         }
+    }
+
+    public void SetMoveFeedback(string info)
+    {
+        Instantiate(combatFeedbackBox, feedbackArea);
     }
 
     public void ChangePhaseText(string phase)
