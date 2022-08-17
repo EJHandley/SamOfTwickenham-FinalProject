@@ -25,8 +25,14 @@ MonoBehaviour:
   baseFatigue: 10
   baseSuccess: 80
   baseCrit: 12
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - "On comes the fly-half\u2026 ooo thats a big hit by the no. 8."
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - "Crushing tackle, he\u2019s sat the young lad."
   minMeterStop: 3
   maxMeterStop: 5
   critMinMeterStop: 6

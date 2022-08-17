@@ -49,7 +49,7 @@ public class TimeManager : MonoBehaviour
         if (time >= 4800f && fullTimeTriggered == false)
         {
             time = 4800f;
-            FullTime();
+            StartCoroutine(FullTime());
             fullTimeTriggered = true;
             return;
         }
@@ -81,7 +81,7 @@ public class TimeManager : MonoBehaviour
 
     public void StartSecondHalf()
     {
-        splashScreenImage = null;
+        splashScreenImage.sprite = null;
         splashHomeScore.text = "";
         splashAwayScore.text = "";
         splashScreen.SetActive(false);
@@ -96,7 +96,24 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    public void FullTime()
+    public IEnumerator FullTime()
+    {
+        AudioManager.instance.Play("Whistle_FullTime");
+
+        yield return new WaitForSeconds(1f);
+
+        splashScreen.SetActive(true);
+        splashScreenImage.sprite = fullTimeSplash;
+        splashHomeScore.text = GameManager.instance.currentPlayerScore.ToString();
+        splashAwayScore.text = GameManager.instance.currentOppoScore.ToString();
+
+        yield return new WaitForSeconds(4f);
+
+        fullTimeContinue.SetActive(true);
+        fullTimeContinueButton.interactable = true;
+    }
+
+    public void EndGame()
     {
         int playerScore = int.Parse(GameManager.instance.playerScoreText.text);
         int oppoScore = int.Parse(GameManager.instance.oppoScoreText.text);
@@ -104,13 +121,11 @@ public class TimeManager : MonoBehaviour
         if (playerScore > oppoScore)
         {
             StartCoroutine(GameWon());
-            return;
         }
 
         if (playerScore < oppoScore)
         {
             StartCoroutine(GameLost());
-            return;
         }
 
         if (playerScore == oppoScore)

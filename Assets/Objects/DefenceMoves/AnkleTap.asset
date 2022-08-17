@@ -25,8 +25,15 @@ MonoBehaviour:
   baseFatigue: 10
   baseSuccess: 100
   baseCrit: 10
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - "The Birmingham winger is away here, they\u2019ve got to make a tackle."
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Excellent work there by the fullback, recovering to swipe the ankle and bring
+      him down.
   minMeterStop: 3
   maxMeterStop: 5
   critMinMeterStop: 6

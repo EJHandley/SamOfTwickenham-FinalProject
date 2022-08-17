@@ -25,8 +25,15 @@ MonoBehaviour:
   baseFatigue: 15
   baseSuccess: 80
   baseCrit: 8
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - The prop carries into contact here and a good tackle, the ruck is forming.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Oh but good work by the Twickenham lock there, getting in and slowing down
+      the ball.
   minMeterStop: 3
   maxMeterStop: 5
   critMinMeterStop: 0

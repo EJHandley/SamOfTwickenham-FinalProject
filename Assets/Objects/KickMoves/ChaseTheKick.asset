@@ -25,8 +25,14 @@ MonoBehaviour:
   baseFatigue: 20
   baseSuccess: 40
   baseCrit: 4
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - A short kick here from Twickenham as they look to chase the ball down.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - The wings are racing after it Vic.
   timeCost: 15
   minMeterGain: 10
   maxMeterGain: 15

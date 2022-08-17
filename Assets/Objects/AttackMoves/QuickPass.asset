@@ -25,8 +25,14 @@ MonoBehaviour:
   baseFatigue: 5
   baseSuccess: 90
   baseCrit: 9
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - No. 15, sends it out wide to the winger.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Nice quick hands there from the fullback.
   timeCost: 60
   minMeterGain: 0
   maxMeterGain: 10

@@ -25,8 +25,14 @@ MonoBehaviour:
   baseFatigue: 15
   baseSuccess: 80
   baseCrit: 8
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - Twickenham are counter rucking well here.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Sam is in there looking to get his hands on the ball and turn it over.
   minMeterStop: 3
   maxMeterStop: 5
   critMinMeterStop: 0

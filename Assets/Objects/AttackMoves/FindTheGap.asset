@@ -25,8 +25,14 @@ MonoBehaviour:
   baseFatigue: 20
   baseSuccess: 80
   baseCrit: 4
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - A quick pass from the 10 and he finds the center who punches through the middle.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Yeah, big gap in the Birmingham defence there and they exploited it.
   timeCost: 90
   minMeterGain: 5
   maxMeterGain: 15

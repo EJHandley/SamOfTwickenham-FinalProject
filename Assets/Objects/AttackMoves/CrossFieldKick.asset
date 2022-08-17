@@ -25,8 +25,15 @@ MonoBehaviour:
   baseFatigue: 30
   baseSuccess: 30
   baseCrit: 0
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - Twickenham are hitting a brick wall here down the near side but the 10 kicks
+      wide.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - He spotted the winger in space there Vic.
   timeCost: 120
   minMeterGain: 15
   maxMeterGain: 40

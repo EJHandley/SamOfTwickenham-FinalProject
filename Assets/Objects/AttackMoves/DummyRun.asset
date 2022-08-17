@@ -25,8 +25,15 @@ MonoBehaviour:
   baseFatigue: 15
   baseSuccess: 90
   baseCrit: 9
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - Fly-half going forward here, Sam on the support line, oh but the fly half finds
+      a gap.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Yeah great diversion there from Sam, drew the defence away.
   timeCost: 90
   minMeterGain: 5
   maxMeterGain: 10

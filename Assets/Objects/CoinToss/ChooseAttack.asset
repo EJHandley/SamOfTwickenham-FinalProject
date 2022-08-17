@@ -28,8 +28,10 @@ MonoBehaviour:
   MainCommentatorDialogue:
   - charName: MC
     sentences:
-    - 123
+    - Twickenham will start the game on the attack meaning Birmingham will take the
+      kick off.
   ColourCommentatorDialogue:
   - charName: CC
     sentences:
-    - 123
+    - A confident choice from the Lions who will look to establish some dominance
+      in the game early.

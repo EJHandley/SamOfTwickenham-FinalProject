@@ -28,10 +28,8 @@ MonoBehaviour:
   MainCommentatorDialogue:
   - charName: MC
     sentences:
-    - And it looks like Twickenham have chosen...
-    - Heads.
+    - And it looks like Twickenham have chosen Heads.
   ColourCommentatorDialogue:
   - charName: CC
     sentences:
-    - I always went heads during my career...
-    - I reckon I won about 50% of the time.
+    - I always went heads during my career, I reckon I won about 50% of the time.

@@ -25,8 +25,15 @@ MonoBehaviour:
   baseFatigue: 15
   baseSuccess: 40
   baseCrit: 0
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - The fly-half takes the ball out of the ruck and he puts through a low, bouncing
+      kick.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Twickenhams no 12 is after that one Vic.
   timeCost: 90
   minMeterGain: 10
   maxMeterGain: 25

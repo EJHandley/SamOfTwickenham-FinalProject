@@ -25,8 +25,14 @@ MonoBehaviour:
   baseFatigue: 20
   baseSuccess: 35
   baseCrit: 0
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - Scrum-half will take it out of the ruck and he sends a high, hanging kick.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - The winger is looking to get under it.
   timeCost: 90
   minMeterGain: 15
   maxMeterGain: 30

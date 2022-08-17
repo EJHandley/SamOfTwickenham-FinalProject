@@ -28,11 +28,11 @@ MonoBehaviour:
   MainCommentatorDialogue:
   - charName: MC
     sentences:
-    - 123
+    - "Here\u2019s the kick and Twickenham send the ball deep into the Bees half."
   ColourCommentatorDialogue:
   - charName: CC
     sentences:
-    - 123
+    - Lions definitely looking for territory here.
   timeCost: 30
   minMeterGain: 25
   maxMeterGain: 40

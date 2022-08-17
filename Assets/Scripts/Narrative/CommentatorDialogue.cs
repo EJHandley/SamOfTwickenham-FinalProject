@@ -70,25 +70,7 @@ public class CommentatorDialogue : MonoBehaviour
 
     public void MoveDialogue(Moves thisMove)
     {
-        if(thisMove.phase == "Coin Toss")
-        {
-            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[0], thisMove.ColourCommentatorDialogue[0]));
-            return;
-        }
-
-        int commChoice = Random.Range(1, 4);
-        if(commChoice == 1)
-        {
-            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[0], thisMove.ColourCommentatorDialogue[0]));
-        }
-        else if(commChoice == 2)
-        {
-            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[1], thisMove.ColourCommentatorDialogue[1]));
-        }
-        else if(commChoice == 3)
-        {
-            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[2], thisMove.ColourCommentatorDialogue[2]));
-        }
+        StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[0], thisMove.ColourCommentatorDialogue[0]));
     }
 
     private IEnumerator SetDialogue(DialogueClass mcDialogue, DialogueClass ccDialogue)
@@ -109,5 +91,24 @@ public class CommentatorDialogue : MonoBehaviour
 
         mc_anim.SetTrigger("End");
         cc_anim.SetTrigger("End");
+    }
+
+    private void HeldCode(Moves thisMove)
+    {
+        //code for multiple option dialogue system
+
+        int commChoice = Random.Range(1, 4);
+        if (commChoice == 1)
+        {
+            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[0], thisMove.ColourCommentatorDialogue[0]));
+        }
+        else if (commChoice == 2)
+        {
+            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[1], thisMove.ColourCommentatorDialogue[1]));
+        }
+        else if (commChoice == 3)
+        {
+            StartCoroutine(SetDialogue(thisMove.MainCommentatorDialogue[2], thisMove.ColourCommentatorDialogue[2]));
+        }
     }
 }

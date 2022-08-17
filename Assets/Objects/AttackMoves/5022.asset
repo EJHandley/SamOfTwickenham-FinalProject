@@ -25,8 +25,14 @@ MonoBehaviour:
   baseFatigue: 15
   baseSuccess: 20
   baseCrit: 0
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - The winger is making a break here and he sends a quick over the defence.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - "Yeah he\u2019s haring after that one Vic."
   timeCost: 120
   minMeterGain: 30
   maxMeterGain: 65

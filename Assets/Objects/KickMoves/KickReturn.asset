@@ -28,11 +28,12 @@ MonoBehaviour:
   MainCommentatorDialogue:
   - charName: MC
     sentences:
-    - ABC
+    - Here comes the kick from Birmingham and the fullback with the leap there to
+      bring down the ball.
   ColourCommentatorDialogue:
   - charName: CC
     sentences:
-    - ABC
+    - Good work by the 15 to safely take the ball under pressure.
   timeCost: 15
   minMeterGain: 5
   maxMeterGain: 10

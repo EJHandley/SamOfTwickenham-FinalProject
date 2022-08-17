@@ -25,8 +25,15 @@ MonoBehaviour:
   baseFatigue: 10
   baseSuccess: 90
   baseCrit: 9
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - The prop takes the ball into contact.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Solid tackle from the Birmingham lock who wraps an arm around the chest and
+      brings him down.
   minMeterStop: 3
   maxMeterStop: 5
   critMinMeterStop: 9

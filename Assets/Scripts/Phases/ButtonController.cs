@@ -98,13 +98,13 @@ public class ButtonController : MonoBehaviour
 
     private IEnumerator UseMove()
     {
-
+        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
 
         if (thisMove.movePic != null)
         {
             StartCoroutine(GameManager.instance.SplashUI(thisMove));
 
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(2f);
         }
 
         if (thisMove.phase == "Coin Toss")
@@ -132,7 +132,7 @@ public class ButtonController : MonoBehaviour
 
     private void HoldVoid()
     {
-        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
+
         GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
 
         if (thisMove.movePic != null)

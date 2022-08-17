@@ -25,8 +25,15 @@ MonoBehaviour:
   baseFatigue: 5
   baseSuccess: 100
   baseCrit: 15
-  MainCommentatorDialogue: []
-  ColourCommentatorDialogue: []
+  MainCommentatorDialogue:
+  - charName: MC
+    sentences:
+    - The prop with the tackle on the ball carrier there.
+  ColourCommentatorDialogue:
+  - charName: CC
+    sentences:
+    - Excellent technique from that man, getting those big arms around his opponents
+      legs.
   minMeterStop: 0
   maxMeterStop: 3
   critMinMeterStop: 4
