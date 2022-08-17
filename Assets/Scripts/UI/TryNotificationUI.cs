@@ -26,6 +26,7 @@ public class TryNotificationUI : MonoBehaviour
 
     public IEnumerator PlayerScored()
     {
+        AudioManager.instance.Play("CrowdNoise-Cheer");
         playerScored.SetActive(true);
         yield return new WaitForSeconds(.1f);
         playerColour1.SetActive(true);
@@ -41,13 +42,15 @@ public class TryNotificationUI : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         playerColour2.SetActive(false);
         playerColour1.SetActive(true);
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(4.5f);
         playerColour1.SetActive(false);
         playerScored.SetActive(false);
+        AudioManager.instance.StopPlaying("CrowdNoise-Cheer");
     }
 
     public IEnumerator EnemyScored()
     {
+        AudioManager.instance.Play("CrowdNoise-Boo");
         enemyScored.SetActive(true);
         yield return new WaitForSeconds(.1f);
         enemyColour1.SetActive(true);
@@ -63,8 +66,9 @@ public class TryNotificationUI : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         enemyColour2.SetActive(false);
         enemyColour1.SetActive(true);
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(4.5f);
         enemyColour1.SetActive(false);
         enemyScored.SetActive(false);
+        AudioManager.instance.StopPlaying("CrowdNoise-Boo");
     }
 }

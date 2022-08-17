@@ -20,6 +20,10 @@ public class SplashScreen : MonoBehaviour
     [Header("Button")]
     public GameObject start;
     public GameObject tutorial;
+    public GameObject credits;
+
+    [Header("Credits")]
+    public GameObject creditsScreen;
 
     void Start()
     {
@@ -78,10 +82,22 @@ public class SplashScreen : MonoBehaviour
 
         start.SetActive(true);
         tutorial.SetActive(true);
+        credits.SetActive(true);
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void Credits()
+    {
+        if(!creditsScreen.activeSelf)
+        {
+            creditsScreen.SetActive(true);
+            return;
+        }
+
+        creditsScreen.SetActive(false);
     }
 }

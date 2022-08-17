@@ -20,6 +20,10 @@ public class ConferenceDialogue : MonoBehaviour
     #endregion
 
     private Story story;
+    private TextAsset thisStory;
+
+    public TextAsset winDialogue;
+    public TextAsset lossDialogue;
 
     public static bool gameWon;
 
@@ -51,10 +55,30 @@ public class ConferenceDialogue : MonoBehaviour
 
     }
 
-    public void SetStory(TextAsset newStory)
+    public void SetWinStory(TextAsset story)
     {
+        winDialogue = story;
+    }
+
+    public void SetLossStory(TextAsset story)
+    {
+        lossDialogue = story;
+        SetStory();
+    }
+
+    public void SetStory()
+    {
+        if (gameWon)
+        {
+            thisStory = winDialogue;
+        }
+        else if (!gameWon)
+        {
+            thisStory = lossDialogue;
+
+        }
         Debug.Log("Clicked");
-        story = new Story(newStory.text);
+        story = new Story(thisStory.text);
         ContinueStory();
     }    
 
@@ -136,7 +160,6 @@ public class ConferenceDialogue : MonoBehaviour
     public void EndOfStory()
     {
         AddBuffs();
-        endOfStoryScreen.SetActive(true);
         egoText.text = "Your Ego increased to: " + playerStats.egoValue.ToString();
         tmText.text = "Your Team Morale increased to: " + playerStats.teamValue.ToString();
     }

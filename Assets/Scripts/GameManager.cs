@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
     public GameObject moveSplash;
     public Image moveImage;
 
+    [Header("Foul, Turnover and Recovery Methods")]
+    public Moves foul;
+
     #region Singleton
     public static GameManager instance;
 
@@ -266,5 +269,27 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(4f);
 
         moveSplash.SetActive(false);
+    }
+
+    public void Turnover(string user)
+    {
+        if (user == "Player")
+        {
+            ChangePhase("Defence Phase");
+        }
+
+        if (user == "Enemy")
+        {
+            ChangePhase("Attack Phase");
+        }
+    }
+
+    public void Foul(string user)
+    {
+        AudioManager.instance.Play("Whistle_Foul");
+
+        StartCoroutine(SplashUI(foul));
+
+        commentatorDialogue.MoveDialogue(foul);
     }
 }

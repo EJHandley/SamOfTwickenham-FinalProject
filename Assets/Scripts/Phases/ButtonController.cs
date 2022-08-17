@@ -61,6 +61,13 @@ public class ButtonController : MonoBehaviour
         }
 
         images[1].sprite = thisMove.icon;
+
+        if(thisButton.interactable == false)
+        {
+            Debug.Log("Change Colour");
+            images[1].color = new Color(100, 100, 100, 255);
+        }    
+
         text.text = thisMove.name;
 
         if(thisMove.phase == "Attack Phase")
@@ -91,7 +98,7 @@ public class ButtonController : MonoBehaviour
 
     private IEnumerator UseMove()
     {
-        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
+
 
         if (thisMove.movePic != null)
         {
@@ -125,6 +132,7 @@ public class ButtonController : MonoBehaviour
 
     private void HoldVoid()
     {
+        GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
         GameManager.instance.commentatorDialogue.MoveDialogue(thisMove);
 
         if (thisMove.movePic != null)

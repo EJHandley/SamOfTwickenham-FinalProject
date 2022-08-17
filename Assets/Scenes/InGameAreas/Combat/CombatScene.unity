@@ -14020,6 +14020,7 @@ MonoBehaviour:
   coinTossWon: 0
   moveSplash: {fileID: 1804212284}
   moveImage: {fileID: 1803047991}
+  foul: {fileID: 11400000, guid: f905b62f21cd8534790a533881fd2c1e, type: 2}
 --- !u!4 &1709267580
 Transform:
   m_ObjectHideFlags: 0

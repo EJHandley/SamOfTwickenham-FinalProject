@@ -42,20 +42,12 @@ public class Moves : ScriptableObject
     
     public virtual void Turnover(string user)
     {
-        if(user == "Player")
-        {
-            GameManager.instance.ChangePhase("Defence Phase");
-        }
-
-        if(user == "Enemy")
-        {
-            GameManager.instance.ChangePhase("Attack Phase");
-        }
+        GameManager.instance.Turnover(user);
     }
 
     public virtual void Foul(string user)
     {
-        Debug.Log("You Committed A Foul");
+        GameManager.instance.Foul(user);
     }
 
     public virtual void Recover(string user)

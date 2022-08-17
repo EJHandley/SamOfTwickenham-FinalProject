@@ -74,7 +74,7 @@ public class ResourceBars : MonoBehaviour
 
             if(currentFatigue == 0)
             {
-                //TURNOVER
+                GameManager.instance.Turnover(user);
             }
         }
         else if(user == "Enemy")
