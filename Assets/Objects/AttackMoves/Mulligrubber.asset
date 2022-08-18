@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Mulli- grubber
   icon: {fileID: 21300000, guid: 0d6cf44651ee46944b078eee3c39a336, type: 3}
   movePic: {fileID: 21300000, guid: c7e70e38b2d9b7b44a660d9e88cc8417, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/8pxns11u2s77pmb/Mulligrubber_Anim.mp4
   unlockValue: 60
   phase: Attack Phase
   type: Team

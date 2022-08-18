@@ -18,6 +18,10 @@ public class TimeManager : MonoBehaviour
     public TMP_Text splashHomeScore;
     public TMP_Text splashAwayScore;
     public GameObject _animation;
+    public GameObject fullTimeImage;
+    public Image fullTimeImg;
+    public Sprite winImg;
+    public Sprite lossImg;
 
     public GameObject halfTimeContinue;
     public Button halfTimeContinueButton;
@@ -109,10 +113,18 @@ public class TimeManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         splashScreen.SetActive(true);
-        _animation.SetActive(true);
+        fullTimeImage.SetActive(true);
         splashScreenImage.sprite = fullTimeSplash;
         splashHomeScore.text = GameManager.instance.currentPlayerScore.ToString();
         splashAwayScore.text = GameManager.instance.currentOppoScore.ToString();
+        if(int.Parse(GameManager.instance.playerScoreText.text) >= int.Parse(GameManager.instance.oppoScoreText.text))
+        {
+            fullTimeImg.sprite = winImg;
+        }
+        else
+        {
+            fullTimeImg.sprite = lossImg;
+        }
 
         yield return new WaitForSeconds(4f);
 

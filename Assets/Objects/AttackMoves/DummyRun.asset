@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Dummy Run
   icon: {fileID: 21300000, guid: 5a1a515bc3c33184a913ab63c772a4c8, type: 3}
   movePic: {fileID: 21300000, guid: a3a95ad40263acf44a069cbb1f0b383b, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/x79z9t2zlszuqu8/DummyRun_Anim.mp4
   unlockValue: 50
   phase: Attack Phase
   type: Team

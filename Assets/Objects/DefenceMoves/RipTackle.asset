@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Rip Tackle
   icon: {fileID: 21300000, guid: d4635f1eddeee3b49be4471c5db0ba5b, type: 3}
   movePic: {fileID: 21300000, guid: 1a8486b2c06e72247a62e26e35743d90, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/apf1b5xd0v0fupb/RipTackle_Anim.mp4
   unlockValue: 50
   phase: Defence Phase
   type: Star

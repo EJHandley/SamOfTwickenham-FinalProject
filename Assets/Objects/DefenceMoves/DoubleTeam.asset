@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2338fc07b7bb6f440a1974757ea63838, type: 3}
   m_Name: DoubleTeam
   m_EditorClassIdentifier: 
-  name: DoubleTeam
+  name: Double Team
   icon: {fileID: 21300000, guid: edc36d45e73c7d54689ff2f5b0e9ef64, type: 3}
   movePic: {fileID: 21300000, guid: 4a0547717a9dc534cb422b3e80094838, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/j1z45d8onqdgmkb/DoubleTeam_Anim.mp4
   unlockValue: 50
   phase: Defence Phase
   type: Team

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Jackle
   icon: {fileID: 21300000, guid: 8db9ea010f1e6c94ca1f8d5fa70ad941, type: 3}
   movePic: {fileID: 21300000, guid: f87e85e24a3c213429dea959f5a1333c, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/4jdtts82i0cfu3y/Jackle_Anim.mp4
   unlockValue: 70
   phase: Defence Phase
   type: Star

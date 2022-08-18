@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Crash Ball
   icon: {fileID: 21300000, guid: 8137c68c1f7dccb42bf026481f5b2147, type: 3}
   movePic: {fileID: 21300000, guid: 5e650585a67c76241b89d073d00ad1c3, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/kb5sv5rf8ffrhij/CrashBall_Anim.mp4
   unlockValue: 0
   phase: Attack Phase
   type: Normal

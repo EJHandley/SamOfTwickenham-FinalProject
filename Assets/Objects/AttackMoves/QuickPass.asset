@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Quick Pass
   icon: {fileID: 21300000, guid: 5dbdc553c71555b499b8b52f8d92471f, type: 3}
   movePic: {fileID: 21300000, guid: 5994dcf072a22744091b1c94336c8855, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/3rif5v261letewp/QuickPass_Anim.mp4
   unlockValue: 0
   phase: Attack Phase
   type: Normal

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8415be7cebab24541840142c0ae68877, type: 3}
   m_Name: FindTheGap
   m_EditorClassIdentifier: 
-  name: FindTheGap
+  name: Find the Gap
   icon: {fileID: 21300000, guid: 3f23ccfc78646b948826cd9458bce8b4, type: 3}
   movePic: {fileID: 21300000, guid: c44e8f7ba28841744b500398d57f5c68, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/16avdbpo8sjcz9z/FindTheGap_Anim.mp4
   unlockValue: 50
   phase: Attack Phase
   type: Star

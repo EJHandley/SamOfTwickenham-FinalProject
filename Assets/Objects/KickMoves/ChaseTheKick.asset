@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Chase The Kick
   icon: {fileID: 21300000, guid: 058140e6774c58c4886207625dd932e8, type: 3}
   movePic: {fileID: 21300000, guid: 2d040812cb25e9346b00e56f6cd3f38f, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/87mwyw5xvc4dcx1/ChaseTheKick_Anim.mp4
   unlockValue: 0
   phase: Kick Phase
   type: Kick

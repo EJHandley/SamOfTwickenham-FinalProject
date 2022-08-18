@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Ankle Tap
   icon: {fileID: 21300000, guid: 3a6e83fe9d38acf469270f2faa86c436, type: 3}
   movePic: {fileID: 21300000, guid: c046112c29a9b7243bbcaee6494d03f9, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/173ik0bveb15601/AnkleTap_Anim.mp4
   unlockValue: 0
   phase: Defence Phase
   type: Normal

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Garryowen
   icon: {fileID: 21300000, guid: 59bd622a60845014abc95b347ea6a414, type: 3}
   movePic: {fileID: 21300000, guid: d081970ead931e64d991fb1fa7daf084, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/x16ics287j2m34w/Garryowen_Anim.mp4
   unlockValue: 70
   phase: Attack Phase
   type: Team

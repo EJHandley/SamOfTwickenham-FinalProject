@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Choke Tackle
   icon: {fileID: 21300000, guid: 71b99e6e07323f743b3b095ede9bd99d, type: 3}
   movePic: {fileID: 21300000, guid: 10261a34c3cf0a7478197a6c146f185a, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/5upjpmaz77653kj/ChokeTackle_Anim.mp4
   unlockValue: 50
   phase: Defence Phase
   type: Team

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Behind The Back Pass
   icon: {fileID: 21300000, guid: d1247bf364caee04991d40864d9bb063, type: 3}
   movePic: {fileID: 21300000, guid: 5419d687f8a32b34aa96d52e26e2523a, type: 3}
+  moveAnimation: https://dl.dropbox.com/s/g3o1pwcgg64m53p/BehindTheBackPass_Anim.mp4
   unlockValue: 60
   phase: Attack Phase
   type: Star
