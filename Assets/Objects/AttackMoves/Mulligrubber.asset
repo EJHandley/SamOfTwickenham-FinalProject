@@ -35,7 +35,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - Twickenhams no 12 is after that one Vic.
-  timeCost: 90
+  timeCost: 150
   minMeterGain: 10
   maxMeterGain: 25
   critMinMeterGain: 0

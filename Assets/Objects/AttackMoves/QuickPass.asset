@@ -34,7 +34,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - Nice quick hands there from the fullback.
-  timeCost: 60
+  timeCost: 120
   minMeterGain: 0
   maxMeterGain: 10
   critMinMeterGain: 11

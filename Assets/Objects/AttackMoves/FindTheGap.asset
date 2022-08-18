@@ -34,7 +34,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - Yeah, big gap in the Birmingham defence there and they exploited it.
-  timeCost: 90
+  timeCost: 150
   minMeterGain: 5
   maxMeterGain: 15
   critMinMeterGain: 16

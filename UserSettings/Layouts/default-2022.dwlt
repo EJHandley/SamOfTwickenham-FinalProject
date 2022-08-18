@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1397
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Console
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 142
+  controlID: 9921
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 46
+  controlID: 9821
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 47
+  controlID: 9822
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 106
+  controlID: 9885
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -349,8 +349,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 737
-    y: 73
+    x: 738
+    y: 19
     width: 1365
     height: 902
   m_ViewDataDictionary: {fileID: 0}
@@ -369,9 +369,9 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_EnterPlayModeBehavior: 0
+  m_EnterPlayModeBehavior: 1
   m_fullscreenMonitorIdx: 0
-  m_playModeBehaviorIdx: 0
+  m_playModeBehaviorIdx: 1
   m_UseMipMap: 0
   m_isFullscreen: 0
   m_suppressRenderingForFullscreen: 0
@@ -463,7 +463,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b615fdff7028fdffba28fdffb22cfdff7a2ffdff4632fdff3e35fdff3638fdff2e3bfdfffe3dfdff3241fdfff058fdfff65cfdffc25ffdff8a62fdff5865fdffd268fdff3c72fdff0e75fdff4478fdff287bfdffac9ffdff84ddfdff1627feffd066feff669ffeffc09ffeffcca5feffe4e2feff205bffff947fffffc489ffffe0ceffffecf2ffff24fbffff08540000f25700007a5800008acf000018d2000052d300006cd40000ac080100083e0100923e0100fa3f0100b46c01007c700100b470010006710100ac7701002c79010074790100fe7b0100727c01006a0602002e0b0200ac100200ac110200
+      m_ExpandedIDs: 7640fdffc040fdffe644fdffde47fdffd64afdffa64dfdffda50fdff9868fdff9e6cfdff6a6ffdff3272fdff0075fdff7a78fdff1282fdffe484fdff1a88fdfffe8afdff6490fdffae90fdffdc94fdffd497fdffcc9afdff9c9dfdffd0a0fdff8eb8fdff94bcfdff60bffdff28c2fdfff6c4fdff70c8fdff08d2fdffdad4fdff10d8fdfff4dafdff5ee8fdff68e8fdff7ee8fdfface8fdffb6e8fdffbae8fdffcae9fdffcce9fdff96edfdffe6edfdff14f2fdff0cf5fdff04f8fdffd4fafdff08fefdffc615feffcc19feff981cfeff601ffeff2e22feffa825feff402ffeff1232feff4835feff2c38feffc641feff164cfeffcc51feffd651feffda51feffea52fefff252feff6456feffc659feff025afeff165efeff0e61feff0664feffd666feff0a6afeffc881feffce85feff9a88feff628bfeff308efeffaa91feff429bfeff149efeff4aa1feff2ea4feff60a8feffa0b2feffd4b5feff52b9feff68bcfeffb8c0feff04d9feff52dcfeff7adffeffeee2fefff8e2fefffae2feff06e5feff54e5feff56e6feff5ae6feff64e6feff6ce6feffeae8feff34e9feff38e9feff3eeafeff48eafeffbeeafeff24f7feffaaf7feff7cfbfeff86fbfeff8efbfeffd4fffeff1000ffff4004ffff3807ffff300affff000dffff3410fffff227fffff82bffffc42effff8c31ffff5a34ffffd437ffff6c41ffff3e44ffff7447ffff584affff4461ffffaef6ffff24fbffff0ac4000010c400001ec400009ac40000b0c400004cc500008cc50000c8d400000eff000036ff00003eff000074080100a4080100ae08010084200100042101007a220100e0230100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -778,9 +778,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.030749083, y: 6.03276, z: 2667.842}
+    m_Target: {x: 0.70225716, y: -0.85592383, z: 2904.477}
     speed: 2
-    m_Value: {x: -0.030749083, y: 6.03276, z: 2667.842}
+    m_Value: {x: 0.70225716, y: -0.85592383, z: 2904.477}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -830,9 +830,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 67.105606
+    m_Target: 73.13261
     speed: 2
-    m_Value: 67.105606
+    m_Value: 73.13261
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1308,22 +1308,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations/RugbySlateAnimations
+    - Assets/Scenes/InGameAreas
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animations/RugbySlateAnimations
+  - Assets/Scenes/InGameAreas
   m_LastFoldersGridSize: -1
   m_LastProjectPath: U:\Unity\Projects\SamOfTwickenham-FinalProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 02600000
-    m_LastClickedID: 24578
-    m_ExpandedIDs: 00000000ca5f0000cc5f0000ce5f0000d05f0000d25f0000d45f0000d65f0000d85f0000da5f0000dc5f0000de5f0000e05f0000e25f0000e45f0000e65f0000e85f0000ea5f0000ec5f0000ee5f0000f05f0000
+    m_SelectedIDs: 865a0000
+    m_LastClickedID: 23174
+    m_ExpandedIDs: 00000000745a0000785a00007a5a00007c5a00007e5a0000805a0000845a0000865a00008c5a00008e5a0000965a0000985a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1351,7 +1351,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ca5f0000cc5f0000ce5f0000d05f0000d25f0000d45f0000d65f0000d85f0000da5f0000dc5f0000de5f0000e05f0000e25f0000e45f0000e65f0000e85f0000ea5f0000ec5f0000ee5f0000f05f0000
+    m_ExpandedIDs: 00000000745a0000785a00007a5a00007c5a00007e5a0000805a0000865a00008c5a00008e5a0000965a0000985a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000024c4ffff32760000a25a00000e550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1465,7 +1465,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 133266
+  m_LastSelectedObjectID: 74828
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52

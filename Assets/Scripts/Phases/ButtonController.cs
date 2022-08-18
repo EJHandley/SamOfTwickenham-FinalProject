@@ -124,7 +124,7 @@ public class ButtonController : MonoBehaviour
         {
             StartCoroutine(GameManager.instance.SplashUI(thisMove));
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(6f);
         }
 
         if (thisMove.phase == "Coin Toss")

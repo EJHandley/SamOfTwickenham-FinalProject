@@ -34,7 +34,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - Good legs from the big lad and a strong left arm to keep off the defender.
-  timeCost: 90
+  timeCost: 150
   minMeterGain: 5
   maxMeterGain: 10
   critMinMeterGain: 11

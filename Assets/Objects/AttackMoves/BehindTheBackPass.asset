@@ -34,7 +34,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - Lovely move there by the veteran
-  timeCost: 90
+  timeCost: 150
   minMeterGain: 10
   maxMeterGain: 20
   critMinMeterGain: 21

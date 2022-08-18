@@ -34,7 +34,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - Lovely work recycling the ball.
-  timeCost: 90
+  timeCost: 150
   minMeterGain: 5
   maxMeterGain: 15
   critMinMeterGain: 16

@@ -35,7 +35,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - Yeah great diversion there from Sam, drew the defence away.
-  timeCost: 90
+  timeCost: 150
   minMeterGain: 5
   maxMeterGain: 10
   critMinMeterGain: 11

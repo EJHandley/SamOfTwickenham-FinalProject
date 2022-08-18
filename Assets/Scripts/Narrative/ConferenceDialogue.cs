@@ -39,7 +39,6 @@ public class ConferenceDialogue : MonoBehaviour
 
     [Header("Choice UI")]
     [SerializeField] private TMP_Text[] choicesText;
-    [SerializeField] private Button[] choiceButtons;
 
     [Header("End of Story UI")]
     [SerializeField] private GameObject endOfStoryScreen;
@@ -53,13 +52,7 @@ public class ConferenceDialogue : MonoBehaviour
 
     private void Update()
     {
-        while (dialogue.typing)
-        {
-            foreach (Button button in choiceButtons)
-            {
-                button.interactable = false;
-            }
-        }
+
     }
 
     public void SetWinStory(TextAsset story)
@@ -84,7 +77,7 @@ public class ConferenceDialogue : MonoBehaviour
             thisStory = lossDialogue;
 
         }
-        Debug.Log("Clicked");
+
         story = new Story(thisStory.text);
         ContinueStory();
     }    

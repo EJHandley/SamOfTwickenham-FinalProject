@@ -35,7 +35,7 @@ MonoBehaviour:
     sentences:
     - "Quick recycling of the ball and it looks like he\u2019s made a few meters
       there."
-  timeCost: 60
+  timeCost: 180
   minMeterGain: 0
   maxMeterGain: 5
   critMinMeterGain: 6

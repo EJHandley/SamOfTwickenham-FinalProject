@@ -35,7 +35,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - He spotted the winger in space there Vic.
-  timeCost: 120
+  timeCost: 180
   minMeterGain: 15
   maxMeterGain: 40
   critMinMeterGain: 0

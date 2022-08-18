@@ -34,7 +34,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - The wings are racing after it Vic.
-  timeCost: 15
+  timeCost: 120
   minMeterGain: 10
   maxMeterGain: 15
   critMinMeterGain: 0

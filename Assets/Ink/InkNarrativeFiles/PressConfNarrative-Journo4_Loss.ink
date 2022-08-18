@@ -55,6 +55,8 @@ VAR TeamMorale = 0
 
 "Understood, Sam." #Evening Banner
 
+-> Balanced_Buffs
+
 
 
 == Full_Ego_Buffs ==

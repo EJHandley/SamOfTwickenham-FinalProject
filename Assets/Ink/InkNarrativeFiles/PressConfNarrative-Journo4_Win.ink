@@ -29,7 +29,7 @@ VAR TeamMorale = 0
 
 * "I'm not sure why people are making such a fuss about this. I played the game, I got through without issue and we won! Me and the team are on cloud 9."
 
-"Well these kinds of injuries are at the forefront of the sport Sam, people might argue that if the coach was looking to bench you despite your form, then you should have been wiser and taken a seat."
+"Well these kinds of injuries are at the forefront of the sport Sam, people might argue that if the coach was looking to bench you despite your form, then you should have been wiser and taken a seat." #Evening Banner
 
     ** "No one has every used my name alongside the word wise, thats for sure. At the end of the day, the Gaffer was looking out for me, but we talked and he understood my desire to play."
     
@@ -54,6 +54,8 @@ VAR TeamMorale = 0
 * "I don't think that's relevant right now, we're the league champs and that's what really matters. Me and the Gaffer couldn't be happier with the result."
 
 "Ok Sam, but the fans will want a proper answer to the question at some point." #Evening Banner
+
+-> Balanced_Buffs
 
 
 

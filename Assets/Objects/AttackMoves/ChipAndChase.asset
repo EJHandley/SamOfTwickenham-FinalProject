@@ -34,7 +34,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - "Yeah he\u2019s haring after that one Vic."
-  timeCost: 120
+  timeCost: 180
   minMeterGain: 20
   maxMeterGain: 35
   critMinMeterGain: 0

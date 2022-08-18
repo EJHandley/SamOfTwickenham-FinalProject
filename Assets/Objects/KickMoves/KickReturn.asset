@@ -35,7 +35,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - Good work by the 15 to safely take the ball under pressure.
-  timeCost: 15
+  timeCost: 120
   minMeterGain: 5
   maxMeterGain: 10
   critMinMeterGain: 11

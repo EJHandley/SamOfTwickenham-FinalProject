@@ -19,7 +19,6 @@ public class SplashScreen : MonoBehaviour
 
     [Header("Button")]
     public GameObject start;
-    public GameObject tutorial;
     public GameObject credits;
 
     [Header("Credits")]
@@ -81,7 +80,6 @@ public class SplashScreen : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         start.SetActive(true);
-        tutorial.SetActive(true);
         credits.SetActive(true);
     }
 

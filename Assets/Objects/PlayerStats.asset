@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f30712bdd799564883dec13108298e4, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  egoValue: 100
-  teamValue: 50
+  egoValue: 0
+  teamValue: 0

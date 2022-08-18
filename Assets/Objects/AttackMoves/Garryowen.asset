@@ -34,7 +34,7 @@ MonoBehaviour:
   - charName: CC
     sentences:
     - The winger is looking to get under it.
-  timeCost: 90
+  timeCost: 150
   minMeterGain: 15
   maxMeterGain: 30
   critMinMeterGain: 0

@@ -292,7 +292,7 @@ public class GameManager : MonoBehaviour
         moveImage.sprite = thisMove.movePic;
 
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5.9f);
 
         _animation.SetActive(false);
         moveSplash.SetActive(false);
